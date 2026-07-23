@@ -1,0 +1,26 @@
+---
+import { paliers } from "../data/niveaux";
+
+const principaux = paliers.filter((p) => p.numero !== null);
+---
+
+<div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+  {principaux.map((p, i) => (
+    <>
+      <a
+        href={`/methodologie/niveaux#${p.id}`}
+        class="group flex flex-col items-center gap-2"
+        title={`${p.label} — ${p.repere}`}
+      >
+        <span
+          class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-ink-900/10 text-sm font-bold shadow-sm transition-transform group-hover:scale-110 dark:border-white/10"
+          style={`background-color:${p.couleur.hex}; color:${p.couleur.texteClair ? "#fff" : "#1a1a1a"}`}
+        >
+          {p.numero}
+        </span>
+        <span class="text-xs font-medium text-ink-500 dark:text-ink-400">{p.couleur.nom}</span>
+      </a>
+      {i < principaux.length - 1 && <span class="hidden h-px w-6 bg-ink-200 sm:block dark:bg-ink-700" />}
+    </>
+  ))}
+</div>

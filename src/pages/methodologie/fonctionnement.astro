@@ -1,0 +1,57 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Fonctionnement des cartes"
+  description="Comment fonctionnent les cartes de récitation : découpage par sourate ou par hizb, validation des objectifs."
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Méthodologie</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">Fonctionnement des cartes</h1>
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-ink-300">
+      Il existe deux découpages possibles pour organiser l'objectif annuel : par sourate, ou par hizb. Les deux
+      versions sont disponibles au téléchargement pour chaque niveau.
+    </p>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+      <div class="rounded-2xl border border-ink-100 p-6 dark:border-ink-800">
+        <h2 class="font-bold text-ink-900 dark:text-white">Cartes organisées en sourates</h2>
+        <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+          L'objectif annuel est décomposé par sourate, elles-mêmes réparties en objectifs hebdomadaires. À chaque
+          objectif correspond une case : si la section est bien récitée, le professeur y inscrit la date de
+          récitation. Sinon, la case reste vierge et une nouvelle échéance est fixée.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+          Au bout de deux objectifs consécutifs non atteints, une discussion est programmée avec les parents pour
+          comprendre et trouver une solution au blocage.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-ink-100 p-6 dark:border-ink-800">
+        <h2 class="font-bold text-ink-900 dark:text-white">Cartes organisées en hizb</h2>
+        <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+          L'objectif annuel est décomposé en 8 objectifs mensuels, eux-mêmes en 4 objectifs hebdomadaires. Une 5ᵉ
+          case permet de valider l'accumulation du mois : une fois validée, l'élève peut aborder l'objectif mensuel
+          suivant.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+          Une validation intermédiaire bimensuelle est prévue pour faciliter la consolidation des acquis tout au
+          long de l'année.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 rounded-2xl bg-gold-50 p-8 dark:bg-ink-900">
+      <h3 class="font-bold text-ink-900 dark:text-white">Le principe de la carte</h3>
+      <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+        La carte est attribuée à chaque élève et correspond à un niveau. Elle est individualisée : nom, prénom,
+        classe, professeur, niveau et objectif annuel y figurent. L'élève la garde toujours en sa possession et la
+        présente à son professeur à chaque récitation ; un duplicata reste en possession du professeur.
+      </p>
+    </div>
+
+    <a href="/methodologie/niveaux" class="mt-12 inline-block text-sm font-semibold text-gold-600 hover:underline">
+      ← Voir le détail des niveaux
+    </a>
+  </section>
+</Layout>

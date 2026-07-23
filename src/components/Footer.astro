@@ -1,0 +1,35 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-ink-100 bg-ink-50 dark:border-ink-800 dark:bg-ink-900">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-2 text-lg font-bold text-ink-900 dark:text-white">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500 font-arabic text-white">ب</span>
+        <span>Bitaqat Hifd Qor'an</span>
+      </div>
+      <p class="mt-3 max-w-xs text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+        Un kit d'apprentissage libre et gratuit pour la mémorisation du Qor'an, pensé pour les élèves, les parents et les professeurs.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-400">Le projet</h3>
+      <ul class="mt-4 space-y-2 text-sm text-ink-600 dark:text-ink-300">
+        <li><a href="/methodologie" class="hover:text-gold-600">Méthodologie</a></li>
+        <li><a href="/methodologie/niveaux" class="hover:text-gold-600">Les niveaux</a></li>
+        <li><a href="/telechargements" class="hover:text-gold-600">Téléchargements</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-400">Informations</h3>
+      <ul class="mt-4 space-y-2 text-sm text-ink-600 dark:text-ink-300">
+        <li><a href="/contact" class="hover:text-gold-600">Contact</a></li>
+        <li><a href="/mentions-legales" class="hover:text-gold-600">Mentions légales</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-ink-200 py-6 text-center text-xs text-ink-400 dark:border-ink-800">
+    &copy; {year} Bitaqat Hifd Qor'an — Œuvre libre, non commercialisable.
+  </div>
+</footer>

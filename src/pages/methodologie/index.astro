@@ -1,0 +1,89 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { methodologieDocs } from "../../data/niveaux";
+---
+
+<Layout
+  title="Méthodologie"
+  description="La méthodologie pédagogique du kit de cartes de récitation : apprentissage par objectif, responsabilisation et suivi."
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Méthodologie</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      Une pédagogie exigeante, pensée pour durer
+    </h1>
+    <p class="mt-6 text-lg leading-relaxed text-ink-600 dark:text-ink-300">
+      L'ambition de cette méthodologie est de permettre l'apprentissage par cœur du dernier quart du Qor'an — de
+      « Sabbih » à « Yâcîn » inclus — avec le respect des règles de Tajwîd, tout en donnant à l'élève une autonomie
+      complète pour poursuivre son apprentissage.
+    </p>
+    <p class="mt-4 leading-relaxed text-ink-600 dark:text-ink-300">
+      Elle se base sur une pédagogie par objectifs et s'appuie sur trois exigences, portées par trois acteurs :
+      l'élève, les parents et le professeur.
+    </p>
+
+    <div class="mt-12 space-y-10">
+      <div id="objectif">
+        <h2 class="text-xl font-bold text-ink-900 dark:text-white">Apprentissage par objectif</h2>
+        <p class="mt-3 leading-relaxed text-ink-600 dark:text-ink-300">
+          Il est important de fixer un objectif en début d'année pour plus d'efficacité. Tout au long du cursus, tous
+          les acteurs doivent savoir à tout moment « où ils vont » et « où ils en sont ». L'apprentissage se fait par
+          objectifs courts à atteindre à la maison ; la récitation et la validation se font en classe, par le
+          professeur. De proche en proche, les acquis s'accumulent, et la consolidation se fait en classe.
+        </p>
+      </div>
+      <div id="responsabilisation">
+        <h2 class="text-xl font-bold text-ink-900 dark:text-white">Responsabilisation</h2>
+        <p class="mt-3 leading-relaxed text-ink-600 dark:text-ink-300">
+          Tous les acteurs sont responsabilisés : le professeur fixe les objectifs, cadre l'élève, exerce un suivi et
+          valide les acquis ; l'élève réalise les objectifs à atteindre ; les parents, en collaboration avec le
+          professeur, aident l'élève à réaliser ses objectifs et exercent un suivi quotidien à la maison. Les parents
+          ont un rôle majeur : d'eux dépend en grande partie le succès de l'élève.
+        </p>
+      </div>
+      <div id="suivi">
+        <h2 class="text-xl font-bold text-ink-900 dark:text-white">Suivi</h2>
+        <p class="mt-3 leading-relaxed text-ink-600 dark:text-ink-300">
+          Comme l'apprentissage se fait principalement à la maison, le suivi des parents est central. Ils
+          participent directement et personnellement au succès du projet et sont contributeurs directs du succès de
+          l'élève.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 grid gap-4 sm:grid-cols-2">
+      <a href="/methodologie/fonctionnement" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">Fonctionnement des cartes →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">Découpage par sourate ou par hizb : comment lire et valider une carte.</p>
+      </a>
+      <a href="/methodologie/niveaux" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">Les niveaux →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">Le détail des 6 niveaux, leurs couleurs et leurs objectifs.</p>
+      </a>
+      <a href="/methodologie/carte-de-suivi" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">Carte de suivi →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">Un outil complémentaire pour suivre récitation et comportement.</p>
+      </a>
+      <a href="/telechargements" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">Téléchargements →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">Toutes les cartes et tous les outils, prêts à imprimer.</p>
+      </a>
+    </div>
+
+    <div class="mt-16 rounded-2xl bg-ink-50 p-8 dark:bg-ink-900">
+      <h3 class="font-bold text-ink-900 dark:text-white">Documents de référence</h3>
+      <ul class="mt-4 space-y-3">
+        {methodologieDocs.map((doc) => (
+          <li>
+            <a href={doc.href} class="font-medium text-gold-600 hover:underline" download>{doc.label}</a>
+            <p class="text-sm text-ink-500 dark:text-ink-400">{doc.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <blockquote class="mt-16 border-l-4 border-gold-400 pl-6 text-ink-600 italic dark:text-ink-300">
+      « Ceci n'est qu'une étape dans le passionnant et gratifiant apprentissage du Qor'an et de ses sciences. »
+    </blockquote>
+  </section>
+</Layout>

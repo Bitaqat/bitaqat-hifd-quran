@@ -1,0 +1,96 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { paliers, categories } from "../../data/niveaux";
+
+const images = import.meta.glob("../../assets/cartes/*.png", { eager: true }) as Record<
+  string,
+  { default: ImageMetadata }
+>;
+function getImage(name: string) {
+  const entry = Object.entries(images).find(([path]) => path.endsWith(`/${name}`));
+  return entry?.[1].default;
+}
+---
+
+<Layout
+  title="Les niveaux"
+  description="Le détail des niveaux du kit de cartes de récitation, leurs couleurs, objectifs et fichiers à télécharger."
+>
+  <section class="mx-auto max-w-3xl px-6 pt-16 sm:pt-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Méthodologie</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">Progression et niveaux</h1>
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-ink-300">
+      Il existe 6 niveaux principaux, du hizb Sabbih à Yâcîn, répartis en trois catégories : Débutant, Intermédiaire
+      et Avancé. Le niveau est indépendant de la classe ou de l'ancienneté de l'élève — chaque élève progresse à son
+      rythme. Deux cartes de démarrage précèdent le niveau 1, et deux niveaux « Initié » prolongent le parcours
+      au-delà de Yâcîn pour les élèves les plus assidus.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 py-16">
+    {Object.entries(categories).map(([key, cat]) => {
+      const items = paliers.filter((p) => p.categorie === key);
+      if (items.length === 0) return null;
+      return (
+        <div class="mb-16">
+          <h2 class="text-2xl font-bold text-ink-900 dark:text-white">{cat.label}</h2>
+          <p class="mt-1 text-sm text-ink-500 dark:text-ink-400">{cat.description}</p>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2">
+            {items.map((p) => {
+              const recto = p.images ? getImage(p.images.recto) : null;
+              return (
+                <div id={p.id} class="scroll-mt-24 overflow-hidden rounded-2xl border border-ink-100 dark:border-ink-800">
+                  {recto && (
+                    <Image src={recto} alt={`Carte ${p.label} — recto`} class="h-48 w-full object-contain bg-ink-50 p-4 dark:bg-ink-900" width={400} height={280} />
+                  )}
+                  <div class="p-6">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="h-4 w-4 rounded-full border border-ink-900/10 dark:border-white/20"
+                        style={`background-color:${p.couleur.hex}`}
+                      ></span>
+                      <h3 class="font-bold text-ink-900 dark:text-white">{p.label}</h3>
+                      <span class="text-xs text-ink-400">{p.couleur.nom}</span>
+                    </div>
+                    <p class="mt-1 text-sm font-medium text-gold-700 dark:text-gold-400">{p.repere}</p>
+                    <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">{p.description}</p>
+                    <dl class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-ink-500 dark:text-ink-400">
+                      <div>
+                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Objectif annuel</dt>
+                        <dd>{p.objectifAnnuel}</dd>
+                      </div>
+                      <div>
+                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Rythme hebdo</dt>
+                        <dd>{p.rythme}</dd>
+                      </div>
+                      <div>
+                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Cumul</dt>
+                        <dd>{p.cumul}</dd>
+                      </div>
+                      <div>
+                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Lieu</dt>
+                        <dd>{p.lieu}</dd>
+                      </div>
+                    </dl>
+                    <div class="mt-5 flex flex-wrap gap-2">
+                      {p.fichiers.map((f) => (
+                        <a
+                          href={f.href}
+                          download
+                          class="rounded-full border border-gold-300 px-4 py-1.5 text-xs font-semibold text-gold-700 transition-colors hover:bg-gold-500 hover:text-white dark:border-gold-700 dark:text-gold-400"
+                        >
+                          {f.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+</Layout>

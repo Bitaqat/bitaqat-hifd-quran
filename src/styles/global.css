@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource/amiri/400.css";
+@import "@fontsource/amiri/700.css";
+
+@theme {
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", "Traditional Arabic", serif;
+
+  --color-gold-50: #fdf8ec;
+  --color-gold-100: #faeec9;
+  --color-gold-200: #f4dc93;
+  --color-gold-300: #edc65c;
+  --color-gold-400: #e6b136;
+  --color-gold-500: #d4941f;
+  --color-gold-600: #b57318;
+  --color-gold-700: #925417;
+  --color-gold-800: #78431a;
+  --color-gold-900: #66391b;
+
+  --color-ink-50: #f6f7f8;
+  --color-ink-100: #eceef1;
+  --color-ink-200: #d3d8de;
+  --color-ink-300: #aab3bf;
+  --color-ink-400: #7b899a;
+  --color-ink-500: #5e6d7e;
+  --color-ink-600: #495767;
+  --color-ink-700: #3c4753;
+  --color-ink-800: #262e37;
+  --color-ink-900: #14181e;
+  --color-ink-950: #0b0d11;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
