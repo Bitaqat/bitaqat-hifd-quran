@@ -161,6 +161,7 @@ export const paliers: Palier[] = [
       { label: "Carte niveau 7 (PDF)", href: "/downloads/cartes/carte-n7.pdf" },
       { label: "Carte niveau 7 — variante (PDF)", href: "/downloads/cartes/carte-n7-style.pdf" },
     ],
+    images: { recto: "niveau-7-recto.png", verso: "niveau-7-verso.png" },
   },
   {
     id: "niveau-8",
@@ -175,6 +176,7 @@ export const paliers: Palier[] = [
     lieu: "À la maison (autonome)",
     description: "Niveau le plus avancé du parcours, pour les élèves les plus assidus.",
     fichiers: [{ label: "Carte niveau 8 (PDF)", href: "/downloads/cartes/carte-n8.pdf" }],
+    images: { recto: "niveau-8-recto.png", verso: "niveau-8-verso.png" },
   },
 ];
 
