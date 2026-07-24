@@ -1,5 +1,14 @@
 ---
-import { paliers } from "../data/niveaux";
+import { paliers as paliersFr } from "../data/niveaux";
+import { paliers as paliersEn } from "../data/niveaux.en";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = "fr" } = Astro.props;
+const paliers = lang === "fr" ? paliersFr : paliersEn;
+const niveauxHref = lang === "fr" ? "/methodologie/niveaux" : "/en/methodology/levels";
 
 const principaux = paliers.filter((p) => p.numero !== null);
 ---
@@ -8,7 +17,7 @@ const principaux = paliers.filter((p) => p.numero !== null);
   {principaux.map((p, i) => (
     <>
       <a
-        href={`/methodologie/niveaux#${p.id}`}
+        href={`${niveauxHref}#${p.id}`}
         class="group flex flex-col items-center gap-2"
         title={`${p.label} — ${p.repere}`}
       >

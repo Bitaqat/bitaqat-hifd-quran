@@ -1,0 +1,90 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { methodologieDocs } from "../../../data/niveaux.en";
+---
+
+<Layout
+  title="Methodology"
+  lang="en"
+  description="The pedagogical methodology behind the recitation card kit: goal-based learning, shared responsibility and tracking."
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Methodology</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      A demanding pedagogy, built to last
+    </h1>
+    <p class="mt-6 text-lg leading-relaxed text-ink-600 dark:text-ink-300">
+      This methodology's ambition is to enable memorizing the last quarter of the Qur'an by heart — from
+      "Sabbih" to "Yâsîn" included — while respecting the rules of Tajweed, all the while giving the student full
+      independence to continue learning.
+    </p>
+    <p class="mt-4 leading-relaxed text-ink-600 dark:text-ink-300">
+      It is based on a goal-oriented pedagogy and rests on three requirements, carried by three roles: the
+      student, the parents and the teacher.
+    </p>
+
+    <div class="mt-12 space-y-10">
+      <div id="objectif">
+        <h2 class="text-xl font-bold text-ink-900 dark:text-white">Goal-based learning</h2>
+        <p class="mt-3 leading-relaxed text-ink-600 dark:text-ink-300">
+          Setting a goal at the start of the year is important for effectiveness. Throughout the year, everyone
+          involved should always know "where they are heading" and "where they stand". Learning happens through
+          short goals to reach at home; recitation and validation happen in class, with the teacher. Step by step,
+          progress accumulates, and consolidation happens in class.
+        </p>
+      </div>
+      <div id="responsabilisation">
+        <h2 class="text-xl font-bold text-ink-900 dark:text-white">Shared responsibility</h2>
+        <p class="mt-3 leading-relaxed text-ink-600 dark:text-ink-300">
+          Everyone involved carries responsibility: the teacher sets the goals, guides the student, tracks progress
+          and validates achievements; the student works towards the goals to reach; the parents, in collaboration
+          with the teacher, help the student reach their goals and provide daily follow-up at home. Parents play a
+          major role — the student's success largely depends on them.
+        </p>
+      </div>
+      <div id="suivi">
+        <h2 class="text-xl font-bold text-ink-900 dark:text-white">Tracking</h2>
+        <p class="mt-3 leading-relaxed text-ink-600 dark:text-ink-300">
+          Since learning mostly happens at home, tracking by parents is central. They take part directly and
+          personally in the project's success and directly contribute to the student's achievements.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 grid gap-4 sm:grid-cols-2">
+      <a href="/en/methodology/how-it-works" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">How the cards work →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">How to read and validate a card, surah by surah.</p>
+      </a>
+      <a href="/en/methodology/levels" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">The levels →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">The details of the 6 levels, their colours and their goals.</p>
+      </a>
+      <a href="/en/methodology/tracking-card" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">Tracking card →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">A complementary tool to track recitation and behaviour.</p>
+      </a>
+      <a href="/en/downloads" class="rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
+        <h3 class="font-bold text-ink-900 dark:text-white">Downloads →</h3>
+        <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">All the cards and tools, ready to print.</p>
+      </a>
+    </div>
+
+    <div class="mt-16 rounded-2xl bg-ink-50 p-8 dark:bg-ink-900">
+      <h3 class="font-bold text-ink-900 dark:text-white">Reference documents</h3>
+      <p class="mt-2 text-xs text-ink-400">Currently available in French only — an English translation is planned. Get in touch if you need it sooner.</p>
+      <ul class="mt-4 space-y-3">
+        {methodologieDocs.map((doc) => (
+          <li>
+            <a href={doc.href} class="font-medium text-gold-600 hover:underline" download>{doc.label} <span class="text-xs font-normal text-ink-400">(FR)</span></a>
+            <p class="text-sm text-ink-500 dark:text-ink-400">{doc.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <blockquote class="mt-16 border-l-4 border-gold-400 pl-6 text-ink-600 italic dark:text-ink-300">
+      "This is but one step in the fascinating and rewarding journey of learning the Qur'an and its sciences."
+    </blockquote>
+  </section>
+</Layout>

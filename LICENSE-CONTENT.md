@@ -1,41 +1,41 @@
-# Licence du contenu pédagogique
+# Pedagogical content licence
 
-Cette licence couvre l'ensemble des **ressources pédagogiques** du projet
-Bitaqat Hifd Qor'an : cartes de récitation, cartes de démarrage, outils de
-suivi, documents de méthodologie et textes explicatifs du site — notamment
-tout ce qui se trouve dans `public/downloads/`, `src/assets/cartes/`, ainsi
-que les contenus des pages `src/pages/methodologie/`.
+This licence covers all the **pedagogical resources** of the Bitaqat Hifd
+Qor'an project: recitation cards, starter cards, tracking tools, methodology
+documents and explanatory text on the site — in particular everything under
+`public/downloads/`, `src/assets/cartes/`, and the content of the
+`src/pages/methodologie/` (French) and `src/pages/en/methodology/` (English)
+pages.
 
-*(Le code source du site — composants, gabarits, styles, configuration —
-est distinct et publié sous licence MIT, voir [LICENSE](LICENSE).)*
+*(The site's source code — components, layouts, styles, configuration — is
+separate and published under the MIT licence, see [LICENSE](LICENSE).)*
 
-## Licence : CC BY-NC 4.0
+## Licence: CC BY-NC 4.0
 
-Ce contenu est mis à disposition sous licence
-**[Creative Commons Attribution – Pas d'Utilisation Commerciale 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.fr)**.
+This content is made available under the
+**[Creative Commons Attribution – NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)**
+licence.
 
-En résumé, vous êtes libre de :
+In short, you are free to:
 
-- **Partager** — copier, distribuer et communiquer le contenu par tous
-  moyens et sous tous formats
-- **Adapter** — remixer, transformer et créer à partir du contenu (par
-  exemple pour l'adapter à votre structure d'enseignement)
+- **Share** — copy, distribute and communicate the content in any medium or
+  format
+- **Adapt** — remix, transform and build upon the content (for example, to
+  adapt it to your own teaching institution)
 
-Sous les conditions suivantes :
+Under the following terms:
 
-- **Attribution** — vous devez créditer l'œuvre, conserver la mention
-  *« Bitaqat Hifd Qor'an — bitaqat-hifd-quran.com »* sur toute copie ou
-  adaptation, indiquer si des modifications ont été effectuées, et ne pas
-  suggérer que le projet vous approuve ou approuve votre usage.
-- **Pas d'Utilisation Commerciale** — vous n'êtes pas autorisé à faire un
-  usage commercial de ce contenu, ni à le vendre, sous quelque forme que
-  ce soit (y compris via une prestation d'impression ou de reproduction
-  payante).
+- **Attribution** — you must give appropriate credit, keep the mention
+  *"Bitaqat Hifd Qor'an — bitaqat-hifd-quran.com"* on any copy or adaptation,
+  indicate if changes were made, and not suggest that the project endorses
+  you or your use.
+- **NonCommercial** — you may not use this content for commercial purposes,
+  nor sell it in any form (including through a paid printing or reproduction
+  service).
 
-Aucune clause de cette licence ne réduit, ne limite ni ne restreint les
-prérogatives dont vous disposez au titre des exceptions et limitations au
-droit d'auteur.
+No clause in this licence reduces, limits or restricts any rights you have
+under copyright exceptions and limitations.
 
-Ceci est un résumé — le texte intégral et légalement contraignant de la
-licence est disponible ici :
-<https://creativecommons.org/licenses/by-nc/4.0/legalcode.fr>
+This is a summary — the full, legally binding text of the licence is
+available here:
+<https://creativecommons.org/licenses/by-nc/4.0/legalcode>

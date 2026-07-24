@@ -1,26 +1,28 @@
 # Bitaqat Hifd Qor'an
 
-Site du kit de cartes de récitation pour l'apprentissage et la mémorisation du Qor'an — méthodologie pédagogique, cartes par niveau et outils de suivi, en libre téléchargement.
+Site for the Qur'an recitation card kit — a pedagogical methodology, level-based cards and tracking tools, free
+to download. Content is in French by default, with an English translation in progress under `/en/`.
 
-Construit avec [Astro](https://astro.build) et Tailwind CSS, déployé sur Cloudflare Pages.
+Built with [Astro](https://astro.build) and Tailwind CSS, deployed on Cloudflare Workers (static assets).
 
-## Commandes
+## Commands
 
-| Commande            | Action                                       |
-| :------------------- | :-------------------------------------------- |
-| `npm install`         | Installe les dépendances                      |
-| `npm run dev`          | Lance le serveur de dev sur `localhost:4321`  |
-| `npm run build`        | Build de production dans `./dist/`            |
-| `npm run preview`      | Prévisualise le build localement               |
+| Command            | Action                                       |
+| :------------------ | :-------------------------------------------- |
+| `npm install`        | Install dependencies                          |
+| `npm run dev`         | Start the dev server on `localhost:4321`     |
+| `npm run build`       | Production build into `./dist/`               |
+| `npm run preview`     | Preview the build locally                     |
 
 ## Structure
 
-- `src/pages/` — les pages du site
-- `src/components/`, `src/layouts/` — composants et gabarits partagés
-- `src/data/niveaux.ts` — données des niveaux, couleurs et fichiers associés
-- `public/downloads/` — cartes, outils de suivi et documents de méthodologie (PDF)
+- `src/pages/` — French pages (default locale) at the root, English pages under `src/pages/en/`
+- `src/components/`, `src/layouts/` — shared components and layouts
+- `src/data/niveaux.ts` / `niveaux.en.ts` — level, colour and file data, per locale
+- `src/i18n/ui.ts` — shared UI string dictionary and locale helpers
+- `public/downloads/` — cards, tracking tools and methodology documents (PDF), currently French only
 
 ## Licences
 
-- **Code source** (composants, gabarits, config) : [MIT](LICENSE)
-- **Contenu pédagogique** (cartes, outils, méthodologie, dans `public/downloads/` et `src/assets/cartes/`) : [CC BY-NC 4.0](LICENSE-CONTENT.md) — partage et adaptation libres, non commercial, attribution requise.
+- **Source code** (components, layouts, config): [MIT](LICENSE)
+- **Pedagogical content** (cards, tools, methodology, under `public/downloads/` and `src/assets/cartes/`): [CC BY-NC 4.0](LICENSE-CONTENT.md) — free sharing and adaptation, non-commercial use only, attribution required.
