@@ -66,10 +66,7 @@ export const paliers: Palier[] = [
     lieu: "En classe (apprentissage collectif)",
     description:
       "Pour les élèves débutants ayant une maîtrise minimale de la lecture. Apprentissage collectif en classe, avec transition progressive vers la maison en fin d'année.",
-    fichiers: [
-      { label: "Version par sourate (PDF)", href: "/downloads/cartes/carte-n1-sourate.pdf" },
-      { label: "Version par hizb (PDF)", href: "/downloads/cartes/carte-n1-hizb.pdf" },
-    ],
+    fichiers: [{ label: "Carte niveau 1 (PDF)", href: "/downloads/cartes/carte-n1.pdf" }],
     images: { recto: "niveau-1-recto.png", verso: "niveau-1-verso.png" },
   },
   {
@@ -85,10 +82,7 @@ export const paliers: Palier[] = [
     lieu: "À la maison (semi-autonome)",
     description:
       "Premier niveau d'apprentissage à la maison, avec la participation active des parents. Transition vers l'autonomie complète en fin d'année.",
-    fichiers: [
-      { label: "Version par sourate (PDF)", href: "/downloads/cartes/carte-n2-sourate.pdf" },
-      { label: "Version par hizb (PDF)", href: "/downloads/cartes/carte-n2-hizb.pdf" },
-    ],
+    fichiers: [{ label: "Carte niveau 2 (PDF)", href: "/downloads/cartes/carte-n2.pdf" }],
     images: { recto: "niveau-2-recto.png", verso: "niveau-2-verso.png" },
   },
   {
@@ -103,10 +97,7 @@ export const paliers: Palier[] = [
     rythme: "7 à 10 lignes / semaine",
     lieu: "À la maison (autonome)",
     description: "Apprentissage exclusivement à la maison, en autonomie complète. Les parents assurent le suivi quotidien.",
-    fichiers: [
-      { label: "Version par sourate (PDF)", href: "/downloads/cartes/carte-n3-sourate.pdf" },
-      { label: "Version par hizb (PDF)", href: "/downloads/cartes/carte-n3-hizb.pdf" },
-    ],
+    fichiers: [{ label: "Carte niveau 3 (PDF)", href: "/downloads/cartes/carte-n3.pdf" }],
     images: { recto: "niveau-3-recto.png", verso: "niveau-3-verso.png" },
   },
   {
@@ -121,10 +112,7 @@ export const paliers: Palier[] = [
     rythme: "15 à 20 lignes / semaine",
     lieu: "À la maison (autonome)",
     description: "Élèves avancés avec une bonne capacité d'apprentissage autonome. Objectif mensuel d'un demi-hizb.",
-    fichiers: [
-      { label: "Version par sourate (PDF)", href: "/downloads/cartes/carte-n4-sourate.pdf" },
-      { label: "Version par hizb (PDF)", href: "/downloads/cartes/carte-n4-hizb.pdf" },
-    ],
+    fichiers: [{ label: "Carte niveau 4 (PDF)", href: "/downloads/cartes/carte-n4.pdf" }],
     images: { recto: "niveau-4-recto.png", verso: "niveau-4-verso.png" },
   },
   {
@@ -154,10 +142,7 @@ export const paliers: Palier[] = [
     rythme: "15 à 20 lignes / semaine",
     lieu: "À la maison (autonome)",
     description: "Dernier niveau du parcours principal : le dernier quart du Coran, de Sabbih à Yâcîn, est mémorisé et maîtrisé.",
-    fichiers: [
-      { label: "Version par sourate (PDF)", href: "/downloads/cartes/carte-n6-sourate.pdf" },
-      { label: "Version par hizb (PDF)", href: "/downloads/cartes/carte-n6-hizb.pdf" },
-    ],
+    fichiers: [{ label: "Carte niveau 6 (PDF)", href: "/downloads/cartes/carte-n6.pdf" }],
     images: { recto: "niveau-6-recto.png", verso: "niveau-6-verso.png" },
   },
   {
