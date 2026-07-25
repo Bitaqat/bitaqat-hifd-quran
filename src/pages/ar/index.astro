@@ -1,0 +1,102 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProgressionPath from "../../components/ProgressionPath.astro";
+---
+
+<Layout
+  title="الرئيسية"
+  lang="ar"
+  description="حقيبة تعليمية حرة ومجانية من بطاقات التسميع لتعلّم وحفظ القرآن الكريم، مع منهجية تربوية متكاملة."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-linear-to-b from-gold-50 to-white dark:from-ink-900 dark:to-ink-950"></div>
+    <div class="mx-auto max-w-4xl px-6 pt-20 pb-16 text-center sm:pt-28 sm:pb-24">
+      <p class="font-arabic text-2xl text-gold-600 sm:text-3xl">بطاقات حفظ القرآن الكريم</p>
+      <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-ink-900 sm:text-6xl dark:text-white">
+        طريق واضح المعالم نحو حفظ القرآن الكريم
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-600 dark:text-ink-300">
+        حقيبة تعليمية حرة ومجانية — بطاقات تسميع، ومنهجية متكاملة، وأدوات متابعة — لمرافقة الطلاب وأولياء الأمور
+        والمعلمين، خطوة بخطوة، حتى إتقان الربع الأخير من القرآن الكريم.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/ar/downloads"
+          class="rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/25 transition-colors hover:bg-gold-600"
+        >
+          تحميل الحقيبة مجانًا
+        </a>
+        <a
+          href="/ar/methodology"
+          class="rounded-full border border-ink-200 px-7 py-3 text-sm font-semibold text-ink-700 transition-colors hover:border-gold-400 hover:text-gold-700 dark:border-ink-700 dark:text-ink-200"
+        >
+          اكتشف المنهجية
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progression -->
+  <section class="border-y border-ink-100 bg-ink-50/60 py-16 dark:border-ink-800 dark:bg-ink-900/40">
+    <div class="mx-auto max-w-5xl px-6 text-center">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-gold-600">مسار مكوَّن من مستويات</h2>
+      <p class="mt-3 text-2xl font-bold text-ink-900 dark:text-white">6 مستويات، من حزب سبّح إلى سورة يس</p>
+      <p class="mx-auto mt-3 max-w-xl text-ink-500 dark:text-ink-400">
+        لكل مستوى لونه وهدفه الخاص. يتقدّم الطالب بالوتيرة التي تناسبه، مع بطاقة يقدّمها في كل تسميع.
+      </p>
+      <div class="mt-10">
+        <ProgressionPath lang="ar" />
+      </div>
+      <a href="/ar/methodology/levels" class="mt-8 inline-block text-sm font-semibold text-gold-600 hover:underline">
+        عرض تفاصيل المستويات ←
+      </a>
+    </div>
+  </section>
+
+  <!-- 3 pillars -->
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-sm font-semibold uppercase tracking-widest text-gold-600">منهجية قائمة على الأهداف</h2>
+      <p class="mt-3 text-3xl font-bold text-ink-900 dark:text-white">ثلاثة شروط، ثلاثة أدوار</p>
+    </div>
+    <div class="mt-14 grid gap-8 sm:grid-cols-3">
+      {[
+        {
+          titre: "تعلّم قائم على الأهداف",
+          texte: "يُحدَّد هدف واضح في بداية السنة، يُقسَّم إلى خطوات أسبوعية وشهرية تُنجَز في المنزل.",
+        },
+        {
+          titre: "تقاسم المسؤولية",
+          texte: "يتقاسم المعلم والطالب والوالدان عبء التعلّم، ولكل منهم دور محدد.",
+        },
+        {
+          titre: "المتابعة",
+          texte: "تُجسّد بطاقة التسميع التقدّم المحرز وتُتيح متابعة منتظمة، في الفصل وفي المنزل.",
+        },
+      ].map((item) => (
+        <div class="rounded-2xl border border-ink-100 p-8 transition-shadow hover:shadow-lg dark:border-ink-800">
+          <h3 class="text-lg font-bold text-ink-900 dark:text-white">{item.titre}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink-500 dark:text-ink-400">{item.texte}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-ink-900 py-20 dark:bg-black">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl font-bold text-white">عمل حر، غير مخصص للاستخدام التجاري</h2>
+      <p class="mt-4 text-ink-300">
+        الحقيبة الكاملة — البطاقات والمنهجية وأدوات المتابعة — متاحة مجانًا للتحميل، للمدارس والمساجد والمعاهد
+        والعائلات.
+      </p>
+      <a
+        href="/ar/downloads"
+        class="mt-8 inline-block rounded-full bg-gold-500 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-400"
+      >
+        الذهاب إلى التحميلات
+      </a>
+    </div>
+  </section>
+</Layout>

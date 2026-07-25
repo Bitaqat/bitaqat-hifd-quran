@@ -1,11 +1,54 @@
 export const languages = {
   fr: "Français",
   en: "English",
+  ar: "العربية",
 } as const;
 
 export type Lang = keyof typeof languages;
 
 export const defaultLang: Lang = "fr";
+
+export const dirs: Record<Lang, "ltr" | "rtl"> = {
+  fr: "ltr",
+  en: "ltr",
+  ar: "rtl",
+};
+
+export const routes: Record<Lang, Record<
+  "home" | "methodologie" | "fonctionnement" | "niveaux" | "carteDeSuivi" | "telechargements" | "contact" | "mentions",
+  string
+>> = {
+  fr: {
+    home: "/",
+    methodologie: "/methodologie",
+    fonctionnement: "/methodologie/fonctionnement",
+    niveaux: "/methodologie/niveaux",
+    carteDeSuivi: "/methodologie/carte-de-suivi",
+    telechargements: "/telechargements",
+    contact: "/contact",
+    mentions: "/mentions-legales",
+  },
+  en: {
+    home: "/en/",
+    methodologie: "/en/methodology",
+    fonctionnement: "/en/methodology/how-it-works",
+    niveaux: "/en/methodology/levels",
+    carteDeSuivi: "/en/methodology/tracking-card",
+    telechargements: "/en/downloads",
+    contact: "/en/contact",
+    mentions: "/en/legal-notice",
+  },
+  ar: {
+    home: "/ar/",
+    methodologie: "/ar/methodology",
+    fonctionnement: "/ar/methodology/how-it-works",
+    niveaux: "/ar/methodology/levels",
+    carteDeSuivi: "/ar/methodology/tracking-card",
+    telechargements: "/ar/downloads",
+    contact: "/ar/contact",
+    mentions: "/ar/legal-notice",
+  },
+};
 
 export const ui = {
   fr: {
@@ -21,7 +64,6 @@ export const ui = {
     "footer.mentions": "Mentions légales",
     "footer.rights": "Œuvre libre, non commercialisable.",
     "footer.follow": "Suivez le projet sur X",
-    "lang.switch": "English",
   },
   en: {
     "nav.methodologie": "Methodology",
@@ -36,7 +78,20 @@ export const ui = {
     "footer.mentions": "Legal notice",
     "footer.rights": "Free work, not for commercial use.",
     "footer.follow": "Follow the project on X",
-    "lang.switch": "Français",
+  },
+  ar: {
+    "nav.methodologie": "المنهجية",
+    "nav.niveaux": "المستويات",
+    "nav.telechargements": "التحميلات",
+    "nav.contact": "تواصل معنا",
+    "nav.cta": "تحميل الحقيبة",
+    "footer.tagline":
+      "حقيبة تعليمية حرة ومجانية لحفظ القرآن الكريم، مصممة للطلاب وأولياء الأمور والمعلمين.",
+    "footer.project": "المشروع",
+    "footer.info": "معلومات",
+    "footer.mentions": "الإشعار القانوني",
+    "footer.rights": "عمل حر، غير مخصص للاستخدام التجاري.",
+    "footer.follow": "تابع المشروع على X",
   },
 } as const;
 
@@ -44,9 +99,4 @@ export function useTranslations(lang: Lang) {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
     return ui[lang][key] ?? ui[defaultLang][key];
   };
-}
-
-export function withLang(path: string, lang: Lang) {
-  if (lang === defaultLang) return path;
-  return `/en${path}`;
 }

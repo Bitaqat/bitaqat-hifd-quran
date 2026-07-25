@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<Layout title="تواصل معنا" lang="ar" description="تواصل مع فريق مشروع بطاقات حفظ القرآن الكريم.">
+  <section class="mx-auto max-w-xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600 text-center">تواصل معنا</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white text-center">
+      لديك سؤال أو اقتراح؟
+    </h1>
+    <p class="mt-6 text-center leading-relaxed text-ink-600 dark:text-ink-300">
+      راسلنا عبر هذا النموذج — ملاحظات، أسئلة حول المنهجية، الإبلاغ عن مشكلة، كل ذلك مرحّب به.
+    </p>
+
+    <form
+      id="contact-form"
+      class="mt-10 space-y-5"
+      data-msg-missing-turnstile="يرجى إتمام التحقق الأمني قبل الإرسال."
+      data-msg-sending="جارٍ الإرسال…"
+      data-msg-success="تم إرسال الرسالة، شكرًا لك! سنرد عليك عبر البريد الإلكتروني."
+      data-msg-error="حدث خطأ ما. يرجى المحاولة مرة أخرى بعد قليل."
+    >
+      <div>
+        <label for="name" class="block text-sm font-medium text-ink-700 dark:text-ink-200">الاسم</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          maxlength="100"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-ink-700 dark:text-ink-200">البريد الإلكتروني</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          maxlength="200"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-ink-700 dark:text-ink-200">الرسالة</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          maxlength="5000"
+          rows="6"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+        ></textarea>
+      </div>
+
+      <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
+      <button
+        type="submit"
+        id="contact-submit"
+        class="w-full rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        إرسال
+      </button>
+      <p id="contact-status" role="status" class="text-center text-sm text-ink-500 dark:text-ink-400"></p>
+    </form>
+  </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/scripts/contact.js" defer></script>
+</Layout>

@@ -1,5 +1,5 @@
 ---
-import { useTranslations, type Lang } from "../i18n/ui";
+import { useTranslations, routes, type Lang } from "../i18n/ui";
 
 interface Props {
   lang: Lang;
@@ -7,23 +7,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const year = new Date().getFullYear();
-
-const links =
-  lang === "fr"
-    ? {
-        methodologie: "/methodologie",
-        niveaux: "/methodologie/niveaux",
-        telechargements: "/telechargements",
-        contact: "/contact",
-        mentions: "/mentions-legales",
-      }
-    : {
-        methodologie: "/en/methodology",
-        niveaux: "/en/methodology/levels",
-        telechargements: "/en/downloads",
-        contact: "/en/contact",
-        mentions: "/en/legal-notice",
-      };
+const links = routes[lang];
 ---
 
 <footer class="border-t border-ink-100 bg-ink-50 dark:border-ink-800 dark:bg-ink-900">

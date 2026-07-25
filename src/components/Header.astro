@@ -1,35 +1,27 @@
 ---
-import { useTranslations, type Lang } from "../i18n/ui";
+import { useTranslations, languages, routes, type Lang } from "../i18n/ui";
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const r = routes[lang];
 
-const home = lang === "fr" ? "/" : "/en/";
-const nav =
-  lang === "fr"
-    ? [
-        { href: "/methodologie", label: t("nav.methodologie") },
-        { href: "/methodologie/niveaux", label: t("nav.niveaux") },
-        { href: "/telechargements", label: t("nav.telechargements") },
-        { href: "/contact", label: t("nav.contact") },
-      ]
-    : [
-        { href: "/en/methodology", label: t("nav.methodologie") },
-        { href: "/en/methodology/levels", label: t("nav.niveaux") },
-        { href: "/en/downloads", label: t("nav.telechargements") },
-        { href: "/en/contact", label: t("nav.contact") },
-      ];
-const ctaHref = lang === "fr" ? "/telechargements" : "/en/downloads";
-const switchHref = lang === "fr" ? "/en/" : "/";
+const nav = [
+  { href: r.methodologie, label: t("nav.methodologie") },
+  { href: r.niveaux, label: t("nav.niveaux") },
+  { href: r.telechargements, label: t("nav.telechargements") },
+  { href: r.contact, label: t("nav.contact") },
+];
+
+const otherLangs = (Object.keys(languages) as Lang[]).filter((l) => l !== lang);
 const path = Astro.url.pathname;
 ---
 
 <header class="sticky top-0 z-50 border-b border-ink-100 bg-white/90 backdrop-blur dark:border-ink-800 dark:bg-ink-950/90">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href={home} class="flex items-center gap-2 text-lg font-bold text-ink-900 dark:text-white">
+    <a href={r.home} class="flex items-center gap-2 text-lg font-bold text-ink-900 dark:text-white">
       <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-gold-500 font-arabic text-white">ب</span>
       <span>Bitaqat Hifd Qor'an</span>
     </a>
@@ -44,12 +36,16 @@ const path = Astro.url.pathname;
           {item.label}
         </a>
       ))}
-      <a href={switchHref} class="text-sm font-medium text-ink-400 transition-colors hover:text-gold-600" hreflang={lang === "fr" ? "en" : "fr"}>
-        {t("lang.switch")}
-      </a>
+      <span class="flex items-center gap-3 text-sm font-medium text-ink-400">
+        {otherLangs.map((l) => (
+          <a href={routes[l].home} class="transition-colors hover:text-gold-600" hreflang={l}>
+            {languages[l]}
+          </a>
+        ))}
+      </span>
     </nav>
     <a
-      href={ctaHref}
+      href={r.telechargements}
       class="hidden rounded-full bg-ink-900 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-600 md:inline-block dark:bg-white dark:text-ink-900"
     >
       {t("nav.cta")}
@@ -66,9 +62,13 @@ const path = Astro.url.pathname;
             {item.label}
           </a>
         ))}
-        <a href={switchHref} class="rounded-md px-3 py-2 text-sm font-medium text-ink-700 hover:bg-ink-50 dark:text-ink-200 dark:hover:bg-ink-800">
-          {t("lang.switch")}
-        </a>
+        <div class="flex gap-4 px-3 py-2">
+          {otherLangs.map((l) => (
+            <a href={routes[l].home} class="text-sm font-medium text-ink-700 hover:text-gold-600 dark:text-ink-200">
+              {languages[l]}
+            </a>
+          ))}
+        </div>
       </div>
     </details>
   </div>
