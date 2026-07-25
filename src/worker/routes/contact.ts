@@ -45,17 +45,17 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
   const verified = await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, ip);
   if (!verified) return json({ ok: false, error: "turnstile_failed" }, 400);
 
-  const msg = createMimeMessage();
-  msg.setSender({ name: "Bitaqat Hifd Qor'an — Site", addr: FROM_ADDRESS });
-  msg.setRecipient(TO_ADDRESS);
-  msg.setSubject("Nouveau message — formulaire de contact du site");
-  msg.setHeader("Reply-To", email);
-  msg.addMessage({
-    contentType: "text/plain",
-    data: `De : ${name} <${email}>\n\n${message}`,
-  });
-
   try {
+    const msg = createMimeMessage();
+    msg.setSender({ name: "Bitaqat Hifd Qor'an — Site", addr: FROM_ADDRESS });
+    msg.setRecipient(TO_ADDRESS);
+    msg.setSubject("Nouveau message — formulaire de contact du site");
+    msg.setHeader("Reply-To", `<${email}>`);
+    msg.addMessage({
+      contentType: "text/plain",
+      data: `De : ${name} <${email}>\n\n${message}`,
+    });
+
     const emailMessage = new EmailMessage(FROM_ADDRESS, TO_ADDRESS, msg.asRaw());
     await env.EMAIL.send(emailMessage);
   } catch (err) {
