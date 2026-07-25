@@ -58,7 +58,8 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
   try {
     const emailMessage = new EmailMessage(FROM_ADDRESS, TO_ADDRESS, msg.asRaw());
     await env.EMAIL.send(emailMessage);
-  } catch {
+  } catch (err) {
+    console.error("contact: send_failed", err instanceof Error ? err.message : err);
     return json({ ok: false, error: "send_failed" }, 502);
   }
 
