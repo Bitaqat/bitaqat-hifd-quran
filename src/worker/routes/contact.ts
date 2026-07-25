@@ -1,4 +1,4 @@
-import { createMimeMessage } from "mimetext";
+import { createMimeMessage, Mailbox } from "mimetext";
 // @ts-expect-error -- provided by the Workers runtime, not a real npm package
 import { EmailMessage } from "cloudflare:email";
 import type { Env } from "../types";
@@ -50,7 +50,7 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
     msg.setSender({ name: "Bitaqat Hifd Qor'an — Site", addr: FROM_ADDRESS });
     msg.setRecipient(TO_ADDRESS);
     msg.setSubject("Nouveau message — formulaire de contact du site");
-    msg.setHeader("Reply-To", `<${email}>`);
+    msg.setHeader("Reply-To", new Mailbox(email));
     msg.addMessage({
       contentType: "text/plain",
       data: `De : ${name} <${email}>\n\n${message}`,
