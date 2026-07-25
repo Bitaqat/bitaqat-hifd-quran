@@ -20,6 +20,7 @@ export const ui = {
     "footer.info": "Informations",
     "footer.mentions": "Mentions légales",
     "footer.rights": "Œuvre libre, non commercialisable.",
+    "footer.follow": "Suivez le projet sur X",
     "lang.switch": "English",
   },
   en: {
@@ -34,6 +35,7 @@ export const ui = {
     "footer.info": "Information",
     "footer.mentions": "Legal notice",
     "footer.rights": "Free work, not for commercial use.",
+    "footer.follow": "Follow the project on X",
     "lang.switch": "Français",
   },
 } as const;

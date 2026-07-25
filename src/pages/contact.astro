@@ -1,17 +1,74 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <Layout title="Contact" description="Contacter l'équipe du projet Bitaqat Hifd Qor'an.">
-  <section class="mx-auto max-w-2xl px-6 py-24 text-center">
-    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Contact</p>
-    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">Un formulaire arrive bientôt</h1>
-    <p class="mt-6 leading-relaxed text-ink-600 dark:text-ink-300">
-      Le formulaire de contact du site est en cours de mise en place. Revenez prochainement pour nous faire part de
-      vos retours, questions ou suggestions sur le kit de cartes de récitation.
+  <section class="mx-auto max-w-xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600 text-center">Contact</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white text-center">
+      Une question, une suggestion ?
+    </h1>
+    <p class="mt-6 text-center leading-relaxed text-ink-600 dark:text-ink-300">
+      Écris-nous via ce formulaire — retours, questions sur la méthodologie, signalement d'un problème, tout est
+      bienvenu.
     </p>
-    <a href="/telechargements" class="mt-10 inline-block rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600">
-      Découvrir les téléchargements en attendant
-    </a>
+
+    <form
+      id="contact-form"
+      class="mt-10 space-y-5"
+      data-msg-missing-turnstile="Merci de valider le contrôle de sécurité avant d'envoyer."
+      data-msg-sending="Envoi en cours…"
+      data-msg-success="Message envoyé, merci ! Nous te répondrons par email."
+      data-msg-error="Une erreur est survenue. Réessaie dans quelques instants."
+    >
+      <div>
+        <label for="name" class="block text-sm font-medium text-ink-700 dark:text-ink-200">Nom</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          maxlength="100"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-ink-700 dark:text-ink-200">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          maxlength="200"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-ink-700 dark:text-ink-200">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          maxlength="5000"
+          rows="6"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+        ></textarea>
+      </div>
+
+      <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
+      <button
+        type="submit"
+        id="contact-submit"
+        class="w-full rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        Envoyer
+      </button>
+      <p id="contact-status" role="status" class="text-center text-sm text-ink-500 dark:text-ink-400"></p>
+    </form>
   </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/scripts/contact.js" defer></script>
 </Layout>

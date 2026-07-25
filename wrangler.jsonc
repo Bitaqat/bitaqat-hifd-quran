@@ -1,7 +1,16 @@
 {
   "name": "bitaqat-hifd-quran",
   "compatibility_date": "2025-01-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/worker/index.ts",
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    { "binding": "BITAQAT_KV", "id": "a7bb963ab07445e18ee76d88b9051f98" }
+  ],
+  "send_email": [
+    { "name": "EMAIL", "destination_address": "bitaqat.hifd.quran@proton.me" }
+  ]
 }
