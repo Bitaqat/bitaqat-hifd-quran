@@ -180,21 +180,26 @@ export const paliers: Palier[] = [
   },
 ];
 
-export const outils = [
+export type Outil = { label: string; description: string; href: string; image: string };
+
+export const outils: Outil[] = [
   {
     label: "Manuel des cartes et tableaux",
     description: "Description détaillée du fonctionnement de tous les outils de suivi.",
-    href: "/downloads/outils/manuel-cartes-et-tableaux.pdf",
+    href: "/downloads/outils/fr/manuel-cartes-et-tableaux.pdf",
+    image: "manuel-cartes-et-tableaux.png",
   },
   {
     label: "Tableau de devoirs",
     description: "Suivi hebdomadaire des devoirs à la maison.",
-    href: "/downloads/outils/tableau-devoirs.pdf",
+    href: "/downloads/outils/fr/tableau-devoirs.pdf",
+    image: "tableau-devoirs.png",
   },
   {
     label: "Fiche de suivi et de comportement",
     description: "Carte de suivi de la récitation et du comportement en classe.",
-    href: "/downloads/outils/fiche-suivi-comportement.pdf",
+    href: "/downloads/outils/fr/fiche-suivi-comportement.pdf",
+    image: "carte-de-suivi.png",
   },
 ];
 
@@ -205,8 +210,8 @@ export const methodologieDocs = [
     href: "/downloads/methodologie/fr/methodologie-complete.pdf",
   },
   {
-    label: "Présentation de la méthodologie (PPTX)",
+    label: "Présentation de la méthodologie (PDF)",
     description: "Support de présentation à destination des responsables pédagogiques des structures d'enseignement.",
-    href: "/downloads/methodologie/fr/presentation.pptx",
+    href: "/downloads/methodologie/fr/presentation.pdf",
   },
 ];

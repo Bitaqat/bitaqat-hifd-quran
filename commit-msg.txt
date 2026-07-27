@@ -1,0 +1,7 @@
+feat: localize outils resources, refresh cards, switch presentation to PDF
+
+- refresh recitation card PDFs/previews with the latest translator-provided files (AR recto previews updated this round)
+- replace the methodology presentation format from PPTX to PDF across fr/en/ar, matching the methodology doc and outils resources
+- localize the three tracking tools (behaviour/recitation sheet, cards-and-charts guide, homework chart) into fr/en/ar instead of French-only, converting the two image-only tools to per-language PDFs
+- add preview thumbnails with lightbox for every outils resource, matching the existing cards treatment
+- remove the now-obsolete "French only" disclaimers and (FR)/(بالفرنسية) badges on en/ar downloads and tracking-card pages

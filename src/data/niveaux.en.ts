@@ -1,4 +1,4 @@
-import type { Palier } from "./niveaux";
+import type { Palier, Outil } from "./niveaux";
 
 export const categories = {
   initiation: { label: "Starter", description: "Before level 1 — for the very first steps." },
@@ -166,21 +166,24 @@ export const paliers: Palier[] = [
   },
 ];
 
-export const outils = [
+export const outils: Outil[] = [
   {
     label: "Cards and charts guide",
     description: "A detailed description of how all the tracking tools work.",
-    href: "/downloads/outils/manuel-cartes-et-tableaux.pdf",
+    href: "/downloads/outils/en/manuel-cartes-et-tableaux.pdf",
+    image: "manuel-cartes-et-tableaux.png",
   },
   {
     label: "Homework chart",
     description: "Weekly tracking of homework done at home.",
-    href: "/downloads/outils/tableau-devoirs.pdf",
+    href: "/downloads/outils/en/tableau-devoirs.pdf",
+    image: "tableau-devoirs.png",
   },
   {
     label: "Tracking & behaviour sheet",
     description: "A card to track recitation progress and classroom behaviour.",
-    href: "/downloads/outils/fiche-suivi-comportement.pdf",
+    href: "/downloads/outils/en/fiche-suivi-comportement.pdf",
+    image: "carte-de-suivi.png",
   },
 ];
 
@@ -191,8 +194,8 @@ export const methodologieDocs = [
     href: "/downloads/methodologie/en/methodologie-complete.pdf",
   },
   {
-    label: "Presentation deck (PPTX)",
+    label: "Presentation deck (PDF)",
     description: "A presentation aimed at the pedagogical leads of teaching institutions.",
-    href: "/downloads/methodologie/en/presentation.pptx",
+    href: "/downloads/methodologie/en/presentation.pdf",
   },
 ];

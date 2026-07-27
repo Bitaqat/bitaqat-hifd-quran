@@ -1,4 +1,4 @@
-import type { Palier } from "./niveaux";
+import type { Palier, Outil } from "./niveaux";
 
 export const categories = {
   initiation: { label: "تمهيدي", description: "قبل المستوى الأول — للخطوات الأولى." },
@@ -166,21 +166,24 @@ export const paliers: Palier[] = [
   },
 ];
 
-export const outils = [
+export const outils: Outil[] = [
   {
     label: "دليل البطاقات والجداول",
     description: "وصف مفصّل لطريقة عمل جميع أدوات المتابعة.",
-    href: "/downloads/outils/manuel-cartes-et-tableaux.pdf",
+    href: "/downloads/outils/ar/manuel-cartes-et-tableaux.pdf",
+    image: "manuel-cartes-et-tableaux.png",
   },
   {
     label: "جدول الواجبات",
     description: "متابعة أسبوعية للواجبات المنزلية.",
-    href: "/downloads/outils/tableau-devoirs.pdf",
+    href: "/downloads/outils/ar/tableau-devoirs.pdf",
+    image: "tableau-devoirs.png",
   },
   {
     label: "بطاقة المتابعة والسلوك",
     description: "بطاقة لمتابعة التسميع والسلوك داخل الفصل.",
-    href: "/downloads/outils/fiche-suivi-comportement.pdf",
+    href: "/downloads/outils/ar/fiche-suivi-comportement.pdf",
+    image: "carte-de-suivi.png",
   },
 ];
 
@@ -191,8 +194,8 @@ export const methodologieDocs = [
     href: "/downloads/methodologie/ar/methodologie-complete.pdf",
   },
   {
-    label: "عرض تقديمي (PPTX)",
+    label: "عرض تقديمي (PDF)",
     description: "عرض تقديمي موجّه للمسؤولين التربويين في المؤسسات التعليمية.",
-    href: "/downloads/methodologie/ar/presentation.pptx",
+    href: "/downloads/methodologie/ar/presentation.pdf",
   },
 ];

@@ -12,6 +12,15 @@ function getImage(name: string) {
   const entry = Object.entries(images).find(([path]) => path.endsWith(`/${name}`));
   return entry?.[1].default;
 }
+
+const outilsImages = import.meta.glob("../../assets/outils/ar/*.png", { eager: true }) as Record<
+  string,
+  { default: ImageMetadata }
+>;
+function getOutilImage(name: string) {
+  const entry = Object.entries(outilsImages).find(([path]) => path.endsWith(`/${name}`));
+  return entry?.[1].default;
+}
 ---
 
 <Layout
@@ -37,9 +46,6 @@ function getImage(name: string) {
     <p class="mt-4 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
       إذا بيعت لك هذه الحقيبة أو إحدى بطاقاتها، يُرجى إعلامنا عبر
       <a href="/ar/contact" class="text-gold-600 hover:underline">صفحة التواصل</a>.
-    </p>
-    <p class="mt-4 rounded-lg bg-gold-50 px-4 py-3 text-xs text-ink-500 dark:bg-ink-900 dark:text-ink-400">
-      البطاقات ووثائق المنهجية متوفرة باللغة العربية أدناه. أدوات المتابعة (المشار إليها بـ <span class="font-semibold">بالفرنسية</span>) لا تزال متوفرة بالفرنسية فقط حاليًا.
     </p>
   </section>
 
@@ -95,15 +101,29 @@ function getImage(name: string) {
   <section class="mx-auto max-w-5xl px-6 pb-16">
     <h2 class="text-2xl font-bold text-ink-900 dark:text-white">أدوات المتابعة</h2>
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      {outils.map((o) => (
-        <div class="rounded-2xl border border-ink-100 p-6 dark:border-ink-800">
-          <p class="font-semibold text-ink-900 dark:text-white">{o.label} <span class="text-xs font-normal text-ink-400">(بالفرنسية)</span></p>
-          <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">{o.description}</p>
-          <div class="mt-4">
-            <ResourceActions href={o.href} label="PDF" lang="ar" />
+      {outils.map((o) => {
+        const preview = getOutilImage(o.image);
+        return (
+          <div class="overflow-hidden rounded-2xl border border-ink-100 dark:border-ink-800">
+            {preview && (
+              <Image
+                src={preview}
+                alt={`معاينة — ${o.label}`}
+                width={800}
+                height={560}
+                class="js-lightbox h-40 w-full cursor-zoom-in bg-white object-contain p-3 transition-opacity hover:opacity-90 dark:bg-ink-950"
+              />
+            )}
+            <div class="p-6">
+              <p class="font-semibold text-ink-900 dark:text-white">{o.label}</p>
+              <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">{o.description}</p>
+              <div class="mt-4">
+                <ResourceActions href={o.href} label="PDF" lang="ar" />
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </section>
 

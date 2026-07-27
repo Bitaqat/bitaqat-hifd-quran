@@ -12,6 +12,15 @@ function getImage(name: string) {
   const entry = Object.entries(images).find(([path]) => path.endsWith(`/${name}`));
   return entry?.[1].default;
 }
+
+const outilsImages = import.meta.glob("../assets/outils/fr/*.png", { eager: true }) as Record<
+  string,
+  { default: ImageMetadata }
+>;
+function getOutilImage(name: string) {
+  const entry = Object.entries(outilsImages).find(([path]) => path.endsWith(`/${name}`));
+  return entry?.[1].default;
+}
 ---
 
 <Layout
@@ -91,15 +100,29 @@ function getImage(name: string) {
   <section class="mx-auto max-w-5xl px-6 pb-16">
     <h2 class="text-2xl font-bold text-ink-900 dark:text-white">Outils de suivi</h2>
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      {outils.map((o) => (
-        <div class="rounded-2xl border border-ink-100 p-6 dark:border-ink-800">
-          <p class="font-semibold text-ink-900 dark:text-white">{o.label}</p>
-          <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">{o.description}</p>
-          <div class="mt-4">
-            <ResourceActions href={o.href} label="PDF" lang="fr" />
+      {outils.map((o) => {
+        const preview = getOutilImage(o.image);
+        return (
+          <div class="overflow-hidden rounded-2xl border border-ink-100 dark:border-ink-800">
+            {preview && (
+              <Image
+                src={preview}
+                alt={`Aperçu — ${o.label}`}
+                width={800}
+                height={560}
+                class="js-lightbox h-40 w-full cursor-zoom-in bg-white object-contain p-3 transition-opacity hover:opacity-90 dark:bg-ink-950"
+              />
+            )}
+            <div class="p-6">
+              <p class="font-semibold text-ink-900 dark:text-white">{o.label}</p>
+              <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">{o.description}</p>
+              <div class="mt-4">
+                <ResourceActions href={o.href} label="PDF" lang="fr" />
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </section>
 
