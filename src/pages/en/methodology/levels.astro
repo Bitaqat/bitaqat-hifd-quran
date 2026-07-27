@@ -3,7 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { paliers, categories } from "../../../data/niveaux.en";
 
-const images = import.meta.glob("../../../assets/cartes/*.png", { eager: true }) as Record<
+const images = import.meta.glob("../../../assets/cartes/en/*.png", { eager: true }) as Record<
   string,
   { default: ImageMetadata }
 >;
@@ -30,9 +30,6 @@ function getImage(name: string) {
   </section>
 
   <section class="mx-auto max-w-5xl px-6 py-16">
-    <p class="mb-6 rounded-lg bg-gold-50 px-4 py-3 text-xs text-ink-500 dark:bg-ink-900 dark:text-ink-400">
-      Downloadable cards are currently in French only — an English translation is planned. Get in touch if you need it sooner.
-    </p>
     {Object.entries(categories).map(([key, cat]) => {
       const items = paliers.filter((p) => p.categorie === key);
       if (items.length === 0) return null;
@@ -84,7 +81,7 @@ function getImage(name: string) {
                           download
                           class="rounded-full border border-gold-300 px-4 py-1.5 text-xs font-semibold text-gold-700 transition-colors hover:bg-gold-500 hover:text-white dark:border-gold-700 dark:text-gold-400"
                         >
-                          {f.label} <span class="font-normal text-ink-400">(FR)</span>
+                          {f.label}
                         </a>
                       ))}
                     </div>

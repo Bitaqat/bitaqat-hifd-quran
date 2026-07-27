@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { paliers, categories } from "../../data/niveaux";
 
-const images = import.meta.glob("../../assets/cartes/*.png", { eager: true }) as Record<
+const images = import.meta.glob("../../assets/cartes/fr/*.png", { eager: true }) as Record<
   string,
   { default: ImageMetadata }
 >;

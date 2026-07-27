@@ -21,8 +21,8 @@ export const paliers: Palier[] = [
     rythme: "In class, collective reading",
     lieu: "In class",
     description: "The first card to tackle the shortest surahs of the Qur'an, even before the hizb Sabbih.",
-    fichiers: [{ label: "Starter card 1 (PDF)", href: "/downloads/cartes/carte-debutant-n1.pdf" }],
-    images: { recto: "debutant-1-recto.png", verso: "debutant-1-verso.png" },
+    fichiers: [{ label: "Starter card 1 (PDF)", href: "/downloads/cartes/en/carte-debutant-01.pdf" }],
+    images: { recto: "carte-debutant-01-recto.png", verso: "carte-debutant-01-verso.png" },
   },
   {
     id: "debutant-2",
@@ -36,8 +36,8 @@ export const paliers: Palier[] = [
     rythme: "In class, collective reading",
     lieu: "In class",
     description: "The second starter card, continuing the collective learning before level 1.",
-    fichiers: [{ label: "Starter card 2 (PDF)", href: "/downloads/cartes/carte-debutant-n2.pdf" }],
-    images: { recto: "debutant-2-recto.png", verso: "debutant-2-verso.png" },
+    fichiers: [{ label: "Starter card 2 (PDF)", href: "/downloads/cartes/en/carte-debutant-02.pdf" }],
+    images: { recto: "carte-debutant-02-recto.png", verso: "carte-debutant-02-verso.png" },
   },
   {
     id: "niveau-1",
@@ -52,8 +52,8 @@ export const paliers: Palier[] = [
     lieu: "In class (collective learning)",
     description:
       "For beginner students with a minimal reading ability. Collective learning in class, with a gradual shift towards home learning by the end of the year.",
-    fichiers: [{ label: "Level 1 card (PDF)", href: "/downloads/cartes/carte-n1.pdf" }],
-    images: { recto: "niveau-1-recto.png", verso: "niveau-1-verso.png" },
+    fichiers: [{ label: "Level 1 card (PDF)", href: "/downloads/cartes/en/carte-01.pdf" }],
+    images: { recto: "carte-01-recto.png", verso: "carte-01-verso.png" },
   },
   {
     id: "niveau-2",
@@ -68,8 +68,8 @@ export const paliers: Palier[] = [
     lieu: "At home (semi-independent)",
     description:
       "The first level of home-based learning, with active involvement from parents. Transition towards full independence by the end of the year.",
-    fichiers: [{ label: "Level 2 card (PDF)", href: "/downloads/cartes/carte-n2.pdf" }],
-    images: { recto: "niveau-2-recto.png", verso: "niveau-2-verso.png" },
+    fichiers: [{ label: "Level 2 card (PDF)", href: "/downloads/cartes/en/carte-02.pdf" }],
+    images: { recto: "carte-02-recto.png", verso: "carte-02-verso.png" },
   },
   {
     id: "niveau-3",
@@ -83,8 +83,8 @@ export const paliers: Palier[] = [
     rythme: "7 to 10 lines / week",
     lieu: "At home (independent)",
     description: "Learning takes place exclusively at home, fully independently. Parents ensure daily follow-up.",
-    fichiers: [{ label: "Level 3 card (PDF)", href: "/downloads/cartes/carte-n3.pdf" }],
-    images: { recto: "niveau-3-recto.png", verso: "niveau-3-verso.png" },
+    fichiers: [{ label: "Level 3 card (PDF)", href: "/downloads/cartes/en/carte-03.pdf" }],
+    images: { recto: "carte-03-recto.png", verso: "carte-03-verso.png" },
   },
   {
     id: "niveau-4",
@@ -98,8 +98,8 @@ export const paliers: Palier[] = [
     rythme: "15 to 20 lines / week",
     lieu: "At home (independent)",
     description: "Advanced students with a good ability for independent learning. Monthly goal of half a hizb.",
-    fichiers: [{ label: "Level 4 card (PDF)", href: "/downloads/cartes/carte-n4.pdf" }],
-    images: { recto: "niveau-4-recto.png", verso: "niveau-4-verso.png" },
+    fichiers: [{ label: "Level 4 card (PDF)", href: "/downloads/cartes/en/carte-04.pdf" }],
+    images: { recto: "carte-04-recto.png", verso: "carte-04-verso.png" },
   },
   {
     id: "niveau-5",
@@ -113,8 +113,8 @@ export const paliers: Palier[] = [
     rythme: "15 to 20 lines / week",
     lieu: "At home (independent)",
     description: "Continued independent learning, at a sustained pace, with a solid mastery of previous hizb.",
-    fichiers: [{ label: "Level 5 card (PDF)", href: "/downloads/cartes/carte-n5.pdf" }],
-    images: { recto: "niveau-5-recto.png", verso: "niveau-5-verso.png" },
+    fichiers: [{ label: "Level 5 card (PDF)", href: "/downloads/cartes/en/carte-05.pdf" }],
+    images: { recto: "carte-05-recto.png", verso: "carte-05-verso.png" },
   },
   {
     id: "niveau-6",
@@ -128,8 +128,8 @@ export const paliers: Palier[] = [
     rythme: "15 to 20 lines / week",
     lieu: "At home (independent)",
     description: "The last level of the main path: the last quarter of the Qur'an, from Sabbih to Yâsîn, is memorized and mastered.",
-    fichiers: [{ label: "Level 6 card (PDF)", href: "/downloads/cartes/carte-n6.pdf" }],
-    images: { recto: "niveau-6-recto.png", verso: "niveau-6-verso.png" },
+    fichiers: [{ label: "Level 6 card (PDF)", href: "/downloads/cartes/en/carte-06.pdf" }],
+    images: { recto: "carte-06-recto.png", verso: "carte-06-verso.png" },
   },
   {
     id: "niveau-7",
@@ -144,10 +144,10 @@ export const paliers: Palier[] = [
     lieu: "At home (independent)",
     description: "For students who have completed the main path and wish to continue beyond Yâsîn.",
     fichiers: [
-      { label: "Level 7 card (PDF)", href: "/downloads/cartes/carte-n7.pdf" },
-      { label: "Level 7 card — alternate (PDF)", href: "/downloads/cartes/carte-n7-style.pdf" },
+      { label: "Level 7 card (PDF)", href: "/downloads/cartes/en/carte-07.pdf" },
+      { label: "Level 7 card — alternate (PDF)", href: "/downloads/cartes/en/carte-07-style.pdf" },
     ],
-    images: { recto: "niveau-7-recto.png", verso: "niveau-7-verso.png" },
+    images: { recto: "carte-07-recto.png", verso: "carte-07-verso.png" },
   },
   {
     id: "niveau-8",
@@ -161,8 +161,8 @@ export const paliers: Palier[] = [
     rythme: "To be set with the teacher",
     lieu: "At home (independent)",
     description: "The most advanced level of the path, for the most dedicated students.",
-    fichiers: [{ label: "Level 8 card (PDF)", href: "/downloads/cartes/carte-n8.pdf" }],
-    images: { recto: "niveau-8-recto.png", verso: "niveau-8-verso.png" },
+    fichiers: [{ label: "Level 8 card (PDF)", href: "/downloads/cartes/en/carte-08.pdf" }],
+    images: { recto: "carte-08-recto.png", verso: "carte-08-verso.png" },
   },
 ];
 
@@ -193,11 +193,11 @@ export const methodologieDocs = [
   {
     label: "Full methodology (PDF)",
     description: "The reference document detailing the whole pedagogical methodology.",
-    href: "/downloads/methodologie/methodologie-cartes-recitation.pdf",
+    href: "/downloads/methodologie/en/methodologie-complete.pdf",
   },
   {
-    label: "Methodology overview (PDF)",
-    description: "A summary aimed at the pedagogical leads of teaching institutions.",
-    href: "/downloads/methodologie/presentation-methodologie.pdf",
+    label: "Presentation deck (PPTX)",
+    description: "A presentation aimed at the pedagogical leads of teaching institutions.",
+    href: "/downloads/methodologie/en/presentation.pptx",
   },
 ];

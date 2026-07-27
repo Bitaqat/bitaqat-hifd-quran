@@ -68,11 +68,10 @@ import { methodologieDocs } from "../../../data/niveaux.ar";
 
     <div class="mt-16 rounded-2xl bg-ink-50 p-8 dark:bg-ink-900">
       <h3 class="font-bold text-ink-900 dark:text-white">وثائق مرجعية</h3>
-      <p class="mt-2 text-xs text-ink-400">متوفرة حاليًا باللغة الفرنسية فقط — تُخطَّط ترجمة عربية لاحقًا. تواصل معنا إذا كنت بحاجة إليها عاجلًا.</p>
       <ul class="mt-4 space-y-3">
         {methodologieDocs.map((doc) => (
           <li>
-            <a href={doc.href} class="font-medium text-gold-600 hover:underline" download>{doc.label} <span class="text-xs font-normal text-ink-400">(بالفرنسية)</span></a>
+            <a href={doc.href} class="font-medium text-gold-600 hover:underline" download>{doc.label}</a>
             <p class="text-sm text-ink-500 dark:text-ink-400">{doc.description}</p>
           </li>
         ))}

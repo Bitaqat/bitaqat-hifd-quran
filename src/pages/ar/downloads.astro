@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { paliers, categories, outils, methodologieDocs } from "../../data/niveaux.ar";
 
-const images = import.meta.glob("../../assets/cartes/*.png", { eager: true }) as Record<
+const images = import.meta.glob("../../assets/cartes/ar/*.png", { eager: true }) as Record<
   string,
   { default: ImageMetadata }
 >;
@@ -38,8 +38,7 @@ function getImage(name: string) {
       <a href="/ar/contact" class="text-gold-600 hover:underline">صفحة التواصل</a>.
     </p>
     <p class="mt-4 rounded-lg bg-gold-50 px-4 py-3 text-xs text-ink-500 dark:bg-ink-900 dark:text-ink-400">
-      جميع الملفات القابلة للتحميل أدناه متوفرة حاليًا باللغة الفرنسية فقط. تُخطَّط ترجمة عربية تدريجية — تواصل
-      معنا إذا كنت بحاجة إلى مورد معيّن عاجلًا.
+      البطاقات ووثائق المنهجية متوفرة باللغة العربية أدناه. أدوات المتابعة (المشار إليها بـ <span class="font-semibold">بالفرنسية</span>) لا تزال متوفرة بالفرنسية فقط حاليًا.
     </p>
   </section>
 
@@ -81,7 +80,7 @@ function getImage(name: string) {
                   <div class="flex flex-wrap gap-2 sm:ps-4">
                     {p.fichiers.map((f) => (
                       <a href={f.href} download class="js-track-download rounded-full border border-gold-300 px-4 py-1.5 text-xs font-semibold text-gold-700 transition-colors hover:bg-gold-500 hover:text-white dark:border-gold-700 dark:text-gold-400">
-                        {f.label} <span class="font-normal text-ink-400">(بالفرنسية)</span> <span class="download-count opacity-70"></span>
+                        {f.label} <span class="download-count opacity-70"></span>
                       </a>
                     ))}
                   </div>
@@ -111,7 +110,7 @@ function getImage(name: string) {
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
       {methodologieDocs.map((d) => (
         <a href={d.href} download class="js-track-download rounded-2xl border border-ink-100 p-6 transition-shadow hover:shadow-lg dark:border-ink-800">
-          <p class="font-semibold text-ink-900 dark:text-white">{d.label} <span class="text-xs font-normal text-ink-400">(بالفرنسية)</span> <span class="download-count text-xs font-normal text-ink-400"></span></p>
+          <p class="font-semibold text-ink-900 dark:text-white">{d.label} <span class="download-count text-xs font-normal text-ink-400"></span></p>
           <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">{d.description}</p>
         </a>
       ))}

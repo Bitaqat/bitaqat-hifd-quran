@@ -35,8 +35,8 @@ export const paliers: Palier[] = [
     rythme: "En classe, lecture collective",
     lieu: "En classe",
     description: "Première carte pour aborder les sourates les plus courtes du Coran, avant même le hizb Sabbih.",
-    fichiers: [{ label: "Carte de démarrage 1 (PDF)", href: "/downloads/cartes/carte-debutant-n1.pdf" }],
-    images: { recto: "debutant-1-recto.png", verso: "debutant-1-verso.png" },
+    fichiers: [{ label: "Carte de démarrage 1 (PDF)", href: "/downloads/cartes/fr/carte-debutant-01.pdf" }],
+    images: { recto: "carte-debutant-01-recto.png", verso: "carte-debutant-01-verso.png" },
   },
   {
     id: "debutant-2",
@@ -50,8 +50,8 @@ export const paliers: Palier[] = [
     rythme: "En classe, lecture collective",
     lieu: "En classe",
     description: "Deuxième carte de démarrage, pour poursuivre l'apprentissage collectif avant le niveau 1.",
-    fichiers: [{ label: "Carte de démarrage 2 (PDF)", href: "/downloads/cartes/carte-debutant-n2.pdf" }],
-    images: { recto: "debutant-2-recto.png", verso: "debutant-2-verso.png" },
+    fichiers: [{ label: "Carte de démarrage 2 (PDF)", href: "/downloads/cartes/fr/carte-debutant-02.pdf" }],
+    images: { recto: "carte-debutant-02-recto.png", verso: "carte-debutant-02-verso.png" },
   },
   {
     id: "niveau-1",
@@ -66,8 +66,8 @@ export const paliers: Palier[] = [
     lieu: "En classe (apprentissage collectif)",
     description:
       "Pour les élèves débutants ayant une maîtrise minimale de la lecture. Apprentissage collectif en classe, avec transition progressive vers la maison en fin d'année.",
-    fichiers: [{ label: "Carte niveau 1 (PDF)", href: "/downloads/cartes/carte-n1.pdf" }],
-    images: { recto: "niveau-1-recto.png", verso: "niveau-1-verso.png" },
+    fichiers: [{ label: "Carte niveau 1 (PDF)", href: "/downloads/cartes/fr/carte-01.pdf" }],
+    images: { recto: "carte-01-recto.png", verso: "carte-01-verso.png" },
   },
   {
     id: "niveau-2",
@@ -82,8 +82,8 @@ export const paliers: Palier[] = [
     lieu: "À la maison (semi-autonome)",
     description:
       "Premier niveau d'apprentissage à la maison, avec la participation active des parents. Transition vers l'autonomie complète en fin d'année.",
-    fichiers: [{ label: "Carte niveau 2 (PDF)", href: "/downloads/cartes/carte-n2.pdf" }],
-    images: { recto: "niveau-2-recto.png", verso: "niveau-2-verso.png" },
+    fichiers: [{ label: "Carte niveau 2 (PDF)", href: "/downloads/cartes/fr/carte-02.pdf" }],
+    images: { recto: "carte-02-recto.png", verso: "carte-02-verso.png" },
   },
   {
     id: "niveau-3",
@@ -97,8 +97,8 @@ export const paliers: Palier[] = [
     rythme: "7 à 10 lignes / semaine",
     lieu: "À la maison (autonome)",
     description: "Apprentissage exclusivement à la maison, en autonomie complète. Les parents assurent le suivi quotidien.",
-    fichiers: [{ label: "Carte niveau 3 (PDF)", href: "/downloads/cartes/carte-n3.pdf" }],
-    images: { recto: "niveau-3-recto.png", verso: "niveau-3-verso.png" },
+    fichiers: [{ label: "Carte niveau 3 (PDF)", href: "/downloads/cartes/fr/carte-03.pdf" }],
+    images: { recto: "carte-03-recto.png", verso: "carte-03-verso.png" },
   },
   {
     id: "niveau-4",
@@ -112,8 +112,8 @@ export const paliers: Palier[] = [
     rythme: "15 à 20 lignes / semaine",
     lieu: "À la maison (autonome)",
     description: "Élèves avancés avec une bonne capacité d'apprentissage autonome. Objectif mensuel d'un demi-hizb.",
-    fichiers: [{ label: "Carte niveau 4 (PDF)", href: "/downloads/cartes/carte-n4.pdf" }],
-    images: { recto: "niveau-4-recto.png", verso: "niveau-4-verso.png" },
+    fichiers: [{ label: "Carte niveau 4 (PDF)", href: "/downloads/cartes/fr/carte-04.pdf" }],
+    images: { recto: "carte-04-recto.png", verso: "carte-04-verso.png" },
   },
   {
     id: "niveau-5",
@@ -127,8 +127,8 @@ export const paliers: Palier[] = [
     rythme: "15 à 20 lignes / semaine",
     lieu: "À la maison (autonome)",
     description: "Poursuite de l'apprentissage autonome, avec un rythme soutenu et une maîtrise consolidée des hizb précédents.",
-    fichiers: [{ label: "Carte niveau 5 (PDF)", href: "/downloads/cartes/carte-n5.pdf" }],
-    images: { recto: "niveau-5-recto.png", verso: "niveau-5-verso.png" },
+    fichiers: [{ label: "Carte niveau 5 (PDF)", href: "/downloads/cartes/fr/carte-05.pdf" }],
+    images: { recto: "carte-05-recto.png", verso: "carte-05-verso.png" },
   },
   {
     id: "niveau-6",
@@ -142,8 +142,8 @@ export const paliers: Palier[] = [
     rythme: "15 à 20 lignes / semaine",
     lieu: "À la maison (autonome)",
     description: "Dernier niveau du parcours principal : le dernier quart du Coran, de Sabbih à Yâcîn, est mémorisé et maîtrisé.",
-    fichiers: [{ label: "Carte niveau 6 (PDF)", href: "/downloads/cartes/carte-n6.pdf" }],
-    images: { recto: "niveau-6-recto.png", verso: "niveau-6-verso.png" },
+    fichiers: [{ label: "Carte niveau 6 (PDF)", href: "/downloads/cartes/fr/carte-06.pdf" }],
+    images: { recto: "carte-06-recto.png", verso: "carte-06-verso.png" },
   },
   {
     id: "niveau-7",
@@ -158,10 +158,10 @@ export const paliers: Palier[] = [
     lieu: "À la maison (autonome)",
     description: "Pour les élèves ayant achevé le parcours principal et souhaitant poursuivre au-delà de Yâcîn.",
     fichiers: [
-      { label: "Carte niveau 7 (PDF)", href: "/downloads/cartes/carte-n7.pdf" },
-      { label: "Carte niveau 7 — variante (PDF)", href: "/downloads/cartes/carte-n7-style.pdf" },
+      { label: "Carte niveau 7 (PDF)", href: "/downloads/cartes/fr/carte-07.pdf" },
+      { label: "Carte niveau 7 — variante (PDF)", href: "/downloads/cartes/fr/carte-07-style.pdf" },
     ],
-    images: { recto: "niveau-7-recto.png", verso: "niveau-7-verso.png" },
+    images: { recto: "carte-07-recto.png", verso: "carte-07-verso.png" },
   },
   {
     id: "niveau-8",
@@ -175,8 +175,8 @@ export const paliers: Palier[] = [
     rythme: "À définir avec le professeur",
     lieu: "À la maison (autonome)",
     description: "Niveau le plus avancé du parcours, pour les élèves les plus assidus.",
-    fichiers: [{ label: "Carte niveau 8 (PDF)", href: "/downloads/cartes/carte-n8.pdf" }],
-    images: { recto: "niveau-8-recto.png", verso: "niveau-8-verso.png" },
+    fichiers: [{ label: "Carte niveau 8 (PDF)", href: "/downloads/cartes/fr/carte-08.pdf" }],
+    images: { recto: "carte-08-recto.png", verso: "carte-08-verso.png" },
   },
 ];
 
@@ -207,11 +207,11 @@ export const methodologieDocs = [
   {
     label: "Méthodologie complète (PDF)",
     description: "Le document de référence détaillant l'ensemble de la méthodologie pédagogique.",
-    href: "/downloads/methodologie/methodologie-cartes-recitation.pdf",
+    href: "/downloads/methodologie/fr/methodologie-complete.pdf",
   },
   {
-    label: "Présentation de la méthodologie (PDF)",
-    description: "Une synthèse à destination des responsables pédagogiques des structures d'enseignement.",
-    href: "/downloads/methodologie/presentation-methodologie.pdf",
+    label: "Présentation de la méthodologie (PPTX)",
+    description: "Support de présentation à destination des responsables pédagogiques des structures d'enseignement.",
+    href: "/downloads/methodologie/fr/presentation.pptx",
   },
 ];
