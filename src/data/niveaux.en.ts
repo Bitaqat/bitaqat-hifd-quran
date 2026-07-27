@@ -192,10 +192,12 @@ export const methodologieDocs = [
     label: "Full methodology (PDF)",
     description: "The reference document detailing the whole pedagogical methodology.",
     href: "/downloads/methodologie/en/methodologie-complete.pdf",
+    image: "methodologie-complete.png",
   },
   {
     label: "Presentation deck (PDF)",
     description: "A presentation aimed at the pedagogical leads of teaching institutions.",
     href: "/downloads/methodologie/en/presentation.pdf",
+    image: "presentation.png",
   },
 ];

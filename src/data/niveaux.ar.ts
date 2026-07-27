@@ -192,10 +192,12 @@ export const methodologieDocs = [
     label: "المنهجية الكاملة (PDF)",
     description: "الوثيقة المرجعية التي تفصّل المنهجية التربوية بالكامل.",
     href: "/downloads/methodologie/ar/methodologie-complete.pdf",
+    image: "methodologie-complete.png",
   },
   {
     label: "عرض تقديمي (PDF)",
     description: "عرض تقديمي موجّه للمسؤولين التربويين في المؤسسات التعليمية.",
     href: "/downloads/methodologie/ar/presentation.pdf",
+    image: "presentation.png",
   },
 ];

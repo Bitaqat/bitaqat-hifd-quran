@@ -21,6 +21,15 @@ function getOutilImage(name: string) {
   const entry = Object.entries(outilsImages).find(([path]) => path.endsWith(`/${name}`));
   return entry?.[1].default;
 }
+
+const methodologieImages = import.meta.glob("../assets/methodologie/fr/*.png", { eager: true }) as Record<
+  string,
+  { default: ImageMetadata }
+>;
+function getMethodologieImage(name: string) {
+  const entry = Object.entries(methodologieImages).find(([path]) => path.endsWith(`/${name}`));
+  return entry?.[1].default;
+}
 ---
 
 <Layout
@@ -110,7 +119,7 @@ function getOutilImage(name: string) {
                 alt={`Aperçu — ${o.label}`}
                 width={800}
                 height={560}
-                class="js-lightbox h-40 w-full cursor-zoom-in bg-white object-contain p-3 transition-opacity hover:opacity-90 dark:bg-ink-950"
+                class="js-lightbox h-48 w-full cursor-zoom-in bg-ink-50 object-contain p-4 transition-opacity hover:opacity-90 dark:bg-ink-900"
               />
             )}
             <div class="p-6">
@@ -129,15 +138,29 @@ function getOutilImage(name: string) {
   <section class="mx-auto max-w-5xl px-6 pb-24">
     <h2 class="text-2xl font-bold text-ink-900 dark:text-white">Méthodologie</h2>
     <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      {methodologieDocs.map((d) => (
-        <div class="rounded-2xl border border-ink-100 p-6 dark:border-ink-800">
-          <p class="font-semibold text-ink-900 dark:text-white">{d.label}</p>
-          <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">{d.description}</p>
-          <div class="mt-4">
-            <ResourceActions href={d.href} label={d.href.endsWith(".pptx") ? "PPTX" : "PDF"} lang="fr" />
+      {methodologieDocs.map((d) => {
+        const preview = getMethodologieImage(d.image);
+        return (
+          <div class="overflow-hidden rounded-2xl border border-ink-100 dark:border-ink-800">
+            {preview && (
+              <Image
+                src={preview}
+                alt={`Aperçu — ${d.label}`}
+                width={800}
+                height={560}
+                class="js-lightbox h-48 w-full cursor-zoom-in bg-ink-50 object-contain p-4 transition-opacity hover:opacity-90 dark:bg-ink-900"
+              />
+            )}
+            <div class="p-6">
+              <p class="font-semibold text-ink-900 dark:text-white">{d.label}</p>
+              <p class="mt-2 text-sm text-ink-500 dark:text-ink-400">{d.description}</p>
+              <div class="mt-4">
+                <ResourceActions href={d.href} label={d.href.endsWith(".pptx") ? "PPTX" : "PDF"} lang="fr" />
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </section>
 

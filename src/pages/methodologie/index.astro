@@ -1,7 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import ResourceActions from "../../components/ResourceActions.astro";
 import { methodologieDocs } from "../../data/niveaux";
+
+const methodologieImages = import.meta.glob("../../assets/methodologie/fr/*.png", { eager: true }) as Record<
+  string,
+  { default: ImageMetadata }
+>;
+function getMethodologieImage(name: string) {
+  const entry = Object.entries(methodologieImages).find(([path]) => path.endsWith(`/${name}`));
+  return entry?.[1].default;
+}
 ---
 
 <Layout
@@ -74,15 +84,29 @@ import { methodologieDocs } from "../../data/niveaux";
     <div class="mt-16 rounded-2xl bg-ink-50 p-8 dark:bg-ink-900">
       <h3 class="font-bold text-ink-900 dark:text-white">Documents de référence</h3>
       <ul class="mt-4 space-y-4">
-        {methodologieDocs.map((doc) => (
-          <li>
-            <p class="font-medium text-ink-900 dark:text-white">{doc.label}</p>
-            <p class="text-sm text-ink-500 dark:text-ink-400">{doc.description}</p>
-            <div class="mt-2">
-              <ResourceActions href={doc.href} label={doc.href.endsWith(".pptx") ? "PPTX" : "PDF"} lang="fr" />
-            </div>
-          </li>
-        ))}
+        {methodologieDocs.map((doc) => {
+          const preview = getMethodologieImage(doc.image);
+          return (
+            <li class="flex items-start gap-4">
+              {preview && (
+                <Image
+                  src={preview}
+                  alt={`Aperçu — ${doc.label}`}
+                  width={800}
+                  height={560}
+                  class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-ink-800"
+                />
+              )}
+              <div>
+                <p class="font-medium text-ink-900 dark:text-white">{doc.label}</p>
+                <p class="text-sm text-ink-500 dark:text-ink-400">{doc.description}</p>
+                <div class="mt-2">
+                  <ResourceActions href={doc.href} label={doc.href.endsWith(".pptx") ? "PPTX" : "PDF"} lang="fr" />
+                </div>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
 
@@ -92,4 +116,5 @@ import { methodologieDocs } from "../../data/niveaux";
   </section>
 
   <script src="/scripts/downloads.js" defer></script>
+  <script src="/scripts/lightbox.js" defer></script>
 </Layout>

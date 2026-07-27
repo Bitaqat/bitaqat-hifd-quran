@@ -1,0 +1,4 @@
+feat: add preview thumbnails for methodology and presentation docs, resize outils previews
+
+- render page 8 of the methodology PDF and page 1 of the presentation PDF as preview thumbnails per language, matching the treatment already used for cards and outils
+- resize outils preview thumbnails from h-40 to h-48 to match the card-grid thumbnail size used elsewhere on the site

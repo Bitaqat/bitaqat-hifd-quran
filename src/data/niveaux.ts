@@ -208,10 +208,12 @@ export const methodologieDocs = [
     label: "Méthodologie complète (PDF)",
     description: "Le document de référence détaillant l'ensemble de la méthodologie pédagogique.",
     href: "/downloads/methodologie/fr/methodologie-complete.pdf",
+    image: "methodologie-complete.png",
   },
   {
     label: "Présentation de la méthodologie (PDF)",
     description: "Support de présentation à destination des responsables pédagogiques des structures d'enseignement.",
     href: "/downloads/methodologie/fr/presentation.pdf",
+    image: "presentation.png",
   },
 ];
