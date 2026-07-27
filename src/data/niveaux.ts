@@ -187,11 +187,6 @@ export const outils = [
     href: "/downloads/outils/manuel-cartes-et-tableaux.pdf",
   },
   {
-    label: "Planning de récitation",
-    description: "Planning annuel pour organiser les séances de récitation.",
-    href: "/downloads/outils/planning-recitation.pdf",
-  },
-  {
     label: "Tableau de devoirs",
     description: "Suivi hebdomadaire des devoirs à la maison.",
     href: "/downloads/outils/tableau-devoirs.pdf",

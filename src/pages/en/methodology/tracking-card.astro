@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import ResourceActions from "../../../components/ResourceActions.astro";
 import suivi from "../../../assets/cartes/carte-de-suivi.png";
 ---
 
@@ -18,7 +19,7 @@ import suivi from "../../../assets/cartes/carte-de-suivi.png";
       there are recitation days in the year.
     </p>
 
-    <Image src={suivi} alt="Recitation and behaviour tracking card" class="mt-10 w-full rounded-2xl border border-ink-100 dark:border-ink-800" />
+    <Image src={suivi} alt="Recitation and behaviour tracking card" class="js-lightbox mt-10 w-full cursor-zoom-in rounded-2xl border border-ink-100 transition-opacity hover:opacity-90 dark:border-ink-800" />
 
     <h2 class="mt-12 text-lg font-bold text-ink-900 dark:text-white">A simple icon system</h2>
     <ul class="mt-4 space-y-3 text-sm text-ink-600 dark:text-ink-300">
@@ -31,12 +32,12 @@ import suivi from "../../../assets/cartes/carte-de-suivi.png";
       A space for remarks is provided in every cell, for precise communication between teacher and parents.
     </p>
 
-    <a
-      href="/downloads/outils/fiche-suivi-comportement.pdf"
-      download
-      class="mt-10 inline-block rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600"
-    >
-      Download the tracking sheet (PDF) <span class="font-normal opacity-80">(FR)</span>
-    </a>
+    <div class="mt-10 flex items-center gap-2">
+      <ResourceActions href="/downloads/outils/fiche-suivi-comportement.pdf" label="Tracking sheet (PDF)" lang="en" />
+      <span class="text-xs text-ink-400">(FR)</span>
+    </div>
   </section>
+
+  <script src="/scripts/downloads.js" defer></script>
+  <script src="/scripts/lightbox.js" defer></script>
 </Layout>

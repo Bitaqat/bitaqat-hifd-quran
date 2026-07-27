@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import ResourceActions from "../../../components/ResourceActions.astro";
 import { paliers, categories } from "../../../data/niveaux.ar";
 
 const images = import.meta.glob("../../../assets/cartes/ar/*.png", { eager: true }) as Record<
@@ -42,7 +43,7 @@ function getImage(name: string) {
               return (
                 <div id={p.id} class="scroll-mt-24 overflow-hidden rounded-2xl border border-ink-100 dark:border-ink-800">
                   {recto && (
-                    <Image src={recto} alt={`${p.label} — الوجه الأمامي`} class="h-48 w-full object-contain bg-ink-50 p-4 dark:bg-ink-900" width={400} height={280} />
+                    <Image src={recto} alt={`${p.label} — الوجه الأمامي`} width={800} height={560} class="js-lightbox h-48 w-full cursor-zoom-in object-contain bg-ink-50 p-4 transition-opacity hover:opacity-90 dark:bg-ink-900" />
                   )}
                   <div class="p-6">
                     <div class="flex items-center gap-3">
@@ -75,13 +76,7 @@ function getImage(name: string) {
                     </dl>
                     <div class="mt-5 flex flex-wrap gap-2">
                       {p.fichiers.map((f) => (
-                        <a
-                          href={f.href}
-                          download
-                          class="rounded-full border border-gold-300 px-4 py-1.5 text-xs font-semibold text-gold-700 transition-colors hover:bg-gold-500 hover:text-white dark:border-gold-700 dark:text-gold-400"
-                        >
-                          {f.label}
-                        </a>
+                        <ResourceActions href={f.href} label={f.label} lang="ar" />
                       ))}
                     </div>
                   </div>
@@ -93,4 +88,7 @@ function getImage(name: string) {
       );
     })}
   </section>
+
+  <script src="/scripts/downloads.js" defer></script>
+  <script src="/scripts/lightbox.js" defer></script>
 </Layout>

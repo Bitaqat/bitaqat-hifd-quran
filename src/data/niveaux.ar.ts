@@ -173,11 +173,6 @@ export const outils = [
     href: "/downloads/outils/manuel-cartes-et-tableaux.pdf",
   },
   {
-    label: "جدول التسميع",
-    description: "جدول سنوي لتنظيم حصص التسميع.",
-    href: "/downloads/outils/planning-recitation.pdf",
-  },
-  {
     label: "جدول الواجبات",
     description: "متابعة أسبوعية للواجبات المنزلية.",
     href: "/downloads/outils/tableau-devoirs.pdf",

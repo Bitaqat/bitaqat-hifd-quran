@@ -1,0 +1,35 @@
+---
+import { useTranslations, type Lang } from "../i18n/ui";
+
+interface Props {
+  href: string;
+  label: string;
+  lang: Lang;
+}
+const { href, label, lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<span class="inline-flex items-stretch overflow-hidden rounded-full border border-gold-300 text-xs font-semibold text-gold-700 dark:border-gold-700 dark:text-gold-400">
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="js-track-download px-3 py-1.5 transition-colors hover:bg-gold-500 hover:text-white"
+    title={t("action.view")}
+  >
+    {label}
+  </a>
+  <a
+    href={href}
+    download
+    class="js-track-download flex items-center border-s border-gold-300 px-2 py-1.5 transition-colors hover:bg-gold-500 hover:text-white dark:border-gold-700"
+    title={t("action.download")}
+    aria-label={`${t("action.download")} — ${label}`}
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" />
+    </svg>
+  </a>
+  <span class="download-count empty:hidden flex items-center border-s border-gold-200 px-2 py-1.5 font-normal text-ink-400 dark:border-ink-700"></span>
+</span>

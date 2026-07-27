@@ -173,11 +173,6 @@ export const outils = [
     href: "/downloads/outils/manuel-cartes-et-tableaux.pdf",
   },
   {
-    label: "Recitation schedule",
-    description: "An annual schedule to organize recitation sessions.",
-    href: "/downloads/outils/planning-recitation.pdf",
-  },
-  {
     label: "Homework chart",
     description: "Weekly tracking of homework done at home.",
     href: "/downloads/outils/tableau-devoirs.pdf",

@@ -64,6 +64,9 @@ export const ui = {
     "footer.mentions": "Mentions légales",
     "footer.rights": "Œuvre libre, non commercialisable.",
     "footer.follow": "Suivez le projet sur X",
+    "action.view": "Voir",
+    "action.download": "Télécharger",
+    "action.noPreview": "Pas d'aperçu",
   },
   en: {
     "nav.methodologie": "Methodology",
@@ -78,6 +81,9 @@ export const ui = {
     "footer.mentions": "Legal notice",
     "footer.rights": "Free work, not for commercial use.",
     "footer.follow": "Follow the project on X",
+    "action.view": "View",
+    "action.download": "Download",
+    "action.noPreview": "No preview",
   },
   ar: {
     "nav.methodologie": "المنهجية",
@@ -92,6 +98,9 @@ export const ui = {
     "footer.mentions": "الإشعار القانوني",
     "footer.rights": "عمل حر، غير مخصص للاستخدام التجاري.",
     "footer.follow": "تابع المشروع على X",
+    "action.view": "عرض",
+    "action.download": "تحميل",
+    "action.noPreview": "لا توجد معاينة",
   },
 } as const;
 

@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import ResourceActions from "../../components/ResourceActions.astro";
 import suivi from "../../assets/cartes/carte-de-suivi.png";
 ---
 
@@ -17,7 +18,7 @@ import suivi from "../../assets/cartes/carte-de-suivi.png";
       séance, idéalement autant de cases que de jours de récitation dans l'année.
     </p>
 
-    <Image src={suivi} alt="Carte de suivi et de comportement" class="mt-10 w-full rounded-2xl border border-ink-100 dark:border-ink-800" />
+    <Image src={suivi} alt="Carte de suivi et de comportement" class="js-lightbox mt-10 w-full cursor-zoom-in rounded-2xl border border-ink-100 transition-opacity hover:opacity-90 dark:border-ink-800" />
 
     <h2 class="mt-12 text-lg font-bold text-ink-900 dark:text-white">Un système d'icônes simple</h2>
     <ul class="mt-4 space-y-3 text-sm text-ink-600 dark:text-ink-300">
@@ -31,12 +32,11 @@ import suivi from "../../assets/cartes/carte-de-suivi.png";
       parents.
     </p>
 
-    <a
-      href="/downloads/outils/fiche-suivi-comportement.pdf"
-      download
-      class="mt-10 inline-block rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600"
-    >
-      Télécharger la fiche de suivi (PDF)
-    </a>
+    <div class="mt-10">
+      <ResourceActions href="/downloads/outils/fiche-suivi-comportement.pdf" label="Fiche de suivi (PDF)" lang="fr" />
+    </div>
   </section>
+
+  <script src="/scripts/downloads.js" defer></script>
+  <script src="/scripts/lightbox.js" defer></script>
 </Layout>

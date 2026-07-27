@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import ResourceActions from "../../../components/ResourceActions.astro";
 import suivi from "../../../assets/cartes/carte-de-suivi.png";
 ---
 
@@ -17,7 +18,7 @@ import suivi from "../../../assets/cartes/carte-de-suivi.png";
       تمثّل كل خانة حصة واحدة — ويُستحسن أن يكون عدد الخانات مساويًا لعدد أيام التسميع في السنة.
     </p>
 
-    <Image src={suivi} alt="بطاقة متابعة التسميع والسلوك" class="mt-10 w-full rounded-2xl border border-ink-100 dark:border-ink-800" />
+    <Image src={suivi} alt="بطاقة متابعة التسميع والسلوك" class="js-lightbox mt-10 w-full cursor-zoom-in rounded-2xl border border-ink-100 transition-opacity hover:opacity-90 dark:border-ink-800" />
 
     <h2 class="mt-12 text-lg font-bold text-ink-900 dark:text-white">نظام رموز بسيط</h2>
     <ul class="mt-4 space-y-3 text-sm text-ink-600 dark:text-ink-300">
@@ -30,12 +31,12 @@ import suivi from "../../../assets/cartes/carte-de-suivi.png";
       خُصِّصت مساحة للملاحظات في كل خانة، لتواصل دقيق بين المعلم والوالدين.
     </p>
 
-    <a
-      href="/downloads/outils/fiche-suivi-comportement.pdf"
-      download
-      class="mt-10 inline-block rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600"
-    >
-      تحميل بطاقة المتابعة (PDF) <span class="font-normal opacity-80">(بالفرنسية)</span>
-    </a>
+    <div class="mt-10 flex items-center gap-2">
+      <ResourceActions href="/downloads/outils/fiche-suivi-comportement.pdf" label="بطاقة المتابعة (PDF)" lang="ar" />
+      <span class="text-xs text-ink-400">(بالفرنسية)</span>
+    </div>
   </section>
+
+  <script src="/scripts/downloads.js" defer></script>
+  <script src="/scripts/lightbox.js" defer></script>
 </Layout>
