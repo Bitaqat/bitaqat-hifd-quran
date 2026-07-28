@@ -67,6 +67,7 @@ export const ui = {
     "action.view": "Voir",
     "action.download": "Télécharger",
     "action.noPreview": "Pas d'aperçu",
+    "theme.toggle": "Changer de thème",
   },
   en: {
     "nav.methodologie": "Methodology",
@@ -84,6 +85,7 @@ export const ui = {
     "action.view": "View",
     "action.download": "Download",
     "action.noPreview": "No preview",
+    "theme.toggle": "Switch theme",
   },
   ar: {
     "nav.methodologie": "المنهجية",
@@ -101,6 +103,7 @@ export const ui = {
     "action.view": "عرض",
     "action.download": "تحميل",
     "action.noPreview": "لا توجد معاينة",
+    "theme.toggle": "تبديل المظهر",
   },
 } as const;
 

@@ -23,6 +23,7 @@ const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 <html lang={lang} dir={dirs[lang]} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <script src="/scripts/theme-init.js" is:inline></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -39,5 +40,6 @@ const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
       <slot />
     </main>
     <Footer lang={lang} />
+    <script src="/scripts/theme-toggle.js" defer></script>
   </body>
 </html>

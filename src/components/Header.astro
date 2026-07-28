@@ -44,6 +44,19 @@ const path = Astro.url.pathname;
         ))}
       </span>
     </nav>
+    <button
+      type="button"
+      class="js-theme-toggle flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-ink-500 transition-colors hover:bg-ink-50 hover:text-ink-900 dark:text-night-300 dark:hover:bg-night-800 dark:hover:text-white"
+      aria-label={t("theme.toggle")}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5 dark:hidden" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" />
+        <path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-5 w-5 dark:block" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
     <a
       href={r.telechargements}
       class="hidden rounded-full bg-ink-900 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-600 md:inline-block dark:bg-white dark:text-ink-900"
