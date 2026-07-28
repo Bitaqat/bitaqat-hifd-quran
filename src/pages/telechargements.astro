@@ -39,19 +39,19 @@ function getMethodologieImage(name: string) {
   <section class="mx-auto max-w-3xl px-6 pt-16 sm:pt-24">
     <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Ressources</p>
     <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">Téléchargements</h1>
-    <p class="mt-6 leading-relaxed text-ink-600 dark:text-ink-300">
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-night-300">
       L'ensemble de ce kit est distribué sous licence
       <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.fr" class="text-gold-600 hover:underline" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>
       : partage et adaptation libres, sous les conditions suivantes :
     </p>
-    <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-ink-600 dark:text-ink-300">
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-ink-600 dark:text-night-300">
       <li>Le kit ne doit pas être commercialisé ni revendu, sous quelque forme que ce soit.</li>
       <li>
         Les cartes et documents doivent conserver la mention : <em>« Bitaqat Hifd Qor'an – bitaqat-hifd-quran.com »</em>,
         et indiquer clairement toute modification apportée.
       </li>
     </ul>
-    <p class="mt-4 text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+    <p class="mt-4 text-sm leading-relaxed text-ink-500 dark:text-night-400">
       Si ce kit ou l'une de ses cartes vous a été vendu, merci de nous le signaler via la page
       <a href="/contact" class="text-gold-600 hover:underline">contact</a>.
     </p>
@@ -65,7 +65,7 @@ function getMethodologieImage(name: string) {
       return (
         <div class="mt-8">
           <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-400">{cat.label}</h3>
-          <div class="mt-3 divide-y divide-ink-100 rounded-2xl border border-ink-100 dark:divide-ink-800 dark:border-ink-800">
+          <div class="mt-3 divide-y divide-ink-100 rounded-2xl border border-ink-100 dark:divide-night-800 dark:border-night-800">
             {items.map((p) => {
               const recto = p.images ? getImage(p.images.recto) : null;
               return (
@@ -77,10 +77,10 @@ function getMethodologieImage(name: string) {
                         alt={`Aperçu — ${p.label}`}
                         width={800}
                         height={560}
-                        class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-ink-800"
+                        class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-night-800"
                       />
                     ) : (
-                      <div class="flex h-20 w-28 shrink-0 items-center justify-center rounded-lg border border-dashed border-ink-200 text-ink-300 dark:border-ink-700 dark:text-ink-600">
+                      <div class="flex h-20 w-28 shrink-0 items-center justify-center rounded-lg border border-dashed border-ink-200 text-ink-300 dark:border-night-700 dark:text-night-600">
                         <span class="text-xs">Pas d'aperçu</span>
                       </div>
                     )}
@@ -88,7 +88,7 @@ function getMethodologieImage(name: string) {
                       <span class="h-3 w-3 shrink-0 rounded-full border border-ink-900/10 dark:border-white/20" style={`background-color:${p.couleur.hex}`}></span>
                       <div>
                         <p class="font-semibold text-ink-900 dark:text-white">{p.label}</p>
-                        <p class="text-xs text-ink-500 dark:text-ink-400">{p.repere}</p>
+                        <p class="text-xs text-ink-500 dark:text-night-400">{p.repere}</p>
                       </div>
                     </div>
                   </div>
@@ -108,7 +108,7 @@ function getMethodologieImage(name: string) {
 
   <section class="mx-auto max-w-5xl px-6 pb-16">
     <h2 class="text-2xl font-bold text-ink-900 dark:text-white">Outils de suivi</h2>
-    <div class="mt-3 divide-y divide-ink-100 rounded-2xl border border-ink-100 dark:divide-ink-800 dark:border-ink-800">
+    <div class="mt-3 divide-y divide-ink-100 rounded-2xl border border-ink-100 dark:divide-night-800 dark:border-night-800">
       {outils.map((o) => {
         const preview = getOutilImage(o.image);
         return (
@@ -120,16 +120,16 @@ function getMethodologieImage(name: string) {
                   alt={`Aperçu — ${o.label}`}
                   width={800}
                   height={560}
-                  class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-ink-800"
+                  class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-night-800"
                 />
               ) : (
-                <div class="flex h-20 w-28 shrink-0 items-center justify-center rounded-lg border border-dashed border-ink-200 text-ink-300 dark:border-ink-700 dark:text-ink-600">
+                <div class="flex h-20 w-28 shrink-0 items-center justify-center rounded-lg border border-dashed border-ink-200 text-ink-300 dark:border-night-700 dark:text-night-600">
                   <span class="text-xs">Pas d'aperçu</span>
                 </div>
               )}
               <div>
                 <p class="font-semibold text-ink-900 dark:text-white">{o.label}</p>
-                <p class="text-xs text-ink-500 dark:text-ink-400">{o.description}</p>
+                <p class="text-xs text-ink-500 dark:text-night-400">{o.description}</p>
               </div>
             </div>
             <div class="flex flex-wrap gap-2 sm:pl-4">
@@ -143,7 +143,7 @@ function getMethodologieImage(name: string) {
 
   <section class="mx-auto max-w-5xl px-6 pb-24">
     <h2 class="text-2xl font-bold text-ink-900 dark:text-white">Méthodologie</h2>
-    <div class="mt-3 divide-y divide-ink-100 rounded-2xl border border-ink-100 dark:divide-ink-800 dark:border-ink-800">
+    <div class="mt-3 divide-y divide-ink-100 rounded-2xl border border-ink-100 dark:divide-night-800 dark:border-night-800">
       {methodologieDocs.map((d) => {
         const preview = getMethodologieImage(d.image);
         return (
@@ -155,16 +155,16 @@ function getMethodologieImage(name: string) {
                   alt={`Aperçu — ${d.label}`}
                   width={800}
                   height={560}
-                  class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-ink-800"
+                  class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-night-800"
                 />
               ) : (
-                <div class="flex h-20 w-28 shrink-0 items-center justify-center rounded-lg border border-dashed border-ink-200 text-ink-300 dark:border-ink-700 dark:text-ink-600">
+                <div class="flex h-20 w-28 shrink-0 items-center justify-center rounded-lg border border-dashed border-ink-200 text-ink-300 dark:border-night-700 dark:text-night-600">
                   <span class="text-xs">Pas d'aperçu</span>
                 </div>
               )}
               <div>
                 <p class="font-semibold text-ink-900 dark:text-white">{d.label}</p>
-                <p class="text-xs text-ink-500 dark:text-ink-400">{d.description}</p>
+                <p class="text-xs text-ink-500 dark:text-night-400">{d.description}</p>
               </div>
             </div>
             <div class="flex flex-wrap gap-2 sm:pl-4">
@@ -176,10 +176,10 @@ function getMethodologieImage(name: string) {
     </div>
   </section>
 
-  <section class="border-t border-ink-100 bg-gold-50 py-16 dark:border-ink-800 dark:bg-ink-900">
+  <section class="border-t border-ink-100 bg-gold-50 py-16 dark:border-night-800 dark:bg-night-900">
     <div class="mx-auto max-w-2xl px-6 text-center">
       <h2 class="text-xl font-bold text-ink-900 dark:text-white">Ce kit vous a été utile ?</h2>
-      <p class="mt-3 text-sm text-ink-600 dark:text-ink-300">
+      <p class="mt-3 text-sm text-ink-600 dark:text-night-300">
         Faites-nous en part via la page <a href="/contact" class="text-gold-600 hover:underline">contact</a> — vos retours nous aident à faire vivre ce projet.
       </p>
     </div>

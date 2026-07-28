@@ -9,7 +9,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white text-center">
       A question, a suggestion?
     </h1>
-    <p class="mt-6 text-center leading-relaxed text-ink-600 dark:text-ink-300">
+    <p class="mt-6 text-center leading-relaxed text-ink-600 dark:text-night-300">
       Write to us using this form — feedback, questions about the methodology, reporting an issue, all welcome.
     </p>
 
@@ -22,36 +22,36 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       data-msg-error="Something went wrong. Please try again shortly."
     >
       <div>
-        <label for="name" class="block text-sm font-medium text-ink-700 dark:text-ink-200">Name</label>
+        <label for="name" class="block text-sm font-medium text-ink-700 dark:text-night-200">Name</label>
         <input
           type="text"
           id="name"
           name="name"
           required
           maxlength="100"
-          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
         />
       </div>
       <div>
-        <label for="email" class="block text-sm font-medium text-ink-700 dark:text-ink-200">Email</label>
+        <label for="email" class="block text-sm font-medium text-ink-700 dark:text-night-200">Email</label>
         <input
           type="email"
           id="email"
           name="email"
           required
           maxlength="200"
-          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
         />
       </div>
       <div>
-        <label for="message" class="block text-sm font-medium text-ink-700 dark:text-ink-200">Message</label>
+        <label for="message" class="block text-sm font-medium text-ink-700 dark:text-night-200">Message</label>
         <textarea
           id="message"
           name="message"
           required
           maxlength="5000"
           rows="6"
-          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-ink-700 dark:bg-ink-900 dark:text-white"
+          class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
         ></textarea>
       </div>
 
@@ -64,7 +64,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       >
         Send
       </button>
-      <p id="contact-status" role="status" class="text-center text-sm text-ink-500 dark:text-ink-400"></p>
+      <p id="contact-status" role="status" class="text-center text-sm text-ink-500 dark:text-night-400"></p>
     </form>
   </section>
 

@@ -10,14 +10,14 @@ const year = new Date().getFullYear();
 const links = routes[lang];
 ---
 
-<footer class="border-t border-ink-100 bg-ink-50 dark:border-ink-800 dark:bg-ink-900">
+<footer class="border-t border-ink-100 bg-ink-50 dark:border-night-800 dark:bg-night-900">
   <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
     <div>
       <div class="flex items-center gap-2 text-lg font-bold text-ink-900 dark:text-white">
         <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500 font-arabic text-white">ب</span>
         <span>Bitaqat Hifd Qor'an</span>
       </div>
-      <p class="mt-3 max-w-xs text-sm leading-relaxed text-ink-500 dark:text-ink-400">
+      <p class="mt-3 max-w-xs text-sm leading-relaxed text-ink-500 dark:text-night-400">
         {t("footer.tagline")}
       </p>
       <a
@@ -25,7 +25,7 @@ const links = routes[lang];
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t("footer.follow")}
-        class="mt-4 inline-flex h-8 w-8 items-center justify-center rounded-full border border-ink-200 text-ink-500 transition-colors hover:border-gold-400 hover:text-gold-600 dark:border-ink-700 dark:text-ink-400"
+        class="mt-4 inline-flex h-8 w-8 items-center justify-center rounded-full border border-ink-200 text-ink-500 transition-colors hover:border-gold-400 hover:text-gold-600 dark:border-night-700 dark:text-night-400"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -34,7 +34,7 @@ const links = routes[lang];
     </div>
     <div>
       <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-400">{t("footer.project")}</h3>
-      <ul class="mt-4 space-y-2 text-sm text-ink-600 dark:text-ink-300">
+      <ul class="mt-4 space-y-2 text-sm text-ink-600 dark:text-night-300">
         <li><a href={links.methodologie} class="hover:text-gold-600">{t("nav.methodologie")}</a></li>
         <li><a href={links.niveaux} class="hover:text-gold-600">{t("nav.niveaux")}</a></li>
         <li><a href={links.telechargements} class="hover:text-gold-600">{t("nav.telechargements")}</a></li>
@@ -42,13 +42,13 @@ const links = routes[lang];
     </div>
     <div>
       <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-400">{t("footer.info")}</h3>
-      <ul class="mt-4 space-y-2 text-sm text-ink-600 dark:text-ink-300">
+      <ul class="mt-4 space-y-2 text-sm text-ink-600 dark:text-night-300">
         <li><a href={links.contact} class="hover:text-gold-600">{t("nav.contact")}</a></li>
         <li><a href={links.mentions} class="hover:text-gold-600">{t("footer.mentions")}</a></li>
       </ul>
     </div>
   </div>
-  <div class="border-t border-ink-200 py-6 text-center text-xs text-ink-400 dark:border-ink-800">
+  <div class="border-t border-ink-200 py-6 text-center text-xs text-ink-400 dark:border-night-800">
     &copy; {year} Bitaqat Hifd Qor'an — {t("footer.rights")}
   </div>
 </footer>

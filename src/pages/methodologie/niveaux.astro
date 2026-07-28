@@ -21,7 +21,7 @@ function getImage(name: string) {
   <section class="mx-auto max-w-3xl px-6 pt-16 sm:pt-24">
     <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Méthodologie</p>
     <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">Progression et niveaux</h1>
-    <p class="mt-6 leading-relaxed text-ink-600 dark:text-ink-300">
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-night-300">
       Il existe 6 niveaux principaux, du hizb Sabbih à Yâcîn, répartis en trois catégories : Débutant, Intermédiaire
       et Avancé. Le niveau est indépendant de la classe ou de l'ancienneté de l'élève — chaque élève progresse à son
       rythme. Deux cartes de démarrage précèdent le niveau 1, et deux niveaux « Initié » prolongent le parcours
@@ -36,14 +36,14 @@ function getImage(name: string) {
       return (
         <div class="mb-16">
           <h2 class="text-2xl font-bold text-ink-900 dark:text-white">{cat.label}</h2>
-          <p class="mt-1 text-sm text-ink-500 dark:text-ink-400">{cat.description}</p>
+          <p class="mt-1 text-sm text-ink-500 dark:text-night-400">{cat.description}</p>
           <div class="mt-8 grid gap-6 sm:grid-cols-2">
             {items.map((p) => {
               const recto = p.images ? getImage(p.images.recto) : null;
               return (
-                <div id={p.id} class="scroll-mt-24 overflow-hidden rounded-2xl border border-ink-100 dark:border-ink-800">
+                <div id={p.id} class="scroll-mt-24 overflow-hidden rounded-2xl border border-ink-100 dark:border-night-800">
                   {recto && (
-                    <Image src={recto} alt={`${p.label} — recto`} width={800} height={560} class="js-lightbox h-48 w-full cursor-zoom-in object-contain bg-ink-50 p-4 transition-opacity hover:opacity-90 dark:bg-ink-900" />
+                    <Image src={recto} alt={`${p.label} — recto`} width={800} height={560} class="js-lightbox h-48 w-full cursor-zoom-in object-contain bg-ink-50 p-4 transition-opacity hover:opacity-90 dark:bg-night-900" />
                   )}
                   <div class="p-6">
                     <div class="flex items-center gap-3">
@@ -55,22 +55,22 @@ function getImage(name: string) {
                       <span class="text-xs text-ink-400">{p.couleur.nom}</span>
                     </div>
                     <p class="mt-1 text-sm font-medium text-gold-700 dark:text-gold-400">{p.repere}</p>
-                    <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">{p.description}</p>
-                    <dl class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-ink-500 dark:text-ink-400">
+                    <p class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-night-300">{p.description}</p>
+                    <dl class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-ink-500 dark:text-night-400">
                       <div>
-                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Objectif annuel</dt>
+                        <dt class="font-semibold text-ink-600 dark:text-night-300">Objectif annuel</dt>
                         <dd>{p.objectifAnnuel}</dd>
                       </div>
                       <div>
-                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Rythme hebdo</dt>
+                        <dt class="font-semibold text-ink-600 dark:text-night-300">Rythme hebdo</dt>
                         <dd>{p.rythme}</dd>
                       </div>
                       <div>
-                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Cumul</dt>
+                        <dt class="font-semibold text-ink-600 dark:text-night-300">Cumul</dt>
                         <dd>{p.cumul}</dd>
                       </div>
                       <div>
-                        <dt class="font-semibold text-ink-600 dark:text-ink-300">Lieu</dt>
+                        <dt class="font-semibold text-ink-600 dark:text-night-300">Lieu</dt>
                         <dd>{p.lieu}</dd>
                       </div>
                     </dl>

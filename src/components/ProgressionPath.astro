@@ -29,9 +29,9 @@ const principaux = paliers.filter((p) => p.numero !== null);
         >
           {p.numero}
         </span>
-        <span class="text-xs font-medium text-ink-500 dark:text-ink-400">{p.couleur.nom}</span>
+        <span class="text-xs font-medium text-ink-500 dark:text-night-400">{p.couleur.nom}</span>
       </a>
-      {i < principaux.length - 1 && <span class="hidden h-px w-6 bg-ink-200 sm:block dark:bg-ink-700" />}
+      {i < principaux.length - 1 && <span class="hidden h-px w-6 bg-ink-200 sm:block dark:bg-night-700" />}
     </>
   ))}
 </div>

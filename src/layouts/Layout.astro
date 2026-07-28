@@ -33,7 +33,7 @@ const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
       <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token": "${beaconToken}"}`}></script>
     )}
   </head>
-  <body class="bg-white text-ink-800 antialiased dark:bg-ink-950 dark:text-ink-100">
+  <body class="bg-white text-ink-800 antialiased dark:bg-night-950 dark:text-night-100">
     <Header lang={lang} />
     <main>
       <slot />

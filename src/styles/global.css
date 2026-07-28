@@ -35,6 +35,23 @@
   --color-ink-800: #262e37;
   --color-ink-900: #14181e;
   --color-ink-950: #0b0d11;
+
+  /* Dark-mode neutrals, hue-shifted from ink-* toward the deck's forest green.
+     Same lightness steps as ink-*, so contrast ratios stay equivalent. */
+  --color-night-100: #e9f1ec;
+  --color-night-200: #cfded7;
+  --color-night-300: #a3beb2;
+  --color-night-400: #73968a;
+  --color-night-600: #426157;
+  --color-night-700: #364f47;
+  --color-night-800: #21342e;
+  --color-night-900: #13201d;
+  --color-night-950: #0a1512;
+
+  /* Vivid deck accent, reserved for short bandeaux (hero/CTA), not body backgrounds. */
+  --color-forest-light: #1a4941;
+  --color-forest: #123832;
+  --color-forest-dark: #0b2420;
 }
 
 html {
