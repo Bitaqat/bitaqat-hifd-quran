@@ -100,24 +100,24 @@ function getMethodologieImage(name: string) {
                                 <Image
                                   src={recto}
                                   alt={`${t("downloads.recto")} — ${p.label}`}
-                                  width={600}
-                                  height={866}
+                                  width={800}
+                                  height={577}
                                   data-theme-variant={theme}
                                   data-riwaya={f.riwaya}
                                   hidden={!isDefault}
-                                  class="js-lightbox h-24 w-[68px] cursor-zoom-in rounded border border-ink-100 object-contain bg-white p-0.5 transition-opacity hover:opacity-80 dark:border-night-800"
+                                  class="js-lightbox h-16 w-[90px] cursor-zoom-in rounded border border-ink-100 object-contain bg-white p-0.5 transition-opacity hover:opacity-80 dark:border-night-800"
                                 />
                               )}
                               {verso && (
                                 <Image
                                   src={verso}
                                   alt={`${t("downloads.verso")} — ${p.label}`}
-                                  width={600}
-                                  height={866}
+                                  width={800}
+                                  height={577}
                                   data-theme-variant={theme}
                                   data-riwaya={f.riwaya}
                                   hidden={!isDefault}
-                                  class="js-lightbox h-24 w-[68px] cursor-zoom-in rounded border border-ink-100 object-contain bg-white p-0.5 transition-opacity hover:opacity-80 dark:border-night-800"
+                                  class="js-lightbox h-16 w-[90px] cursor-zoom-in rounded border border-ink-100 object-contain bg-white p-0.5 transition-opacity hover:opacity-80 dark:border-night-800"
                                 />
                               )}
                             </>
@@ -178,7 +178,6 @@ function getMethodologieImage(name: string) {
                   src={preview}
                   alt={`Aperçu — ${o.label}`}
                   width={800}
-                  height={560}
                   data-theme-variant={theme}
                   hidden={!isDefault}
                   class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-night-800"
@@ -215,7 +214,6 @@ function getMethodologieImage(name: string) {
                   src={preview}
                   alt={`Aperçu — ${d.label}`}
                   width={800}
-                  height={560}
                   class="js-lightbox h-20 w-28 shrink-0 cursor-zoom-in rounded-lg border border-ink-100 object-contain bg-white p-1 transition-opacity hover:opacity-80 dark:border-night-800"
                 />
               ) : (
