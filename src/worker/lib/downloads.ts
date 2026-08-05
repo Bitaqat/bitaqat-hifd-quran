@@ -7,7 +7,7 @@ const allOutils = [...outilsFr, ...outilsEn, ...outilsAr];
 const allMethodologieDocs = [...methodologieDocsFr, ...methodologieDocsEn, ...methodologieDocsAr];
 
 export const validDownloadPaths: Set<string> = new Set([
-  ...allPaliers.flatMap((p) => p.fichiers.map((f) => f.href)),
-  ...allOutils.map((o) => o.href),
+  ...allPaliers.flatMap((p) => p.fichiers.flatMap((f) => Object.values(f.hrefByTheme))),
+  ...allOutils.flatMap((o) => Object.values(o.hrefByTheme)),
   ...allMethodologieDocs.map((d) => d.href),
 ]);

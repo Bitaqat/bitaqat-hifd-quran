@@ -1,6 +1,8 @@
 import type { Palier, Outil } from "./niveaux";
+import { cardFile, outilFiles } from "./niveaux";
 
 export const categories = {
+  ouverture: { label: "Welcome", description: "A welcome card, before the very first steps." },
   initiation: { label: "Starter", description: "Before level 1 — for the very first steps." },
   debutant: { label: "Beginner", description: "First steps, guided reading in class." },
   intermediaire: { label: "Intermediate", description: "Growing independence, home-based learning." },
@@ -9,6 +11,21 @@ export const categories = {
 } as const;
 
 export const paliers: Palier[] = [
+  {
+    id: "ouverture",
+    numero: 0,
+    label: "Welcome card",
+    categorie: "ouverture",
+    couleur: { nom: "Forest", hex: "#1A4941", texteClair: true },
+    repere: "Al-Fâtihah — the opening of the Qur'an",
+    objectifAnnuel: "Al-Fâtihah (7 verses)",
+    cumul: "—",
+    rythme: "In class, verse by verse",
+    lieu: "In class",
+    description:
+      "A welcome card that opens the collection, designed especially for the non-Arabic-speaking student: it introduces the recitation card principle through Al-Fâtihah, the opening of the Qur'an recited in every prayer.",
+    fichiers: [cardFile("ouverture", "Welcome card (PDF)", "en", { slug: "00-ouverture" })],
+  },
   {
     id: "debutant-1",
     numero: null,
@@ -21,8 +38,7 @@ export const paliers: Palier[] = [
     rythme: "In class, collective reading",
     lieu: "In class",
     description: "The first card to tackle the shortest surahs of the Qur'an, even before the hizb Sabbih.",
-    fichiers: [{ label: "Starter card 1 (PDF)", href: "/downloads/cartes/en/carte-debutant-01.pdf" }],
-    images: { recto: "carte-debutant-01-recto.png", verso: "carte-debutant-01-verso.png" },
+    fichiers: [cardFile("debutant-1", "Starter card 1 (PDF)", "en", { slug: "debutant-01" })],
   },
   {
     id: "debutant-2",
@@ -36,8 +52,7 @@ export const paliers: Palier[] = [
     rythme: "In class, collective reading",
     lieu: "In class",
     description: "The second starter card, continuing the collective learning before level 1.",
-    fichiers: [{ label: "Starter card 2 (PDF)", href: "/downloads/cartes/en/carte-debutant-02.pdf" }],
-    images: { recto: "carte-debutant-02-recto.png", verso: "carte-debutant-02-verso.png" },
+    fichiers: [cardFile("debutant-2", "Starter card 2 (PDF)", "en", { slug: "debutant-02" })],
   },
   {
     id: "niveau-1",
@@ -52,8 +67,7 @@ export const paliers: Palier[] = [
     lieu: "In class (collective learning)",
     description:
       "For beginner students with a minimal reading ability. Collective learning in class, with a gradual shift towards home learning by the end of the year.",
-    fichiers: [{ label: "Level 1 card (PDF)", href: "/downloads/cartes/en/carte-01.pdf" }],
-    images: { recto: "carte-01-recto.png", verso: "carte-01-verso.png" },
+    fichiers: [cardFile("niveau-1", "Level 1 card (PDF)", "en", { slug: "01" })],
   },
   {
     id: "niveau-2",
@@ -68,8 +82,7 @@ export const paliers: Palier[] = [
     lieu: "At home (semi-independent)",
     description:
       "The first level of home-based learning, with active involvement from parents. Transition towards full independence by the end of the year.",
-    fichiers: [{ label: "Level 2 card (PDF)", href: "/downloads/cartes/en/carte-02.pdf" }],
-    images: { recto: "carte-02-recto.png", verso: "carte-02-verso.png" },
+    fichiers: [cardFile("niveau-2", "Level 2 card (PDF)", "en", { slug: "02" })],
   },
   {
     id: "niveau-3",
@@ -83,8 +96,7 @@ export const paliers: Palier[] = [
     rythme: "7 to 10 lines / week",
     lieu: "At home (independent)",
     description: "Learning takes place exclusively at home, fully independently. Parents ensure daily follow-up.",
-    fichiers: [{ label: "Level 3 card (PDF)", href: "/downloads/cartes/en/carte-03.pdf" }],
-    images: { recto: "carte-03-recto.png", verso: "carte-03-verso.png" },
+    fichiers: [cardFile("niveau-3", "Level 3 card (PDF)", "en", { slug: "03" })],
   },
   {
     id: "niveau-4",
@@ -98,8 +110,7 @@ export const paliers: Palier[] = [
     rythme: "15 to 20 lines / week",
     lieu: "At home (independent)",
     description: "Advanced students with a good ability for independent learning. Monthly goal of half a hizb.",
-    fichiers: [{ label: "Level 4 card (PDF)", href: "/downloads/cartes/en/carte-04.pdf" }],
-    images: { recto: "carte-04-recto.png", verso: "carte-04-verso.png" },
+    fichiers: [cardFile("niveau-4", "Level 4 card (PDF)", "en", { slug: "04" })],
   },
   {
     id: "niveau-5",
@@ -113,8 +124,7 @@ export const paliers: Palier[] = [
     rythme: "15 to 20 lines / week",
     lieu: "At home (independent)",
     description: "Continued independent learning, at a sustained pace, with a solid mastery of previous hizb.",
-    fichiers: [{ label: "Level 5 card (PDF)", href: "/downloads/cartes/en/carte-05.pdf" }],
-    images: { recto: "carte-05-recto.png", verso: "carte-05-verso.png" },
+    fichiers: [cardFile("niveau-5", "Level 5 card (PDF)", "en", { slug: "05" })],
   },
   {
     id: "niveau-6",
@@ -128,8 +138,7 @@ export const paliers: Palier[] = [
     rythme: "15 to 20 lines / week",
     lieu: "At home (independent)",
     description: "The last level of the main path: the last quarter of the Qur'an, from Sabbih to Yâsîn, is memorized and mastered.",
-    fichiers: [{ label: "Level 6 card (PDF)", href: "/downloads/cartes/en/carte-06.pdf" }],
-    images: { recto: "carte-06-recto.png", verso: "carte-06-verso.png" },
+    fichiers: [cardFile("niveau-6", "Level 6 card (PDF)", "en", { slug: "06" })],
   },
   {
     id: "niveau-7",
@@ -144,10 +153,9 @@ export const paliers: Palier[] = [
     lieu: "At home (independent)",
     description: "For students who have completed the main path and wish to continue beyond Yâsîn.",
     fichiers: [
-      { label: "Level 7 card (PDF)", href: "/downloads/cartes/en/carte-07.pdf" },
-      { label: "Level 7 card — alternate (PDF)", href: "/downloads/cartes/en/carte-07-style.pdf" },
+      cardFile("niveau-7", "Level 7 card (PDF)", "en", { slug: "07", riwaya: "hafs" }),
+      cardFile("niveau-7", "Level 7 card (PDF)", "en", { slug: "07-warch", riwaya: "warsh" }),
     ],
-    images: { recto: "carte-07-recto.png", verso: "carte-07-verso.png" },
   },
   {
     id: "niveau-8",
@@ -161,8 +169,10 @@ export const paliers: Palier[] = [
     rythme: "To be set with the teacher",
     lieu: "At home (independent)",
     description: "The most advanced level of the path, for the most dedicated students.",
-    fichiers: [{ label: "Level 8 card (PDF)", href: "/downloads/cartes/en/carte-08.pdf" }],
-    images: { recto: "carte-08-recto.png", verso: "carte-08-verso.png" },
+    fichiers: [
+      cardFile("niveau-8", "Level 8 card (PDF)", "en", { slug: "08", riwaya: "hafs" }),
+      cardFile("niveau-8", "Level 8 card (PDF)", "en", { slug: "08-warch", riwaya: "warsh" }),
+    ],
   },
 ];
 
@@ -170,20 +180,17 @@ export const outils: Outil[] = [
   {
     label: "Cards and charts guide",
     description: "A detailed description of how all the tracking tools work.",
-    href: "/downloads/outils/en/manuel-cartes-et-tableaux.pdf",
-    image: "manuel-cartes-et-tableaux.png",
+    ...outilFiles("manuel-cartes-et-tableaux", "en"),
   },
   {
     label: "Homework chart",
     description: "Weekly tracking of homework done at home.",
-    href: "/downloads/outils/en/tableau-devoirs.pdf",
-    image: "tableau-devoirs.png",
+    ...outilFiles("tableau-devoirs", "en"),
   },
   {
     label: "Tracking & behaviour sheet",
     description: "A card to track recitation progress and classroom behaviour.",
-    href: "/downloads/outils/en/fiche-suivi-comportement.pdf",
-    image: "carte-de-suivi.png",
+    ...outilFiles("fiche-suivi-comportement", "en"),
   },
 ];
 

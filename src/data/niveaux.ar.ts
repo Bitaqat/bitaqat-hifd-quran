@@ -1,6 +1,8 @@
 import type { Palier, Outil } from "./niveaux";
+import { cardFile, outilFiles } from "./niveaux";
 
 export const categories = {
+  ouverture: { label: "افتتاح", description: "بطاقة ترحيب، قبل الخطوات الأولى نفسها." },
   initiation: { label: "تمهيدي", description: "قبل المستوى الأول — للخطوات الأولى." },
   debutant: { label: "مبتدئ", description: "الخطوات الأولى، قراءة موجّهة في الفصل." },
   intermediaire: { label: "متوسط", description: "استقلالية متدرجة، تعلّم في المنزل." },
@@ -9,6 +11,21 @@ export const categories = {
 } as const;
 
 export const paliers: Palier[] = [
+  {
+    id: "ouverture",
+    numero: 0,
+    label: "بطاقة الافتتاح",
+    categorie: "ouverture",
+    couleur: { nom: "أخضر غابي", hex: "#1A4941", texteClair: true },
+    repere: "الفاتحة — افتتاح القرآن الكريم",
+    objectifAnnuel: "الفاتحة (7 آيات)",
+    cumul: "—",
+    rythme: "في الفصل، آية آية",
+    lieu: "في الفصل",
+    description:
+      "بطاقة ترحيب تفتتح المجموعة، مُعَدّة خصيصًا للطالب غير الناطق بالعربية: تُعرّفه بمبدأ بطاقة التسميع من خلال الفاتحة، افتتاح القرآن الكريم التي تُتلى في كل صلاة.",
+    fichiers: [cardFile("ouverture", "بطاقة الافتتاح (PDF)", "ar", { slug: "00-ouverture" })],
+  },
   {
     id: "debutant-1",
     numero: null,
@@ -21,8 +38,7 @@ export const paliers: Palier[] = [
     rythme: "في الفصل، قراءة جماعية",
     lieu: "في الفصل",
     description: "البطاقة الأولى للتعرف على أقصر سور القرآن الكريم، حتى قبل حزب سبّح.",
-    fichiers: [{ label: "بطاقة الانطلاق 1 (PDF)", href: "/downloads/cartes/ar/carte-debutant-01.pdf" }],
-    images: { recto: "carte-debutant-01-recto.png", verso: "carte-debutant-01-verso.png" },
+    fichiers: [cardFile("debutant-1", "بطاقة الانطلاق 1 (PDF)", "ar", { slug: "debutant-01" })],
   },
   {
     id: "debutant-2",
@@ -36,8 +52,7 @@ export const paliers: Palier[] = [
     rythme: "في الفصل، قراءة جماعية",
     lieu: "في الفصل",
     description: "البطاقة الثانية للانطلاق، لمواصلة التعلّم الجماعي قبل المستوى الأول.",
-    fichiers: [{ label: "بطاقة الانطلاق 2 (PDF)", href: "/downloads/cartes/ar/carte-debutant-02.pdf" }],
-    images: { recto: "carte-debutant-02-recto.png", verso: "carte-debutant-02-verso.png" },
+    fichiers: [cardFile("debutant-2", "بطاقة الانطلاق 2 (PDF)", "ar", { slug: "debutant-02" })],
   },
   {
     id: "niveau-1",
@@ -52,8 +67,7 @@ export const paliers: Palier[] = [
     lieu: "في الفصل (تعلّم جماعي)",
     description:
       "للطلاب المبتدئين الذين يتقنون القراءة بشكل أساسي. تعلّم جماعي في الفصل، مع انتقال تدريجي إلى المنزل في نهاية السنة.",
-    fichiers: [{ label: "بطاقة المستوى 1 (PDF)", href: "/downloads/cartes/ar/carte-01.pdf" }],
-    images: { recto: "carte-01-recto.png", verso: "carte-01-verso.png" },
+    fichiers: [cardFile("niveau-1", "بطاقة المستوى 1 (PDF)", "ar", { slug: "01" })],
   },
   {
     id: "niveau-2",
@@ -68,8 +82,7 @@ export const paliers: Palier[] = [
     lieu: "في المنزل (شبه مستقل)",
     description:
       "أول مستوى للتعلّم في المنزل، بمشاركة فعّالة من الوالدين. انتقال نحو الاستقلالية الكاملة في نهاية السنة.",
-    fichiers: [{ label: "بطاقة المستوى 2 (PDF)", href: "/downloads/cartes/ar/carte-02.pdf" }],
-    images: { recto: "carte-02-recto.png", verso: "carte-02-verso.png" },
+    fichiers: [cardFile("niveau-2", "بطاقة المستوى 2 (PDF)", "ar", { slug: "02" })],
   },
   {
     id: "niveau-3",
@@ -83,8 +96,7 @@ export const paliers: Palier[] = [
     rythme: "7 إلى 10 أسطر / أسبوع",
     lieu: "في المنزل (مستقل)",
     description: "تعلّم في المنزل بشكل كامل ومستقل. يتابع الوالدان التقدم يوميًا.",
-    fichiers: [{ label: "بطاقة المستوى 3 (PDF)", href: "/downloads/cartes/ar/carte-03.pdf" }],
-    images: { recto: "carte-03-recto.png", verso: "carte-03-verso.png" },
+    fichiers: [cardFile("niveau-3", "بطاقة المستوى 3 (PDF)", "ar", { slug: "03" })],
   },
   {
     id: "niveau-4",
@@ -98,8 +110,7 @@ export const paliers: Palier[] = [
     rythme: "15 إلى 20 سطرًا / أسبوع",
     lieu: "في المنزل (مستقل)",
     description: "طلاب متقدمون يتمتعون بقدرة جيدة على التعلّم المستقل. الهدف الشهري نصف حزب.",
-    fichiers: [{ label: "بطاقة المستوى 4 (PDF)", href: "/downloads/cartes/ar/carte-04.pdf" }],
-    images: { recto: "carte-04-recto.png", verso: "carte-04-verso.png" },
+    fichiers: [cardFile("niveau-4", "بطاقة المستوى 4 (PDF)", "ar", { slug: "04" })],
   },
   {
     id: "niveau-5",
@@ -113,8 +124,7 @@ export const paliers: Palier[] = [
     rythme: "15 إلى 20 سطرًا / أسبوع",
     lieu: "في المنزل (مستقل)",
     description: "مواصلة التعلّم المستقل بوتيرة منتظمة، مع إتقان راسخ للأحزاب السابقة.",
-    fichiers: [{ label: "بطاقة المستوى 5 (PDF)", href: "/downloads/cartes/ar/carte-05.pdf" }],
-    images: { recto: "carte-05-recto.png", verso: "carte-05-verso.png" },
+    fichiers: [cardFile("niveau-5", "بطاقة المستوى 5 (PDF)", "ar", { slug: "05" })],
   },
   {
     id: "niveau-6",
@@ -128,8 +138,7 @@ export const paliers: Palier[] = [
     rythme: "15 إلى 20 سطرًا / أسبوع",
     lieu: "في المنزل (مستقل)",
     description: "المستوى الأخير من المسار الرئيسي: يتم حفظ وإتقان الربع الأخير من القرآن الكريم، من سبّح إلى يس.",
-    fichiers: [{ label: "بطاقة المستوى 6 (PDF)", href: "/downloads/cartes/ar/carte-06.pdf" }],
-    images: { recto: "carte-06-recto.png", verso: "carte-06-verso.png" },
+    fichiers: [cardFile("niveau-6", "بطاقة المستوى 6 (PDF)", "ar", { slug: "06" })],
   },
   {
     id: "niveau-7",
@@ -144,10 +153,9 @@ export const paliers: Palier[] = [
     lieu: "في المنزل (مستقل)",
     description: "للطلاب الذين أتموا المسار الرئيسي ويرغبون في المواصلة بعد سورة يس.",
     fichiers: [
-      { label: "بطاقة المستوى 7 (PDF)", href: "/downloads/cartes/ar/carte-07.pdf" },
-      { label: "بطاقة المستوى 7 — نسخة بديلة (PDF)", href: "/downloads/cartes/ar/carte-07-style.pdf" },
+      cardFile("niveau-7", "بطاقة المستوى 7 (PDF)", "ar", { slug: "07", riwaya: "hafs" }),
+      cardFile("niveau-7", "بطاقة المستوى 7 (PDF)", "ar", { slug: "07-warch", riwaya: "warsh" }),
     ],
-    images: { recto: "carte-07-recto.png", verso: "carte-07-verso.png" },
   },
   {
     id: "niveau-8",
@@ -161,8 +169,10 @@ export const paliers: Palier[] = [
     rythme: "يُحدَّد مع المعلم",
     lieu: "في المنزل (مستقل)",
     description: "المستوى الأكثر تقدمًا في المسار، للطلاب الأكثر مثابرة.",
-    fichiers: [{ label: "بطاقة المستوى 8 (PDF)", href: "/downloads/cartes/ar/carte-08.pdf" }],
-    images: { recto: "carte-08-recto.png", verso: "carte-08-verso.png" },
+    fichiers: [
+      cardFile("niveau-8", "بطاقة المستوى 8 (PDF)", "ar", { slug: "08", riwaya: "hafs" }),
+      cardFile("niveau-8", "بطاقة المستوى 8 (PDF)", "ar", { slug: "08-warch", riwaya: "warsh" }),
+    ],
   },
 ];
 
@@ -170,20 +180,17 @@ export const outils: Outil[] = [
   {
     label: "دليل البطاقات والجداول",
     description: "وصف مفصّل لطريقة عمل جميع أدوات المتابعة.",
-    href: "/downloads/outils/ar/manuel-cartes-et-tableaux.pdf",
-    image: "manuel-cartes-et-tableaux.png",
+    ...outilFiles("manuel-cartes-et-tableaux", "ar"),
   },
   {
     label: "جدول الواجبات",
     description: "متابعة أسبوعية للواجبات المنزلية.",
-    href: "/downloads/outils/ar/tableau-devoirs.pdf",
-    image: "tableau-devoirs.png",
+    ...outilFiles("tableau-devoirs", "ar"),
   },
   {
     label: "بطاقة المتابعة والسلوك",
     description: "بطاقة لمتابعة التسميع والسلوك داخل الفصل.",
-    href: "/downloads/outils/ar/fiche-suivi-comportement.pdf",
-    image: "carte-de-suivi.png",
+    ...outilFiles("fiche-suivi-comportement", "ar"),
   },
 ];
 
