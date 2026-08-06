@@ -11,6 +11,10 @@ version numbers — entries are grouped by date instead.
   never mails anyone by itself.
 - `dryRun` mode reporting subscriber count, per-language split and remaining daily quota without
   sending anything.
+- `since` option on the trigger, restricting a send to subscribers confirmed after a given date.
+  An article stays sendable indefinitely, so one that went out to a small list can be re-sent later
+  to whoever joined since, without mailing anyone twice. Such a send drops the "just published"
+  wording, which would be untrue for an older article.
 - A cron trigger drains a queued broadcast ten recipients at a time, capped at 80 messages a day so
   the rest of Resend's free tier stays available for signup confirmations. Progress is resumable:
   a tick that dies mid-batch picks up at the same cursor.

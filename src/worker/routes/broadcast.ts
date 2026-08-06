@@ -17,7 +17,7 @@ export async function handleBroadcast(request: Request, env: Env): Promise<Respo
   if (request.method === "GET") return status(request, env);
   if (request.method !== "POST") return json({ ok: false, error: "method_not_allowed" }, 405);
 
-  let body: { slug?: string; dryRun?: boolean };
+  let body: { slug?: string; dryRun?: boolean; since?: string };
   try {
     body = await request.json();
   } catch {
@@ -26,6 +26,14 @@ export async function handleBroadcast(request: Request, env: Env): Promise<Respo
 
   const slug = (body.slug ?? "").trim();
   if (!slug) return json({ ok: false, error: "missing_slug" }, 400);
+
+  // Re-sending an older article: restrict it to whoever joined after the given date, so the
+  // people who already received it are not mailed twice.
+  let since: Date | undefined;
+  if (body.since !== undefined) {
+    since = new Date(body.since);
+    if (Number.isNaN(since.valueOf())) return json({ ok: false, error: "invalid_since" }, 400);
+  }
 
   const articles = await loadArticles(env);
   const article = articles.find((a) => a.slug === slug && a.lang === defaultLang);
@@ -36,7 +44,7 @@ export async function handleBroadcast(request: Request, env: Env): Promise<Respo
     return json({ ok: false, error: "job_already_running", job: running }, 409);
   }
 
-  const recipients = await listSubscribers(env);
+  const recipients = await listSubscribers(env, since);
   const allowance = await broadcastAllowance(env);
 
   if (body.dryRun) {
@@ -46,7 +54,9 @@ export async function handleBroadcast(request: Request, env: Env): Promise<Respo
       slug,
       title: article.title,
       url: article.url,
+      since: since?.toISOString() ?? null,
       recipients: recipients.length,
+      totalSubscribers: since ? (await listSubscribers(env)).length : recipients.length,
       allowanceToday: allowance,
       languages: countBy(recipients.map((r) => r.lang)),
     });
@@ -54,7 +64,7 @@ export async function handleBroadcast(request: Request, env: Env): Promise<Respo
 
   if (recipients.length === 0) return json({ ok: false, error: "no_subscribers" }, 400);
 
-  const job = await createJob(env, slug, recipients);
+  const job = await createJob(env, slug, recipients, since);
   return json({ ok: true, job, allowanceToday: allowance });
 }
 

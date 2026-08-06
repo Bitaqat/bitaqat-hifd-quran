@@ -44,6 +44,23 @@ signup confirmations. Follow progress with `GET` on the same URL and the same he
 Subscribers are re-checked against KV as each message goes out, so anyone unsubscribing mid-send is
 skipped. Only one broadcast may run at a time.
 
+### Re-sending an older article
+
+An article stays sendable indefinitely — useful when it went out to a small list, or to none at all.
+Add `since` to reach only the people who joined after a given date, so earlier recipients are not
+mailed twice:
+
+```bash
+curl -s -X POST https://bitaqat-hifd-quran.com/api/newsletter/broadcast \
+  -H "Authorization: Bearer $NEWSLETTER_ADMIN_SECRET" \
+  -H "Content-Type: application/json" \
+  -d '{"slug":"<slug>","since":"2026-08-06","dryRun":true}'
+```
+
+The dry run then reports both `recipients` (who would be mailed) and `totalSubscribers` (the whole
+list), so the filter's effect is visible before committing to it. A `since` send also drops the
+"just published" wording, which would be untrue for an older article.
+
 ## Structure
 
 - `src/pages/` — French pages (default locale) at the root, English under `src/pages/en/`, Arabic under `src/pages/ar/`

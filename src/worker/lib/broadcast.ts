@@ -26,6 +26,8 @@ export interface Job {
   id: string;
   slug: string;
   createdAt: string;
+  /** Set on a re-send: only subscribers confirmed after this instant were included. */
+  since?: string;
   status: "running" | "done";
   /** Index of the next recipient to mail, so a tick that dies mid-way resumes cleanly. */
   cursor: number;
@@ -51,7 +53,13 @@ export async function loadArticles(env: Env): Promise<ArticleRecord[]> {
   return (await res.json()) as ArticleRecord[];
 }
 
-export async function listSubscribers(env: Env): Promise<Recipient[]> {
+/**
+ * Confirmed subscribers, optionally only those who joined after `since`.
+ *
+ * That filter is what makes re-sending an older article safe: it reaches the people who
+ * were not on the list the first time round, and nobody receives the same article twice.
+ */
+export async function listSubscribers(env: Env, since?: Date): Promise<Recipient[]> {
   const recipients: Recipient[] = [];
   let cursor: string | undefined;
 
@@ -60,7 +68,20 @@ export async function listSubscribers(env: Env): Promise<Recipient[]> {
     for (const key of page.keys) {
       const raw = await env.BITAQAT_KV.get(key.name);
       if (!raw) continue;
-      const sub = JSON.parse(raw) as { email: string; lang: Lang; unsubToken: string };
+      const sub = JSON.parse(raw) as {
+        email: string;
+        lang: Lang;
+        unsubToken: string;
+        confirmedAt?: string;
+      };
+
+      if (since) {
+        // A record without a date cannot be shown to be recent, so leave it out: the cost
+        // of skipping someone is one missed article, against sending a duplicate.
+        if (!sub.confirmedAt) continue;
+        if (new Date(sub.confirmedAt) < since) continue;
+      }
+
       recipients.push({ email: sub.email, lang: sub.lang, unsubToken: sub.unsubToken });
     }
     cursor = page.list_complete ? undefined : page.cursor;
@@ -81,11 +102,17 @@ export async function getJob(env: Env, id: string): Promise<Job | null> {
   return raw ? (JSON.parse(raw) as Job) : null;
 }
 
-export async function createJob(env: Env, slug: string, recipients: Recipient[]): Promise<Job> {
+export async function createJob(
+  env: Env,
+  slug: string,
+  recipients: Recipient[],
+  since?: Date
+): Promise<Job> {
   const job: Job = {
     id: randomToken().slice(0, 16),
     slug,
     createdAt: new Date().toISOString(),
+    ...(since ? { since: since.toISOString() } : {}),
     status: "running",
     cursor: 0,
     total: recipients.length,
@@ -146,7 +173,10 @@ export async function drainJob(env: Env): Promise<{ status: string; sent?: numbe
     const lang = article.lang;
     const pageUrl = `${SITE_ORIGIN}${routes[lang].newsletter}/?u=${recipient.unsubToken}`;
     const oneClickUrl = `${SITE_ORIGIN}/api/newsletter/unsubscribe?u=${recipient.unsubToken}`;
-    const { subject, html, text } = buildBroadcastEmail(lang, article, pageUrl);
+    // A re-send drops the "just published" wording, which would be false for an older article.
+    const { subject, html, text } = buildBroadcastEmail(lang, article, pageUrl, {
+      resend: Boolean(job.since),
+    });
 
     try {
       await mailer.send({
