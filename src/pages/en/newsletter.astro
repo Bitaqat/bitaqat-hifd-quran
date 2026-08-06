@@ -60,22 +60,4 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <script is:inline>
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var unsubToken = params.get("u");
-      var signup = document.getElementById("nl-signup");
-
-      if (params.get("confirmed")) {
-        signup.hidden = true;
-        document.getElementById("nl-confirmed").hidden = false;
-      } else if (unsubToken && /^[0-9a-f]{64}$/.test(unsubToken)) {
-        signup.hidden = true;
-        document.getElementById("newsletter-unsub-form").dataset.token = unsubToken;
-        document.getElementById("nl-unsub").hidden = false;
-      } else if (params.get("invalid")) {
-        document.getElementById("nl-invalid").hidden = false;
-      }
-    })();
-  </script>
 </Layout>

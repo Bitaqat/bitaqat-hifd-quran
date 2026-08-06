@@ -3,6 +3,25 @@
   var unsubForm = document.getElementById("newsletter-unsub-form");
   if (!forms.length && !unsubForm) return;
 
+  // Which block of the newsletter page to show. Lives here rather than in an inline script
+  // on the page because the site's CSP sets script-src 'self' with no 'unsafe-inline'.
+  var signupBlock = document.getElementById("nl-signup");
+  if (signupBlock) {
+    var params = new URLSearchParams(window.location.search);
+    var unsubToken = params.get("u");
+
+    if (params.get("confirmed")) {
+      signupBlock.hidden = true;
+      document.getElementById("nl-confirmed").hidden = false;
+    } else if (unsubToken && /^[0-9a-f]{64}$/.test(unsubToken)) {
+      signupBlock.hidden = true;
+      unsubForm.dataset.token = unsubToken;
+      document.getElementById("nl-unsub").hidden = false;
+    } else if (params.get("invalid")) {
+      document.getElementById("nl-invalid").hidden = false;
+    }
+  }
+
   // The Turnstile bundle is fetched on first interaction rather than on page load: the
   // signup form sits in the footer of every page, and most visitors never touch it.
   var scriptRequested = false;
