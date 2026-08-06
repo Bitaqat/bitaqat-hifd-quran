@@ -64,5 +64,6 @@ version numbers — entries are grouped by date instead.
 ## 2026-07-23 — Initial launch
 
 ### Added
-- Site relaunch on Astro, deployed to Cloudflare Workers (static assets).
+- Relaunch of bitaqat-hifd-quran.com, a site originally designed and developed by this project's
+  maintainer in 2014, rebuilt on Astro and deployed to Cloudflare Workers (static assets).
 - French recitation cards, methodology, and tracking tools, free to download.
