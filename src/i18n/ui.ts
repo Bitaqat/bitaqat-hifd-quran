@@ -15,7 +15,15 @@ export const dirs: Record<Lang, "ltr" | "rtl"> = {
 };
 
 export const routes: Record<Lang, Record<
-  "home" | "methodologie" | "fonctionnement" | "niveaux" | "carteDeSuivi" | "telechargements" | "contact" | "mentions",
+  | "home"
+  | "methodologie"
+  | "fonctionnement"
+  | "niveaux"
+  | "carteDeSuivi"
+  | "telechargements"
+  | "contact"
+  | "mentions"
+  | "newsletter",
   string
 >> = {
   fr: {
@@ -27,6 +35,7 @@ export const routes: Record<Lang, Record<
     telechargements: "/telechargements",
     contact: "/contact",
     mentions: "/mentions-legales",
+    newsletter: "/newsletter",
   },
   en: {
     home: "/en/",
@@ -37,6 +46,7 @@ export const routes: Record<Lang, Record<
     telechargements: "/en/downloads",
     contact: "/en/contact",
     mentions: "/en/legal-notice",
+    newsletter: "/en/newsletter",
   },
   ar: {
     home: "/ar/",
@@ -47,6 +57,7 @@ export const routes: Record<Lang, Record<
     telechargements: "/ar/downloads",
     contact: "/ar/contact",
     mentions: "/ar/legal-notice",
+    newsletter: "/ar/newsletter",
   },
 };
 
@@ -76,6 +87,34 @@ export const ui = {
     "downloads.riwayaWarsh": "Warsh",
     "downloads.recto": "Recto",
     "downloads.verso": "Verso",
+    "footer.newsletter": "Newsletter",
+    "newsletter.title": "Recevoir les actualités",
+    "newsletter.desc":
+      "Un email à chaque nouveauté : nouvelles cartes, mises à jour de la méthodologie. Rien d'autre.",
+    "newsletter.placeholder": "ton@email.com",
+    "newsletter.submit": "S'inscrire",
+    "newsletter.legal":
+      "Ton adresse sert uniquement à l'envoi de ces actualités. Désinscription en un clic depuis chaque email.",
+    "newsletter.msgInvalidEmail": "Merci de saisir une adresse email valide.",
+    "newsletter.msgMissingTurnstile": "Merci de valider le contrôle de sécurité.",
+    "newsletter.msgSending": "Envoi en cours…",
+    "newsletter.msgSuccess": "Presque terminé ! Vérifie ta boîte mail et clique sur le lien de confirmation.",
+    "newsletter.msgRateLimited": "Trop de tentatives. Réessaie dans une heure.",
+    "newsletter.msgError": "Une erreur est survenue. Réessaie dans quelques instants.",
+    "newsletter.pageDesc": "Inscription aux actualités du projet Bitaqat Hifd Qor'an.",
+    "newsletter.confirmedTitle": "Inscription confirmée",
+    "newsletter.confirmedBody":
+      "Ton adresse est enregistrée. Tu recevras un email à chaque nouvelle actualité du projet.",
+    "newsletter.invalidTitle": "Lien invalide ou expiré",
+    "newsletter.invalidBody":
+      "Ce lien de confirmation n'est plus valable — il expire au bout de 24 heures. Tu peux relancer ton inscription ci-dessous.",
+    "newsletter.unsubTitle": "Se désinscrire",
+    "newsletter.unsubBody": "Confirme ta désinscription pour ne plus recevoir les actualités du projet.",
+    "newsletter.unsubButton": "Confirmer ma désinscription",
+    "newsletter.unsubDoneTitle": "Désinscription effectuée",
+    "newsletter.unsubDoneBody":
+      "Ton adresse a été supprimée de la liste. Tu ne recevras plus d'email de notre part.",
+    "newsletter.backHome": "Retour à l'accueil",
   },
   en: {
     "nav.methodologie": "Methodology",
@@ -102,6 +141,33 @@ export const ui = {
     "downloads.riwayaWarsh": "Warsh",
     "downloads.recto": "Front",
     "downloads.verso": "Back",
+    "footer.newsletter": "Newsletter",
+    "newsletter.title": "Get the latest news",
+    "newsletter.desc":
+      "One email whenever something new lands: new cards, methodology updates. Nothing else.",
+    "newsletter.placeholder": "you@email.com",
+    "newsletter.submit": "Subscribe",
+    "newsletter.legal":
+      "Your address is used only to send these updates. One-click unsubscribe from every email.",
+    "newsletter.msgInvalidEmail": "Please enter a valid email address.",
+    "newsletter.msgMissingTurnstile": "Please complete the security check.",
+    "newsletter.msgSending": "Sending…",
+    "newsletter.msgSuccess": "Almost there! Check your inbox and click the confirmation link.",
+    "newsletter.msgRateLimited": "Too many attempts. Please try again in an hour.",
+    "newsletter.msgError": "Something went wrong. Please try again in a moment.",
+    "newsletter.pageDesc": "Subscribe to news from the Bitaqat Hifd Qor'an project.",
+    "newsletter.confirmedTitle": "Subscription confirmed",
+    "newsletter.confirmedBody":
+      "Your address is registered. You will get an email whenever there is project news.",
+    "newsletter.invalidTitle": "Invalid or expired link",
+    "newsletter.invalidBody":
+      "This confirmation link is no longer valid — it expires after 24 hours. You can sign up again below.",
+    "newsletter.unsubTitle": "Unsubscribe",
+    "newsletter.unsubBody": "Confirm below to stop receiving news from the project.",
+    "newsletter.unsubButton": "Confirm unsubscribe",
+    "newsletter.unsubDoneTitle": "You have been unsubscribed",
+    "newsletter.unsubDoneBody": "Your address has been removed from the list. You will not hear from us again.",
+    "newsletter.backHome": "Back to home",
   },
   ar: {
     "nav.methodologie": "المنهجية",
@@ -128,6 +194,31 @@ export const ui = {
     "downloads.riwayaWarsh": "ورش",
     "downloads.recto": "الوجه",
     "downloads.verso": "الظهر",
+    "footer.newsletter": "النشرة البريدية",
+    "newsletter.title": "تابع أخبار المشروع",
+    "newsletter.desc": "رسالة واحدة عند كل جديد: بطاقات جديدة، تحديثات المنهجية. لا شيء غير ذلك.",
+    "newsletter.placeholder": "بريدك@الإلكتروني.com",
+    "newsletter.submit": "اشترك",
+    "newsletter.legal":
+      "يُستعمل عنوانك لإرسال هذه الأخبار فقط. يمكنك إلغاء الاشتراك بنقرة واحدة من كل رسالة.",
+    "newsletter.msgInvalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+    "newsletter.msgMissingTurnstile": "يرجى إتمام التحقق الأمني.",
+    "newsletter.msgSending": "جارٍ الإرسال…",
+    "newsletter.msgSuccess": "بقيت خطوة واحدة! تفقّد بريدك واضغط على رابط التأكيد.",
+    "newsletter.msgRateLimited": "محاولات كثيرة. أعد المحاولة بعد ساعة.",
+    "newsletter.msgError": "حدث خطأ. أعد المحاولة بعد لحظات.",
+    "newsletter.pageDesc": "الاشتراك في أخبار مشروع بطاقة حفظ القرآن.",
+    "newsletter.confirmedTitle": "تم تأكيد الاشتراك",
+    "newsletter.confirmedBody": "تم تسجيل عنوانك. ستصلك رسالة عند كل خبر جديد عن المشروع.",
+    "newsletter.invalidTitle": "رابط غير صالح أو منتهي الصلاحية",
+    "newsletter.invalidBody":
+      "لم يعد رابط التأكيد صالحًا — تنتهي صلاحيته بعد 24 ساعة. يمكنك إعادة الاشتراك أدناه.",
+    "newsletter.unsubTitle": "إلغاء الاشتراك",
+    "newsletter.unsubBody": "أكّد إلغاء اشتراكك لتتوقف عن تلقّي أخبار المشروع.",
+    "newsletter.unsubButton": "تأكيد إلغاء الاشتراك",
+    "newsletter.unsubDoneTitle": "تم إلغاء الاشتراك",
+    "newsletter.unsubDoneBody": "تم حذف عنوانك من القائمة. لن تصلك أي رسالة منّا بعد الآن.",
+    "newsletter.backHome": "العودة إلى الصفحة الرئيسية",
   },
 } as const;
 

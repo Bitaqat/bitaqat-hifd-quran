@@ -1,0 +1,67 @@
+---
+import { useTranslations, type Lang } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  /** Distinguishes the footer instance from the one on the newsletter page, which coexist. */
+  id: string;
+  /** The footer renders this below the site title, the dedicated page renders it as the main heading. */
+  headingLevel?: "h1" | "h2" | "h3";
+}
+
+const { lang, id, headingLevel = "h2" } = Astro.props;
+const t = useTranslations(lang);
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+const Heading = headingLevel;
+---
+
+<div class="mx-auto max-w-md text-center">
+  <Heading
+    class:list={[
+      "font-bold text-ink-900 dark:text-white",
+      headingLevel === "h1" ? "text-3xl font-extrabold tracking-tight sm:text-4xl" : "text-lg",
+    ]}
+  >
+    {t("newsletter.title")}
+  </Heading>
+  <p class="mt-2 text-sm leading-relaxed text-ink-500 dark:text-night-400">{t("newsletter.desc")}</p>
+
+  <form
+    data-newsletter-form
+    data-lang={lang}
+    data-sitekey={turnstileSiteKey}
+    data-msg-invalid-email={t("newsletter.msgInvalidEmail")}
+    data-msg-missing-turnstile={t("newsletter.msgMissingTurnstile")}
+    data-msg-sending={t("newsletter.msgSending")}
+    data-msg-success={t("newsletter.msgSuccess")}
+    data-msg-rate-limited={t("newsletter.msgRateLimited")}
+    data-msg-error={t("newsletter.msgError")}
+    class="mt-5"
+  >
+    <div class="flex flex-col gap-2 sm:flex-row">
+      <label for={`${id}-email`} class="sr-only">{t("newsletter.title")}</label>
+      <input
+        type="email"
+        name="email"
+        id={`${id}-email`}
+        required
+        maxlength="200"
+        autocomplete="email"
+        placeholder={t("newsletter.placeholder")}
+        class="w-full rounded-full border border-ink-200 bg-white px-5 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+      />
+      <button
+        type="submit"
+        class="shrink-0 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {t("newsletter.submit")}
+      </button>
+    </div>
+
+    <!-- Rendered on first interaction so the Turnstile bundle is not loaded on every page. -->
+    <div data-turnstile class="mt-3 flex justify-center empty:mt-0"></div>
+
+    <p data-status role="status" class="mt-3 text-sm text-ink-500 dark:text-night-400"></p>
+    <p class="mt-2 text-xs leading-relaxed text-ink-400 dark:text-night-500">{t("newsletter.legal")}</p>
+  </form>
+</div>

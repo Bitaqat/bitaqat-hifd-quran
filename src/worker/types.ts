@@ -5,4 +5,5 @@ export interface Env {
   BITAQAT_KV: KVNamespace;
   EMAIL: SendEmail;
   TURNSTILE_SECRET_KEY: string;
+  RESEND_API_KEY: string;
 }

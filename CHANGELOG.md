@@ -3,6 +3,22 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-06 — Newsletter signup
+
+### Added
+- Newsletter signup form in the footer of every page and on a dedicated `/newsletter` page, in
+  French, English, and Arabic. Protected by Turnstile and rate-limited per IP.
+- Double opt-in: subscribing sends a confirmation email whose link, valid 24 hours, is what actually
+  registers the address. Subscribers are stored in KV; the site owns the list.
+- One-click unsubscribe via an opaque token, so the subscriber's address never appears in a URL.
+- Legal notice updated in all three languages to cover the newsletter processing.
+
+### Notes
+- Sending goes through Resend, isolated behind a `Mailer` interface so the provider can be swapped
+  without touching the routes. Requires the `RESEND_API_KEY` Worker secret and a verified sending
+  domain.
+- Only collection is implemented. Broadcasting news to the list is not built yet.
+
 ## 2026-08-06 — Resource redesign
 
 ### Added

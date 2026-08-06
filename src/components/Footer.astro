@@ -1,5 +1,6 @@
 ---
 import { useTranslations, routes, type Lang } from "../i18n/ui";
+import NewsletterForm from "./NewsletterForm.astro";
 
 interface Props {
   lang: Lang;
@@ -12,6 +13,9 @@ const links = routes[lang];
 ---
 
 <footer class="border-t border-ink-100 bg-ink-50 dark:border-night-800 dark:bg-night-900">
+  <div class="border-b border-ink-200 px-6 py-12 dark:border-night-800">
+    <NewsletterForm lang={lang} id="newsletter-footer" headingLevel="h2" />
+  </div>
   <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
     <div>
       <div class="flex items-center gap-2 text-lg font-bold text-ink-900 dark:text-white">
@@ -45,6 +49,7 @@ const links = routes[lang];
       <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-400">{t("footer.info")}</h3>
       <ul class="mt-4 space-y-2 text-sm text-ink-600 dark:text-night-300">
         <li><a href={links.contact} class="hover:text-gold-600">{t("nav.contact")}</a></li>
+        <li><a href={links.newsletter} class="hover:text-gold-600">{t("footer.newsletter")}</a></li>
         <li><a href={links.mentions} class="hover:text-gold-600">{t("footer.mentions")}</a></li>
       </ul>
     </div>
