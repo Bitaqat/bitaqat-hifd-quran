@@ -6,4 +6,6 @@ export interface Env {
   EMAIL: SendEmail;
   TURNSTILE_SECRET_KEY: string;
   RESEND_API_KEY: string;
+  /** Guards the broadcast trigger. Absent means the endpoint refuses every caller. */
+  NEWSLETTER_ADMIN_SECRET: string;
 }

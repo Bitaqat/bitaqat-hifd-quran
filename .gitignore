@@ -8,6 +8,9 @@ node_modules/
 
 # wrangler
 .wrangler/
+# local Worker secrets for `wrangler dev` — never committed
+.dev.vars
+.dev.vars.*
 
 # logs
 npm-debug.log*

@@ -46,6 +46,38 @@ const copy: Record<Lang, EmailCopy> = {
   },
 };
 
+interface BroadcastCopy {
+  intro: string;
+  button: string;
+  fallbackNotice: string;
+  why: string;
+  unsubscribe: string;
+}
+
+const broadcastCopy: Record<Lang, BroadcastCopy> = {
+  fr: {
+    intro: "Une nouvelle actualité vient d'être publiée sur le site.",
+    button: "Lire l'article",
+    fallbackNotice: "Cet article n'est pas encore traduit. Il est publié dans sa version française d'origine.",
+    why: "Tu reçois cet email parce que tu t'es inscrit aux actualités de Bitaqat Hifd Qor'an.",
+    unsubscribe: "Se désinscrire",
+  },
+  en: {
+    intro: "A new article has just been published on the site.",
+    button: "Read the article",
+    fallbackNotice: "This article has not been translated yet. It is published in its original French.",
+    why: "You are receiving this email because you subscribed to news from Bitaqat Hifd Qor'an.",
+    unsubscribe: "Unsubscribe",
+  },
+  ar: {
+    intro: "نُشر خبر جديد على الموقع.",
+    button: "اقرأ المقالة",
+    fallbackNotice: "لم تُترجَم هذه المقالة بعد. وهي منشورة بنصّها الفرنسي الأصلي.",
+    why: "تصلك هذه الرسالة لأنك اشتركت في أخبار بطاقة حفظ القرآن.",
+    unsubscribe: "إلغاء الاشتراك",
+  },
+};
+
 /** Minimal escaping: the only interpolated value is a URL we build ourselves, but the
  *  templates are shared with subscriber-facing copy, so keep it safe by default. */
 function escapeHtml(value: string): string {
@@ -113,4 +145,83 @@ ${c.expiry}
 ${c.ignore}`;
 
   return { subject: c.subject, html, text };
+}
+
+export interface BroadcastArticle {
+  title: string;
+  description: string;
+  url: string;
+  isFallback: boolean;
+}
+
+/**
+ * A notification, not a full-content newsletter: title, teaser and a link to the article.
+ * That is what a subscriber asked for, it survives every mail client, and it keeps the
+ * canonical version of the text on the site rather than frozen in an inbox.
+ */
+export function buildBroadcastEmail(lang: Lang, article: BroadcastArticle, unsubscribeUrl: string) {
+  const c = broadcastCopy[lang];
+  const dir = lang === "ar" ? "rtl" : "ltr";
+  const align = lang === "ar" ? "right" : "left";
+  const url = escapeHtml(article.url);
+  const unsub = escapeHtml(unsubscribeUrl);
+  const title = escapeHtml(article.title);
+  const description = escapeHtml(article.description);
+
+  const html = `<!doctype html>
+<html lang="${lang}" dir="${dir}">
+  <body style="margin:0;padding:0;background:#f7f7f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f7f7f5;padding:32px 16px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#ffffff;border-radius:12px;padding:32px;text-align:${align};">
+            <tr>
+              <td style="font-size:18px;font-weight:700;color:${INK};padding-bottom:24px;">Bitaqat Hifd Qor'an</td>
+            </tr>
+            <tr>
+              <td style="font-size:13px;color:${MUTED};padding-bottom:12px;">${c.intro}</td>
+            </tr>
+            <tr>
+              <td style="font-size:22px;font-weight:800;color:${INK};line-height:1.3;padding-bottom:16px;">${title}</td>
+            </tr>
+            <tr>
+              <td style="font-size:15px;line-height:1.6;color:#374151;padding-bottom:24px;">${description}</td>
+            </tr>
+            ${
+              article.isFallback
+                ? `<tr><td style="font-size:13px;line-height:1.6;color:#92400e;background:#fdf8ec;border-radius:8px;padding:12px 16px;">${c.fallbackNotice}</td></tr>
+            <tr><td style="height:24px;"></td></tr>`
+                : ""
+            }
+            <tr>
+              <td style="padding-bottom:32px;">
+                <a href="${url}" style="display:inline-block;background:${GOLD};color:#ffffff;text-decoration:none;font-size:15px;font-weight:600;padding:12px 28px;border-radius:9999px;">${c.button}</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-size:12px;line-height:1.6;color:${MUTED};border-top:1px solid #e5e7eb;padding-top:16px;">
+                ${c.why}<br />
+                <a href="${unsub}" style="color:${MUTED};">${c.unsubscribe}</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
+
+  const text = `${c.intro}
+
+${article.title}
+
+${article.description}
+
+${article.url}
+${article.isFallback ? `\n${c.fallbackNotice}\n` : ""}
+--
+${c.why}
+${c.unsubscribe} : ${unsubscribeUrl}`;
+
+  return { subject: article.title, html, text };
 }

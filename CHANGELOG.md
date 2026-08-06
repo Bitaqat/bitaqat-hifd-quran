@@ -3,6 +3,26 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-06 — Newsletter sending
+
+### Added
+- Broadcasting an article to the subscriber list, triggered manually against
+  `/api/newsletter/broadcast` with the `NEWSLETTER_ADMIN_SECRET` bearer token. Publishing an article
+  never mails anyone by itself.
+- `dryRun` mode reporting subscriber count, per-language split and remaining daily quota without
+  sending anything.
+- A cron trigger drains a queued broadcast ten recipients at a time, capped at 80 messages a day so
+  the rest of Resend's free tier stays available for signup confirmations. Progress is resumable:
+  a tick that dies mid-batch picks up at the same cursor.
+- `List-Unsubscribe` and `List-Unsubscribe-Post` headers, so Gmail and Yahoo show their own
+  unsubscribe control. The one-click URL accepts `POST`, as those providers require.
+
+### Notes
+- Emails are notifications, not full articles: title, teaser and a link. That is what subscribers
+  asked for, it survives every mail client, and the canonical text stays on the site.
+- Subscribers are re-checked against KV as each message goes out, so unsubscribing mid-send takes
+  effect immediately. Only one broadcast may run at a time.
+
 ## 2026-08-06 — News section
 
 ### Added

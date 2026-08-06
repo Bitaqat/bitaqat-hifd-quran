@@ -13,6 +13,10 @@
   "send_email": [
     { "name": "EMAIL", "destination_address": "bitaqat.hifd.quran@proton.me" }
   ],
+  // Drains a running newsletter broadcast, ten recipients at a time. Idle otherwise.
+  "triggers": {
+    "crons": ["*/10 * * * *"]
+  },
   "observability": {
     "logs": {
       "enabled": true

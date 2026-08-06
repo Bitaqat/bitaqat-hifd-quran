@@ -14,3 +14,12 @@ export function randomToken(): string {
 export function isValidToken(token: string): boolean {
   return /^[0-9a-f]{64}$/.test(token);
 }
+
+/** Compares in time independent of where the strings first differ, so a caller cannot
+ *  discover a secret one character at a time by measuring the response. */
+export function timingSafeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}

@@ -3,6 +3,7 @@ import { verifyTurnstile } from "../lib/turnstile";
 import { createResendMailer } from "../lib/mailer";
 import { randomToken, isValidToken } from "../lib/tokens";
 import { buildConfirmEmail } from "../lib/newsletter-emails";
+import { recordSends } from "../lib/quota";
 import { routes, defaultLang, type Lang } from "../../i18n/ui";
 
 const MAX_EMAIL = 200;
@@ -78,6 +79,7 @@ export async function handleSubscribe(request: Request, env: Env): Promise<Respo
   try {
     const mailer = createResendMailer(env.RESEND_API_KEY, FROM_ADDRESS);
     await mailer.send({ to: email, subject, html, text });
+    await recordSends(env);
   } catch (err) {
     console.error("newsletter: send_failed", err instanceof Error ? err.message : err);
     await env.BITAQAT_KV.delete(`nlpending:${token}`);
@@ -136,14 +138,19 @@ export async function handleConfirm(request: Request, env: Env): Promise<Respons
 export async function handleUnsubscribe(request: Request, env: Env): Promise<Response> {
   if (request.method !== "POST") return json({ ok: false, error: "method_not_allowed" }, 405);
 
-  let body: { token?: string };
-  try {
-    body = await request.json();
-  } catch {
-    return json({ ok: false, error: "invalid_body" }, 400);
+  // Two callers reach this. The site's own page posts a JSON body; mail providers doing
+  // One-Click unsubscribe post a form body to the URL carried in the List-Unsubscribe
+  // header, where the token is the query parameter.
+  let token = new URL(request.url).searchParams.get("u") ?? "";
+  if (!token) {
+    try {
+      const body = (await request.json()) as { token?: string };
+      token = body.token ?? "";
+    } catch {
+      return json({ ok: false, error: "invalid_body" }, 400);
+    }
   }
 
-  const token = body.token ?? "";
   if (!isValidToken(token)) return json({ ok: false, error: "invalid_token" }, 400);
 
   const email = await env.BITAQAT_KV.get(`nlunsub:${token}`);
