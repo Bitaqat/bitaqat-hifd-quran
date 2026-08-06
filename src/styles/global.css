@@ -70,3 +70,93 @@ html[lang="ar"] body {
 .font-arabic {
   font-family: var(--font-arabic);
 }
+
+/* Rendered Markdown of a news article. Kept as hand-written rules rather than pulling in a
+   typography plugin: the article body only ever uses a handful of elements, and logical
+   properties keep it correct in Arabic without a separate RTL pass. */
+.prose-news {
+  color: var(--color-ink-700);
+  line-height: 1.75;
+}
+
+.prose-news > * + * {
+  margin-top: 1.25em;
+}
+
+.prose-news h2 {
+  margin-top: 2em;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-ink-900);
+}
+
+.prose-news h3 {
+  margin-top: 1.75em;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-ink-900);
+}
+
+.prose-news a {
+  color: var(--color-gold-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-news strong {
+  font-weight: 600;
+  color: var(--color-ink-900);
+}
+
+.prose-news ul,
+.prose-news ol {
+  padding-inline-start: 1.5rem;
+}
+
+.prose-news ul {
+  list-style: disc;
+}
+
+.prose-news ol {
+  list-style: decimal;
+}
+
+.prose-news li + li {
+  margin-top: 0.5em;
+}
+
+.prose-news blockquote {
+  border-inline-start: 3px solid var(--color-gold-400);
+  padding-inline-start: 1rem;
+  font-style: italic;
+  color: var(--color-ink-600);
+}
+
+.prose-news code {
+  border-radius: 0.25rem;
+  background: var(--color-ink-100);
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+.prose-news img {
+  border-radius: 0.5rem;
+}
+
+:where(.dark) .prose-news {
+  color: var(--color-night-300);
+}
+
+:where(.dark) .prose-news h2,
+:where(.dark) .prose-news h3,
+:where(.dark) .prose-news strong {
+  color: #ffffff;
+}
+
+:where(.dark) .prose-news blockquote {
+  color: var(--color-night-400);
+}
+
+:where(.dark) .prose-news code {
+  background: var(--color-night-800);
+}

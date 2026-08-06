@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NewsArticle from "../../components/NewsArticle.astro";
+import { getArticles, type LocalizedArticle } from "../../lib/news";
+import type { Lang } from "../../i18n/ui";
+
+const lang: Lang = "fr";
+
+export async function getStaticPaths() {
+  const articles = await getArticles("fr");
+  return articles.map((article) => ({ params: { slug: article.slug }, props: { article } }));
+}
+
+const { article } = Astro.props as { article: LocalizedArticle };
+---
+
+<Layout title={article.entry.data.title} description={article.entry.data.description} lang={lang}>
+  <NewsArticle lang={lang} article={article} />
+</Layout>

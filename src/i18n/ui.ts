@@ -23,7 +23,8 @@ export const routes: Record<Lang, Record<
   | "telechargements"
   | "contact"
   | "mentions"
-  | "newsletter",
+  | "newsletter"
+  | "actualites",
   string
 >> = {
   fr: {
@@ -36,6 +37,7 @@ export const routes: Record<Lang, Record<
     contact: "/contact",
     mentions: "/mentions-legales",
     newsletter: "/newsletter",
+    actualites: "/actualites",
   },
   en: {
     home: "/en/",
@@ -47,6 +49,7 @@ export const routes: Record<Lang, Record<
     contact: "/en/contact",
     mentions: "/en/legal-notice",
     newsletter: "/en/newsletter",
+    actualites: "/en/news",
   },
   ar: {
     home: "/ar/",
@@ -58,6 +61,7 @@ export const routes: Record<Lang, Record<
     contact: "/ar/contact",
     mentions: "/ar/legal-notice",
     newsletter: "/ar/newsletter",
+    actualites: "/ar/news",
   },
 };
 
@@ -87,6 +91,16 @@ export const ui = {
     "downloads.riwayaWarsh": "Warsh",
     "downloads.recto": "Recto",
     "downloads.verso": "Verso",
+    "nav.actualites": "Actualités",
+    "news.title": "Actualités",
+    "news.desc": "Les nouveautés du projet : nouvelles cartes, outils de suivi et évolutions de la méthodologie.",
+    "news.readMore": "Lire la suite",
+    "news.backToList": "Toutes les actualités",
+    "news.published": "Publié le",
+    "news.updated": "Mis à jour le",
+    "news.empty": "Aucune actualité pour le moment.",
+    "news.rss": "Flux RSS",
+    "news.fallbackNotice": "Cet article n'est pas encore traduit. Il est affiché dans sa version française d'origine.",
     "footer.newsletter": "Newsletter",
     "newsletter.title": "Recevoir les actualités",
     "newsletter.desc":
@@ -141,6 +155,16 @@ export const ui = {
     "downloads.riwayaWarsh": "Warsh",
     "downloads.recto": "Front",
     "downloads.verso": "Back",
+    "nav.actualites": "News",
+    "news.title": "News",
+    "news.desc": "What is new in the project: new cards, tracking tools and methodology updates.",
+    "news.readMore": "Read more",
+    "news.backToList": "All news",
+    "news.published": "Published on",
+    "news.updated": "Updated on",
+    "news.empty": "No news yet.",
+    "news.rss": "RSS feed",
+    "news.fallbackNotice": "This article has not been translated yet. It is shown in its original French.",
     "footer.newsletter": "Newsletter",
     "newsletter.title": "Get the latest news",
     "newsletter.desc":
@@ -194,6 +218,16 @@ export const ui = {
     "downloads.riwayaWarsh": "ورش",
     "downloads.recto": "الوجه",
     "downloads.verso": "الظهر",
+    "nav.actualites": "الأخبار",
+    "news.title": "الأخبار",
+    "news.desc": "مستجدّات المشروع: بطاقات جديدة وأدوات متابعة وتحديثات المنهجية.",
+    "news.readMore": "اقرأ المزيد",
+    "news.backToList": "كل الأخبار",
+    "news.published": "نُشر في",
+    "news.updated": "حُدّث في",
+    "news.empty": "لا توجد أخبار بعد.",
+    "news.rss": "تدفّق RSS",
+    "news.fallbackNotice": "لم تُترجَم هذه المقالة بعد. وهي معروضة بنصّها الفرنسي الأصلي.",
     "footer.newsletter": "النشرة البريدية",
     "newsletter.title": "تابع أخبار المشروع",
     "newsletter.desc": "رسالة واحدة عند كل جديد: بطاقات جديدة، تحديثات المنهجية. لا شيء غير ذلك.",

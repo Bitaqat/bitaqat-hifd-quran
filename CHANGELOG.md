@@ -3,6 +3,20 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-06 — News section
+
+### Added
+- News section at `/actualites` (`/en/news`, `/ar/news`), with one page per article, listed
+  newest first. Articles are Markdown files under `src/content/news/<lang>/`.
+- RSS feed per language, linked from the news page and discoverable from every page's `<head>`.
+  It carries the same news as the newsletter, without asking for an address.
+- French is the reference language: an article appears in all three locales as soon as the French
+  file exists. Where a translation is missing the French text is shown instead, behind a notice and
+  marked up with its own `lang`/`dir` so it reads correctly inside an Arabic page.
+
+### Notes
+- `site` is now set in the Astro config, which the RSS feeds need to emit absolute URLs.
+
 ## 2026-08-06 — Newsletter signup
 
 ### Added

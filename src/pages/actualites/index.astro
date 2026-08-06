@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import NewsList from "../../components/NewsList.astro";
+import { useTranslations, type Lang } from "../../i18n/ui";
+
+const lang: Lang = "fr";
+const t = useTranslations(lang);
+---
+
+<Layout title={t("news.title")} description={t("news.desc")} lang={lang}>
+  <NewsList lang={lang} />
+</Layout>

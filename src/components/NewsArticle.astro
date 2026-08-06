@@ -1,0 +1,48 @@
+---
+import { render } from "astro:content";
+import { useTranslations, routes, dirs, defaultLang, type Lang } from "../i18n/ui";
+import { formatDate, type LocalizedArticle } from "../lib/news";
+
+interface Props {
+  lang: Lang;
+  article: LocalizedArticle;
+}
+
+const { lang, article } = Astro.props;
+const t = useTranslations(lang);
+const { Content } = await render(article.entry);
+const { title, pubDate, updatedDate } = article.entry.data;
+---
+
+<article class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+  <a href={routes[lang].actualites} class="text-sm font-semibold text-gold-600 hover:text-gold-700">
+    &larr; {t("news.backToList")}
+  </a>
+
+  <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">{title}</h1>
+
+  <p class="mt-4 text-sm text-ink-400 dark:text-night-500">
+    {t("news.published")} <time datetime={pubDate.toISOString()}>{formatDate(pubDate, lang)}</time>
+    {updatedDate && (
+      <> — {t("news.updated")} <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate, lang)}</time></>
+    )}
+  </p>
+
+  {article.isFallback && (
+    <p
+      class="mt-8 rounded-lg border border-gold-200 bg-gold-50 px-5 py-4 text-sm leading-relaxed text-gold-800 dark:border-gold-800 dark:bg-gold-900/20 dark:text-gold-200"
+    >
+      {t("news.fallbackNotice")}
+    </p>
+  )}
+
+  <!-- The fallback body is French: mark it up as such so screen readers and hyphenation
+       switch language, and so the text renders left-to-right inside an RTL page. -->
+  <div
+    class="prose-news mt-10"
+    lang={article.isFallback ? defaultLang : lang}
+    dir={article.isFallback ? dirs[defaultLang] : dirs[lang]}
+  >
+    <Content />
+  </div>
+</article>
