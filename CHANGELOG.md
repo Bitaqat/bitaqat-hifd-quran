@@ -3,6 +3,12 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-07 — Opening card & methodology content refinements
+
+### Changed
+- Updated the opening card (Al-Fâtihah) and the full methodology/presentation documents with refined
+  text, replacing the initial versions from the 2026-08-06 redesign. Same design, no layout changes.
+
 ## 2026-08-06 — Newsletter sending
 
 ### Added
