@@ -8,6 +8,20 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Constraints
+
+`public/_headers` sets a strict CSP: `script-src 'self'`, with no `'unsafe-inline'`. Inline
+`<script>` blocks are refused by the browser in production. This does not show up during
+development, because `astro dev` does not apply `_headers` — put page logic in a file under
+`public/scripts/` and load it with `src` instead.
+
+Wrangler v4 `kv` commands read and write **local** storage unless told otherwise. Pass
+`--remote` to reach the real namespace:
+
+```
+npx wrangler kv key list --binding BITAQAT_KV --prefix "nlsub:" --remote
+```
+
 ## Documentation
 
 Full documentation: https://docs.astro.build

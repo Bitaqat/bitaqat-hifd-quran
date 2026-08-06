@@ -15,8 +15,10 @@ version numbers — entries are grouped by date instead.
 
 ### Notes
 - Sending goes through Resend, isolated behind a `Mailer` interface so the provider can be swapped
-  without touching the routes. Requires the `RESEND_API_KEY` Worker secret and a verified sending
-  domain.
+  without touching the routes. Requires the `RESEND_API_KEY` Worker secret.
+- Email authentication is now set up on the domain: Resend's return path and SPF live on the `send`
+  subdomain, DKIM signs as `bitaqat-hifd-quran.com` so the signature aligns with the From address,
+  and a DMARC record was published at `p=none`. The root SPF used by Email Routing is untouched.
 - Only collection is implemented. Broadcasting news to the list is not built yet.
 
 ## 2026-08-06 — Resource redesign
