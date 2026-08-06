@@ -6,6 +6,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const startYear = 2014;
 const year = new Date().getFullYear();
 const links = routes[lang];
 ---
@@ -49,6 +50,6 @@ const links = routes[lang];
     </div>
   </div>
   <div class="border-t border-ink-200 py-6 text-center text-xs text-ink-400 dark:border-night-800">
-    &copy; {year} Bitaqat Hifd Qor'an — {t("footer.rights")}
+    &copy; {startYear} - {year} Bitaqat Hifd Qor'an — {t("footer.rights")}
   </div>
 </footer>
