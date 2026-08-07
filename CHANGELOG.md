@@ -3,6 +3,13 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-07 — Opening card case-count fix
+
+### Fixed
+- Opening card (Al-Fâtihah) recto stated 8 cases while the verso grid has 9 (verse 7 is longer and
+  spans two cases). Corrected on the card itself and in the matching figure in the methodology
+  documents and presentation decks, in all three languages.
+
 ## 2026-08-07 — Opening card & methodology content refinements
 
 ### Changed
