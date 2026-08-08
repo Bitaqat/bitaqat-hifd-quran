@@ -3,6 +3,12 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-08 — Level 5 card and methodology update
+
+### Fixed
+- Level 5 card verso (both themes) and PDF regenerated in French, English, and Arabic; the full
+  methodology document re-exported to match. Recto unchanged.
+
 ## 2026-08-07 — Opening card case-count fix
 
 ### Fixed
