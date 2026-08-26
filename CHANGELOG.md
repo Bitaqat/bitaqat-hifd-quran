@@ -3,6 +3,24 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-26 — Landing page for the app's address confirmation
+
+### Added
+- `/app/adresse-confirmee` and `/en/app/address-confirmed`: where the Bitaqat Hifd Qor'an mobile
+  app's email-confirmation link now lands. It used to land on `http://localhost:3000` — the
+  Supabase project's default Site URL — so a mentor who had just confirmed their address saw
+  `ERR_CONNECTION_REFUSED` and reasonably concluded it had failed.
+- The page reads Supabase's verdict from the URL fragment (`#error=...&error_code=otp_expired`),
+  which never reaches the server, and shows an expired-link state instead of claiming success.
+  On a touch device it then bounces to `bitaqat://auth`; the button is always there, because an
+  email is just as often opened on a computer, where a bare deep link leads nowhere.
+- `public/scripts/app-retour.js` — the fragment reading and the bounce, in a file rather than
+  inline, as the CSP requires.
+
+### Changed
+- `Layout.astro` takes an optional `noindex` prop. Both new pages use it: they are useful to
+  whoever received the link, and to nobody else.
+
 ## 2026-08-08 — Level 5 card and methodology update
 
 ### Fixed
