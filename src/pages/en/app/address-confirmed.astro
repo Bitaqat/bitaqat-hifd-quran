@@ -1,0 +1,65 @@
+---
+/** English twin of /app/adresse-confirmee — see that file for why this page exists. */
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  lang="en"
+  title="Address confirmed"
+  description="Confirmation of an adult account's address for the Bitaqat Hifd Qor'an app."
+  noindex
+>
+  <section class="mx-auto max-w-xl px-6 py-16 sm:py-24" data-app-retour data-scheme="bitaqat://auth">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Application</p>
+
+    <div data-etat="succes">
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+        Your address is confirmed
+      </h1>
+      <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+        <p>
+          The account is open. Go back to the <strong>Bitaqat Hifd Qor'an</strong> app and sign in
+          with this address and your password.
+        </p>
+        <p class="text-ink-500 dark:text-night-400">
+          If you are reading this on a computer, there is nothing more to do here: carry on from
+          the phone the app is installed on.
+        </p>
+      </div>
+      <p class="mt-8">
+        <a
+          href="bitaqat://auth"
+          class="inline-block rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900 dark:hover:bg-gold-400"
+        >
+          Open the app
+        </a>
+      </p>
+    </div>
+
+    <div data-etat="echec" data-titre="Link expired · Bitaqat Hifd Qor'an" hidden>
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+        This link is no longer valid
+      </h1>
+      <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+        <p>
+          A confirmation link expires after one hour, and works only once. This one has run out of
+          time, or had already been used.
+        </p>
+        <p>
+          Open the app again and ask to sign in with the same address: a new message will be sent.
+        </p>
+        <p class="text-ink-500 dark:text-night-400" data-detail hidden></p>
+      </div>
+      <p class="mt-8">
+        <a
+          href="/en/contact"
+          class="inline-block rounded-full border border-ink-200 px-6 py-3 text-sm font-semibold text-ink-800 transition-colors hover:bg-ink-50 dark:border-night-700 dark:text-night-100 dark:hover:bg-night-900"
+        >
+          Write to us
+        </a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script src="/scripts/app-retour.js" is:inline defer></script>

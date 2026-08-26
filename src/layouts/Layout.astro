@@ -8,12 +8,15 @@ interface Props {
   title: string;
   description?: string;
   lang?: Lang;
+  /** Pages de plomberie de l'application : utiles à qui reçoit le lien, à personne d'autre. */
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Kit gratuit et libre de cartes de récitation pour l'apprentissage et la mémorisation du Qor'an, avec une méthodologie pédagogique complète.",
   lang = "fr",
+  noindex = false,
 } = Astro.props;
 
 const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
@@ -31,6 +34,7 @@ const rssHref = lang === "fr" ? "/rss.xml" : `/${lang}/rss.xml`;
     <title>{title} · Bitaqat Hifd Qor'an</title>
     <meta name="description" content={description} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="alternate" type="application/rss+xml" title="Bitaqat Hifd Qor'an" href={rssHref} />
     {beaconToken && (
       <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={`{"token": "${beaconToken}"}`}></script>

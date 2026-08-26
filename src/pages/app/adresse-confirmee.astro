@@ -1,0 +1,80 @@
+---
+/**
+ * Où aboutit le lien de confirmation d'adresse de l'application (§5.1).
+ *
+ * Jusqu'au 26/08/2026 il aboutissait sur http://localhost:3000 — la Site URL par défaut
+ * du projet Supabase —, c'est-à-dire sur ERR_CONNECTION_REFUSED. La confirmation
+ * fonctionnait quand même (le jeton est validé avant la redirection), mais le mentor
+ * voyait une page d'erreur et concluait raisonnablement à un échec.
+ *
+ * Cette page existe parce qu'un courriel s'ouvre souvent ailleurs que sur le téléphone
+ * qui porte l'application : un lien profond nu n'aurait fait que déplacer la page
+ * d'erreur sur l'ordinateur du mentor.
+ *
+ * Supabase ne redirige ici qu'après avoir tranché. En cas d'échec — le cas courant est
+ * le lien expiré, une heure —, il ajoute `#error=...&error_code=...` dans le FRAGMENT,
+ * que le serveur ne voit jamais : c'est le script qui doit le lire.
+ */
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Adresse confirmée"
+  description="Confirmation de l'adresse d'un compte adulte de l'application Bitaqat Hifd Qor'an."
+  noindex
+>
+  <section class="mx-auto max-w-xl px-6 py-16 sm:py-24" data-app-retour data-scheme="bitaqat://auth">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Application</p>
+
+    <div data-etat="succes">
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+        Votre adresse est confirmée
+      </h1>
+      <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+        <p>
+          Le compte est ouvert. Retournez dans l'application <strong>Bitaqat Hifd Qor'an</strong>
+          et connectez-vous avec cette adresse et votre mot de passe.
+        </p>
+        <p class="text-ink-500 dark:text-night-400">
+          Si vous lisez ceci sur un ordinateur, rien de plus à faire ici : reprenez sur le
+          téléphone où l'application est installée.
+        </p>
+      </div>
+      <p class="mt-8">
+        <a
+          href="bitaqat://auth"
+          class="inline-block rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900 dark:hover:bg-gold-400"
+        >
+          Ouvrir l'application
+        </a>
+      </p>
+    </div>
+
+    <div data-etat="echec" data-titre="Lien expiré · Bitaqat Hifd Qor'an" hidden>
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+        Ce lien n'est plus valable
+      </h1>
+      <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+        <p>
+          Un lien de confirmation expire au bout d'une heure, et ne sert qu'une fois. Celui-ci
+          a fait son temps, ou il avait déjà été utilisé.
+        </p>
+        <p>
+          Rouvrez l'application et demandez la connexion avec cette même adresse : un nouveau
+          message vous sera envoyé.
+        </p>
+        <p class="text-ink-500 dark:text-night-400" data-detail hidden></p>
+      </div>
+      <p class="mt-8">
+        <a
+          href="/contact"
+          class="inline-block rounded-full border border-ink-200 px-6 py-3 text-sm font-semibold text-ink-800 transition-colors hover:bg-ink-50 dark:border-night-700 dark:text-night-100 dark:hover:bg-night-900"
+        >
+          Nous écrire
+        </a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script src="/scripts/app-retour.js" is:inline defer></script>
