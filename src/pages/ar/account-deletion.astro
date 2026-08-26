@@ -1,0 +1,181 @@
+---
+/**
+ * Arabic twin of /suppression-de-compte — see that file for why this page exists.
+ *
+ * The Arabic wording was written alongside the French and English pages on 26/08/2026 and
+ * is awaiting the author's review, like the rest of the Arabic content of the site.
+ */
+import Layout from "../../layouts/Layout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<Layout
+  lang="ar"
+  title="حذف حساب أو ملف"
+  description="كيفية حذف حساب شخص بالغ أو ملف متعلّم في تطبيق بطاقات حفظ القرآن، من داخل التطبيق أو بطلب."
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">التطبيق</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      حذف حساب أو ملف
+    </h1>
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-night-300">
+      يتيح تطبيق <strong>بطاقات حفظ القرآن</strong>
+      (<span class="font-mono text-sm" dir="ltr">com.bitaqat.hifdquran</span>)
+      حذف كل شيء من داخل التطبيق نفسه. هذه الصفحة موجّهة إلى من لم يعد يستطيع ذلك: حُذف التطبيق، أو
+      ضاع الهاتف، أو تعطّل الجهاز.
+    </p>
+
+    <p class="mt-6">
+      <a
+        href="#request"
+        class="inline-block rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900 dark:hover:bg-gold-400"
+      >
+        تقديم طلب حذف
+      </a>
+    </p>
+
+    <div class="mt-12 space-y-10 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">من داخل التطبيق، في الحال</h2>
+        <p class="mt-3">هذا أسرع طريق، ولا يحتاج إلى موافقة أحد.</p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            <strong>إن كنت بالغًا</strong> (وليًّا أو معلّمًا): تبويب <em>الوليّ</em> أو
+            <em>المعلّم</em> ← <em>الإعدادات</em> ← <em>حذف حسابي</em>.
+          </li>
+          <li>
+            <strong>إن كنت المتعلّم</strong>، على جهازك أنت: <em>الإعدادات</em> ←
+            <em>حذف ملفي</em>.
+          </li>
+          <li>
+            <strong>إن كنت وليّ قاصر</strong>: افتح صفحة الطفل ← <em>حذف ملف هذا الطفل</em>.
+            يطلب منك التطبيق كلمة المرور واسم الرحلة الخاص بالطفل. ولا يملك المعلّم هذا الحقّ أبدًا:
+            فهو للبالغ الذي أعطى موافقته عن الطفل.
+          </li>
+        </ul>
+      </div>
+
+      <div id="what-goes">
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">ما الذي يُحذف وما الذي يبقى</h2>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">ملف متعلّم</h3>
+        <p class="mt-2">
+          ينتقل الملف أولًا إلى <strong>سلّة مهملات مدّتها ثلاثون يومًا</strong>: يصير غير مرئيّ في
+          كلّ أنحاء التطبيق ولا يجري له شيء، غير أنّ وليّه ما زال يستطيع إرجاعه. وفي اليوم الحادي
+          والثلاثين يُمحى كلّ شيء بلا رجعة: اسم الرحلة، والصورة الرمزية، والتقدّم، وطلبات التصديق،
+          والتقييمات المستلَمة، والمواعيد، والأوسمة، والمكافآت، والجلسات، والسجلّ، والإشعارات — ومعها
+          جلسة الجهاز المجهولة.
+        </p>
+        <p class="mt-2">
+          وقبل الحذف يعرض التطبيق <strong>حفظ نسخة</strong> من المسار، تُسلَّم على الجهاز نفسه.
+          ولا يُرسَل هذا الملفّ إلى أيّ جهة.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">حساب بالغ</h3>
+        <p class="mt-2">
+          يُحذف: الحساب نفسه، وعنوان بريده الإلكتروني، والاسم المعروض، والتفضيلات، ورموز الدعوة،
+          ورموز الإشعارات الخاصة بأجهزته.
+        </p>
+        <p class="mt-2">
+          ولا تُحذف ملفات المتعلّمين الذين كان يتابعهم. فالبالغ لا يملك المتعلّم ولا يحوزه — إنّما هو
+          معلّمه أو وليّه. تعود تلك الملفات إلى حال «في انتظار معلّم»، وتبقى التقييمات التي أصدرها في
+          سجلّ المتعلّم بلا اسم صاحبها. فلا يفقد الطفل عمله لأنّ بالغًا انصرف.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">النسخ الاحتياطية</h3>
+        <p class="mt-2">
+          قد تحتفظ النسخ الاحتياطية التلقائية للخادم، وهي يحلّ بعضها محلّ بعض، بنسخة أيامًا معدودة
+          أخرى. ولا يُرجَع إليها قطّ لاستعادة حساب محذوف.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">ما لا يحتفظ به التطبيق أصلًا</h2>
+        <p class="mt-3">
+          لا شيء يُحذف ممّا لم يُجمع قطّ. لا يطلب التطبيق تاريخ ميلاد، ولا اسمًا مدنيًّا، ولا رقم
+          هاتف، ولا عنوانًا بريديًّا. ولا يقيس أيّ مدّة، ولا يصل إلى الميكروفون ولا الكاميرا ولا
+          الموقع، ولا يحوي أيّ متعقّب ولا أيّ إعلان. وليس للمتعلّم عنوان بريد إلكتروني: فجهازه يتّصل
+          دون هويّة. والبيانات مستضافة داخل الاتحاد الأوروبي.
+        </p>
+      </div>
+
+      <div id="request" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">تقديم طلب</h2>
+        <p class="mt-3">
+          إن لم يعد لديك وصول إلى التطبيق، فاكتب إلينا من هنا. اذكر عنوان البريد الإلكتروني للحساب
+          المعنيّ، وإن تعلّق الأمر بطفل فاذكر اسم الرحلة الذي كان يستعمله في التطبيق.
+        </p>
+        <p class="mt-2">
+          كلّ طلب <strong>يُتحقَّق منه ثمّ يُعالَج يدويًّا</strong>: نردّ عليك على العنوان الذي ذكرته
+          قبل أيّ حذف. وهذا أبطأ من زرّ، وهو مقصود — إذ لا ينبغي لنموذج علنيّ أن يمحو مسار طفل
+          بمجرّد عنوان مكتوب. فاحتسب بضعة أيام.
+        </p>
+
+        <form
+          id="contact-form"
+          class="mt-8 space-y-5"
+          data-objet="suppression"
+          data-msg-missing-turnstile="يرجى إتمام التحقّق الأمني قبل الإرسال."
+          data-msg-sending="جارٍ الإرسال…"
+          data-msg-success="أُرسل الطلب. سنردّ على هذا العنوان قبل أيّ حذف."
+          data-msg-error="حدث خطأ. أعد المحاولة بعد قليل."
+        >
+          <div>
+            <label for="name" class="block text-sm font-medium text-ink-700 dark:text-night-200">الاسم</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              maxlength="100"
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-ink-700 dark:text-night-200">
+              البريد الإلكتروني للحساب المراد حذفه
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="200"
+              dir="ltr"
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-ink-700 dark:text-night-200">
+              ما المطلوب حذفه
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              maxlength="5000"
+              rows="6"
+              placeholder="حساب البالغ، أو ملف طفل (اذكر اسم رحلته)، أو كلاهما."
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            ></textarea>
+          </div>
+
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
+          <button
+            type="submit"
+            id="contact-submit"
+            class="w-full rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            إرسال الطلب
+          </button>
+          <p id="contact-status" role="status" class="text-center text-sm text-ink-500 dark:text-night-400"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/scripts/contact.js" defer></script>
+</Layout>

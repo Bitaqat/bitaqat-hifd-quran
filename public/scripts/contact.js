@@ -31,6 +31,11 @@
           name: formData.get("name"),
           email: formData.get("email"),
           message: formData.get("message"),
+          // Ajouté le 26/08/2026 : la page de demande de suppression réutilise ce
+          // formulaire, et une demande de suppression ne doit pas arriver dans la boîte
+          // sous le même intitulé qu'une question sur la méthodologie. Absent partout
+          // ailleurs, et le serveur retombe alors sur l'objet du contact ordinaire.
+          objet: form.dataset.objet || undefined,
           turnstileToken: turnstileToken,
         }),
       });

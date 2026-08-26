@@ -1,0 +1,197 @@
+---
+/**
+ * Demande de suppression de compte — exigence Google Play (règle « Suppression de
+ * compte », vérifiée le 26/08/2026).
+ *
+ * Play demande DEUX chemins, et non un : un chemin dans l'application, et une page web
+ * atteignable SANS session. La raison est dans la règle elle-même — « certains
+ * utilisateurs ont pu désinstaller l'application » —, et c'est exactement le cas que le
+ * constat du 22/08 avait trouvé dans notre propre produit : ceux qui écriront sont ceux
+ * qui n'ont plus l'app.
+ *
+ * Cette page ne supprime rien elle-même, et c'est une décision de l'auteur (26/08) :
+ * demande par courriel, vérification, traitement manuel. Un formulaire public qui
+ * effacerait le parcours d'un enfant sur la foi d'une adresse saisie serait une porte,
+ * pas un droit.
+ */
+import Layout from "../layouts/Layout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<Layout
+  title="Supprimer un compte ou un profil"
+  description="Comment supprimer un compte adulte ou le profil d'un apprenant dans l'application Bitaqat Hifd Qor'an, depuis l'application ou par demande."
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Application</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      Supprimer un compte ou un profil
+    </h1>
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-night-300">
+      L'application <strong>Bitaqat Hifd Qor'an</strong> (<span class="font-mono text-sm">com.bitaqat.hifdquran</span>)
+      permet de tout supprimer depuis l'application elle-même. Cette page est là pour ceux qui ne le
+      peuvent plus — application désinstallée, téléphone perdu, appareil hors d'usage.
+    </p>
+
+    <!-- Play demande que le chemin de demande soit « bien en évidence et facile à
+         trouver sur la page ». Il est donc annoncé ici, en haut, avant les explications. -->
+    <p class="mt-6">
+      <a
+        href="#demande"
+        class="inline-block rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900 dark:hover:bg-gold-400"
+      >
+        Faire une demande de suppression
+      </a>
+    </p>
+
+    <div class="mt-12 space-y-10 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">Depuis l'application, tout de suite</h2>
+        <p class="mt-3">C'est le chemin le plus rapide, et il ne demande l'accord de personne.</p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            <strong>Vous êtes un adulte</strong> (parent, tuteur ou professeur) : onglet
+            <em>Tuteur</em> ou <em>Mentor</em> → <em>Réglages</em> → <em>Supprimer mon compte</em>.
+          </li>
+          <li>
+            <strong>Vous êtes l'apprenant</strong>, sur votre propre appareil : <em>Réglages</em> →
+            <em>Supprimer mon profil</em>.
+          </li>
+          <li>
+            <strong>Vous êtes le tuteur d'un mineur</strong> : ouvrez la fiche de l'enfant →
+            <em>Supprimer le profil de cet enfant</em>. Le geste demande votre mot de passe et le nom
+            de voyage de l'enfant. Un professeur ne peut jamais le faire : ce droit appartient à
+            l'adulte qui a consenti pour l'enfant.
+          </li>
+        </ul>
+      </div>
+
+      <div id="ce-qui-part">
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">Ce qui est supprimé, et ce qui reste</h2>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">Un profil d'apprenant</h3>
+        <p class="mt-2">
+          Le profil part d'abord dans une <strong>corbeille de 30 jours</strong> : il devient invisible
+          partout dans l'application et plus rien ne circule pour lui, mais son tuteur peut encore le
+          rétablir. Au 31<sup>e</sup> jour, tout est effacé, sans retour possible : nom de voyage,
+          avatar, progression, demandes de validation, évaluations reçues, échéances, badges,
+          récompenses, séances, historique et notifications — ainsi que la session anonyme de
+          l'appareil.
+        </p>
+        <p class="mt-2">
+          Avant de supprimer, l'application propose d'<strong>enregistrer une copie</strong> du
+          parcours, remise sur l'appareil. Ce fichier n'est envoyé nulle part.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">Un compte adulte</h3>
+        <p class="mt-2">
+          Sont supprimés : le compte lui-même, son adresse e-mail, son nom d'usage, ses préférences,
+          ses codes d'invitation et les jetons de notification de ses appareils.
+        </p>
+        <p class="mt-2">
+          Ne sont <strong>pas</strong> supprimés : les profils des apprenants qu'il suivait. Un adulte
+          n'est ni propriétaire ni détenteur d'un apprenant — il en est le professeur ou le tuteur.
+          Ces profils repassent « en attente de professeur », et les évaluations qu'il avait rendues
+          restent dans l'historique de l'apprenant, sans nom d'auteur. Un enfant ne perd pas son
+          travail parce qu'un adulte s'en va.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">Les sauvegardes</h3>
+        <p class="mt-2">
+          Les sauvegardes automatiques du serveur, qui se remplacent les unes les autres, peuvent
+          contenir une copie quelques jours de plus. Elles ne sont jamais consultées pour rétablir un
+          compte supprimé.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">Ce que l'application ne détient pas</h2>
+        <p class="mt-3">
+          Il n'y a rien à supprimer de ce qui n'a jamais été collecté. L'application ne demande ni
+          date de naissance, ni état civil, ni numéro de téléphone, ni adresse postale. Elle ne
+          mesure aucune durée, n'accède ni au micro, ni à la caméra, ni à la position, et ne contient
+          aucun traqueur ni aucune publicité. Un apprenant n'a pas d'adresse e-mail : son appareil se
+          connecte anonymement. Les données sont hébergées dans l'Union européenne.
+        </p>
+      </div>
+
+      <div id="demande" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">Faire une demande</h2>
+        <p class="mt-3">
+          Si vous n'avez plus accès à l'application, écrivez-nous ici. Indiquez l'adresse e-mail du
+          compte adulte concerné, et — s'il s'agit d'un enfant — le nom de voyage qu'il utilisait dans
+          l'application.
+        </p>
+        <p class="mt-2">
+          Chaque demande est <strong>vérifiée puis traitée à la main</strong> : nous vous répondons à
+          l'adresse indiquée avant toute suppression. C'est plus lent qu'un bouton, et c'est
+          volontaire — un formulaire public ne doit pas pouvoir effacer le parcours d'un enfant sur la
+          seule foi d'une adresse saisie. Comptez quelques jours.
+        </p>
+
+        <form
+          id="contact-form"
+          class="mt-8 space-y-5"
+          data-objet="suppression"
+          data-msg-missing-turnstile="Merci de valider le contrôle de sécurité avant d'envoyer."
+          data-msg-sending="Envoi en cours…"
+          data-msg-success="Demande envoyée. Nous vous répondrons à cette adresse avant toute suppression."
+          data-msg-error="Une erreur est survenue. Réessayez dans quelques instants."
+        >
+          <div>
+            <label for="name" class="block text-sm font-medium text-ink-700 dark:text-night-200">Nom</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              maxlength="100"
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-ink-700 dark:text-night-200">
+              E-mail du compte à supprimer
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="200"
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-ink-700 dark:text-night-200">
+              Ce qu'il faut supprimer
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              maxlength="5000"
+              rows="6"
+              placeholder="Le compte adulte, le profil d'un enfant (indiquez son nom de voyage), ou les deux."
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            ></textarea>
+          </div>
+
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
+          <button
+            type="submit"
+            id="contact-submit"
+            class="w-full rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            Envoyer la demande
+          </button>
+          <p id="contact-status" role="status" class="text-center text-sm text-ink-500 dark:text-night-400"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/scripts/contact.js" defer></script>
+</Layout>

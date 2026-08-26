@@ -24,7 +24,8 @@ export const routes: Record<Lang, Record<
   | "contact"
   | "mentions"
   | "newsletter"
-  | "actualites",
+  | "actualites"
+  | "suppression",
   string
 >> = {
   fr: {
@@ -38,6 +39,7 @@ export const routes: Record<Lang, Record<
     mentions: "/mentions-legales",
     newsletter: "/newsletter",
     actualites: "/actualites",
+    suppression: "/suppression-de-compte",
   },
   en: {
     home: "/en/",
@@ -50,6 +52,7 @@ export const routes: Record<Lang, Record<
     mentions: "/en/legal-notice",
     newsletter: "/en/newsletter",
     actualites: "/en/news",
+    suppression: "/en/account-deletion",
   },
   ar: {
     home: "/ar/",
@@ -62,6 +65,7 @@ export const routes: Record<Lang, Record<
     mentions: "/ar/legal-notice",
     newsletter: "/ar/newsletter",
     actualites: "/ar/news",
+    suppression: "/ar/account-deletion",
   },
 };
 
@@ -77,6 +81,7 @@ export const ui = {
     "footer.project": "Le projet",
     "footer.info": "Informations",
     "footer.mentions": "Mentions légales",
+    "footer.suppression": "Supprimer un compte",
     "footer.rights": "Œuvre libre, non commercialisable.",
     "footer.follow": "Suivez le projet sur X",
     "action.view": "Voir",
@@ -141,6 +146,7 @@ export const ui = {
     "footer.project": "The project",
     "footer.info": "Information",
     "footer.mentions": "Legal notice",
+    "footer.suppression": "Delete an account",
     "footer.rights": "Free work, not for commercial use.",
     "footer.follow": "Follow the project on X",
     "action.view": "View",
@@ -204,6 +210,7 @@ export const ui = {
     "footer.project": "المشروع",
     "footer.info": "معلومات",
     "footer.mentions": "الإشعار القانوني",
+    "footer.suppression": "حذف حساب",
     "footer.rights": "عمل حر، غير مخصص للاستخدام التجاري.",
     "footer.follow": "تابع المشروع على X",
     "action.view": "عرض",

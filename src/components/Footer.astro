@@ -52,6 +52,9 @@ const links = routes[lang];
         <li><a href={links.contact} class="hover:text-gold-600">{t("nav.contact")}</a></li>
         <li><a href={links.newsletter} class="hover:text-gold-600">{t("footer.newsletter")}</a></li>
         <li><a href={links.mentions} class="hover:text-gold-600">{t("footer.mentions")}</a></li>
+        <!-- Exigence Google Play : la page de demande de suppression doit être
+             atteignable sans session, donc depuis n'importe quelle page du site. -->
+        <li><a href={links.suppression} class="hover:text-gold-600">{t("footer.suppression")}</a></li>
       </ul>
     </div>
   </div>

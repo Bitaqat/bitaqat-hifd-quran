@@ -3,6 +3,21 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-26 — Account deletion request page
+
+### Added
+- `/suppression-de-compte`, `/en/account-deletion` and `/ar/account-deletion`: the web link
+  Google Play requires alongside the in-app deletion path, reachable without signing in — because
+  the people who will write are precisely those who no longer have the app. The page states what is
+  deleted, what is kept, and why a request is verified and handled by hand rather than by a button:
+  a public form must not be able to erase a child's journey on the strength of a typed address.
+- All three are linked from the footer of every page, in their own locale.
+
+### Changed
+- `/api/contact` accepts an optional `objet`. Only the subject line changes, and only from a closed
+  list held server-side, so a crafted request cannot write its own. A deletion request no longer
+  lands in the inbox under the same heading as a question about the methodology.
+
 ## 2026-08-26 — Landing page for the app's address confirmation
 
 ### Added

@@ -16,7 +16,13 @@ const TO_ADDRESS = "bitaqat.hifd.quran@proton.me";
 export async function handleContact(request: Request, env: Env): Promise<Response> {
   if (request.method !== "POST") return json({ ok: false, error: "method_not_allowed" }, 405);
 
-  let body: { name?: string; email?: string; message?: string; turnstileToken?: string };
+  let body: {
+    name?: string;
+    email?: string;
+    message?: string;
+    objet?: string;
+    turnstileToken?: string;
+  };
   try {
     body = await request.json();
   } catch {
@@ -27,6 +33,15 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
   const email = (body.email ?? "").trim();
   const message = (body.message ?? "").trim();
   const turnstileToken = body.turnstileToken ?? "";
+  /**
+   * The deletion-request page (a Google Play requirement) reuses this form. Only the
+   * subject line changes, and only from a closed list: whatever the client sends, the
+   * subject of the mail is chosen here, so a crafted request cannot write its own.
+   */
+  const sujet =
+    body.objet === "suppression"
+      ? "Demande de suppression de compte — page /suppression-de-compte"
+      : "Nouveau message — formulaire de contact du site";
 
   if (!name || name.length > MAX_NAME) return json({ ok: false, error: "invalid_name" }, 400);
   if (!email || email.length > MAX_EMAIL || !EMAIL_RE.test(email)) return json({ ok: false, error: "invalid_email" }, 400);
@@ -49,7 +64,7 @@ export async function handleContact(request: Request, env: Env): Promise<Respons
     const msg = createMimeMessage();
     msg.setSender({ name: "Bitaqat Hifd Qor'an — Site", addr: FROM_ADDRESS });
     msg.setRecipient(TO_ADDRESS);
-    msg.setSubject("Nouveau message — formulaire de contact du site");
+    msg.setSubject(sujet);
     msg.setHeader("Reply-To", new Mailbox(email));
     msg.addMessage({
       contentType: "text/plain",

@@ -1,0 +1,178 @@
+---
+/** English twin of /suppression-de-compte — see that file for why this page exists. */
+import Layout from "../../layouts/Layout.astro";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<Layout
+  lang="en"
+  title="Delete an account or a profile"
+  description="How to delete an adult account or a learner's profile in the Bitaqat Hifd Qor'an app, from the app or by request."
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Application</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      Delete an account or a profile
+    </h1>
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-night-300">
+      The <strong>Bitaqat Hifd Qor'an</strong> app (<span class="font-mono text-sm">com.bitaqat.hifdquran</span>)
+      lets you delete everything from within the app itself. This page is for those who no longer
+      can — app uninstalled, phone lost, device out of service.
+    </p>
+
+    <p class="mt-6">
+      <a
+        href="#request"
+        class="inline-block rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900 dark:hover:bg-gold-400"
+      >
+        Request a deletion
+      </a>
+    </p>
+
+    <div class="mt-12 space-y-10 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">From the app, right away</h2>
+        <p class="mt-3">This is the fastest path, and it needs nobody's approval.</p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            <strong>You are an adult</strong> (parent, guardian or teacher): <em>Guardian</em> or
+            <em>Mentor</em> tab → <em>Settings</em> → <em>Delete my account</em>.
+          </li>
+          <li>
+            <strong>You are the learner</strong>, on your own device: <em>Settings</em> →
+            <em>Delete my profile</em>.
+          </li>
+          <li>
+            <strong>You are a minor's guardian</strong>: open the child's page →
+            <em>Delete this child's profile</em>. The gesture asks for your password and the child's
+            travel name. A teacher can never do it: that right belongs to the adult who consented for
+            the child.
+          </li>
+        </ul>
+      </div>
+
+      <div id="what-goes">
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">What is deleted, and what stays</h2>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">A learner's profile</h3>
+        <p class="mt-2">
+          The profile first goes into a <strong>30-day bin</strong>: it becomes invisible everywhere in
+          the app and nothing circulates for it any more, but its guardian can still bring it back. On
+          the 31st day everything is erased, with no way back: travel name, avatar, progress,
+          validation requests, evaluations received, deadlines, badges, rewards, sessions, history and
+          notifications — along with the device's anonymous session.
+        </p>
+        <p class="mt-2">
+          Before deleting, the app offers to <strong>save a copy</strong> of the journey, handed over on
+          the device. That file is not sent anywhere.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">An adult account</h3>
+        <p class="mt-2">
+          Deleted: the account itself, its email address, its display name, its preferences, its
+          invitation codes and the notification tokens of its devices.
+        </p>
+        <p class="mt-2">
+          <strong>Not</strong> deleted: the profiles of the learners it followed. An adult neither owns
+          nor holds a learner — they are that learner's teacher or guardian. Those profiles go back to
+          “waiting for a teacher”, and the evaluations the adult had given stay in the learner's
+          history, without an author's name. A child does not lose their work because an adult leaves.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">Backups</h3>
+        <p class="mt-2">
+          The server's automatic backups, which overwrite one another, may hold a copy for a few days
+          longer. They are never consulted to restore a deleted account.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">What the app does not hold</h2>
+        <p class="mt-3">
+          There is nothing to delete of what was never collected. The app asks for no date of birth, no
+          legal name, no phone number, no postal address. It measures no duration, reaches neither
+          microphone, nor camera, nor location, and contains no tracker and no advertising. A learner
+          has no email address: their device signs in anonymously. Data is hosted in the European
+          Union.
+        </p>
+      </div>
+
+      <div id="request" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">Make a request</h2>
+        <p class="mt-3">
+          If you no longer have access to the app, write to us here. Give the email address of the
+          adult account concerned and — if a child is involved — the travel name they used in the app.
+        </p>
+        <p class="mt-2">
+          Every request is <strong>verified and then handled by hand</strong>: we reply to the address
+          you give before anything is deleted. That is slower than a button, and deliberately so — a
+          public form must not be able to erase a child's journey on the strength of a typed address
+          alone. Allow a few days.
+        </p>
+
+        <form
+          id="contact-form"
+          class="mt-8 space-y-5"
+          data-objet="suppression"
+          data-msg-missing-turnstile="Please complete the security check before sending."
+          data-msg-sending="Sending…"
+          data-msg-success="Request sent. We will reply to this address before anything is deleted."
+          data-msg-error="Something went wrong. Please try again in a moment."
+        >
+          <div>
+            <label for="name" class="block text-sm font-medium text-ink-700 dark:text-night-200">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              maxlength="100"
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-ink-700 dark:text-night-200">
+              Email of the account to delete
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="200"
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-ink-700 dark:text-night-200">
+              What should be deleted
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              maxlength="5000"
+              rows="6"
+              placeholder="The adult account, a child's profile (give their travel name), or both."
+              class="mt-1 w-full rounded-lg border border-ink-200 bg-white px-4 py-2.5 text-sm text-ink-900 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400 dark:border-night-700 dark:bg-night-900 dark:text-white"
+            ></textarea>
+          </div>
+
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+
+          <button
+            type="submit"
+            id="contact-submit"
+            class="w-full rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-gold-500/20 transition-colors hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            Send the request
+          </button>
+          <p id="contact-status" role="status" class="text-center text-sm text-ink-500 dark:text-night-400"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="/scripts/contact.js" defer></script>
+</Layout>
