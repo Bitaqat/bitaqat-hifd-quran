@@ -44,23 +44,38 @@
       // réponses : c'est ce titre-là qui reste dans l'historique et dans un partage.
       var titre = echec.getAttribute('data-titre');
       if (titre) document.title = titre;
-      // Le libellé brut de Supabase est en anglais et technique : il ne remplace pas le
-      // texte de la page, il se range dessous pour qui sait quoi en faire.
-      var description = params.get('error_description');
-      var detail = echec.querySelector('[data-detail]');
-      if (detail && description) {
-        detail.textContent = description.replace(/\+/g, ' ');
-        detail.hidden = false;
-      }
+      /**
+       * Le libellé brut de Supabase (« Email link is invalid or has expired ») était
+       * affiché ici jusqu'au 29/08/2026. Il est parti après l'essai de l'auteur, qui l'a
+       * signalé comme une coquille — et il avait raison : une phrase ANGLAISE et
+       * technique au bas d'une page française ressemble à un défaut, quoi qu'elle dise.
+       * Elle n'apprenait rien de plus que le texte au-dessus, qui dit déjà la même chose
+       * en français et avec le geste à faire.
+       */
     }
     return;
   }
 
+  /**
+   * LE BOUTON NE PARAÎT QUE LÀ OÙ IL MÈNE QUELQUE PART.
+   *
+   * Il était affiché partout, au nom de « il n'y a jamais de rebond sans bouton ». Vrai
+   * sur un téléphone ; faux sur un ordinateur, où `bitaqat://` n'est enregistré par
+   * aucune application et où le bouton ne fait, littéralement, RIEN. L'auteur l'a
+   * constaté le 29/08 : un bouton mort est pire que pas de bouton — on l'appuie, on
+   * recommence, on conclut que la page est cassée.
+   *
+   * Sur un ordinateur, le paragraphe « reprenez sur le téléphone où l'application est
+   * installée » reste, et c'est le seul conseil vrai à cet endroit-là.
+   */
   var scheme = section.getAttribute('data-scheme');
   var tactile = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-  if (scheme && tactile) {
-    window.setTimeout(function () {
-      window.location.href = scheme;
-    }, 900);
-  }
+  if (!scheme || !tactile) return;
+
+  var bouton = section.querySelector('[data-vers-app]');
+  if (bouton) bouton.hidden = false;
+
+  window.setTimeout(function () {
+    window.location.href = scheme;
+  }, 900);
 })();

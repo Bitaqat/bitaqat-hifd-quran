@@ -29,6 +29,8 @@ import Layout from "../../../layouts/Layout.astro";
       <p class="mt-8">
         <a
           href="bitaqat://auth"
+          data-vers-app
+          hidden
           class="inline-block rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900 dark:hover:bg-gold-400"
         >
           Open the app
@@ -48,7 +50,6 @@ import Layout from "../../../layouts/Layout.astro";
         <p>
           Open the app again and ask to sign in with the same address: a new message will be sent.
         </p>
-        <p class="text-ink-500 dark:text-night-400" data-detail hidden></p>
       </div>
       <p class="mt-8">
         <a
