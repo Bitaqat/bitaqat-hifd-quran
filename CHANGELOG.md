@@ -3,6 +3,18 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-08-29 — Fixes from the first real signup
+
+### Fixed
+- `/app/adresse-confirmee` read "Bitaqat Hifd Qor'anet connectez-vous": Astro compresses HTML and
+  ate the newline after `</strong>`. Same fix applied to `/ar/account-deletion`.
+- The expired-link page no longer shows Supabase's raw `error_description`. An English, technical
+  sentence at the foot of a French page reads as a defect whatever it says, and it taught nothing
+  the French text above does not already say.
+- "Ouvrir l'application" now appears only on a touch device. On a computer `bitaqat://` is
+  registered by no application and the button was inert — pressed, pressed again, and the page
+  concluded broken. The sentence telling you to carry on from the phone stays.
+
 ## 2026-08-26 — Account deletion request page
 
 ### Added
