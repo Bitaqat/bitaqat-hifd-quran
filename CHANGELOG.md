@@ -3,6 +3,25 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-09-12 — Password reset landing page
+
+### Added
+- `/app/nouveau-mot-de-passe` and `/en/app/new-password`, both `noindex`: where the app's
+  "forgotten password" link lands. Twin of the address-confirmation pages, differing on the one
+  point that decides everything — a confirmation is finished when the page renders, a reset is
+  not. The fragment Supabase leaves here carries an open session, and only the app can set the
+  new password, so the page forwards the fragment to `bitaqat://auth` rather than wiping it.
+- `public/scripts/app-mot-de-passe.js`, separate from `app-retour.js` on purpose: the two do the
+  opposite thing with the fragment, and `app-retour.js` has been in production since 29/08 on the
+  busier of the two paths.
+
+### Notes
+- The pages say three things, not two. Expired link, as before. Good link on a phone: the app
+  opens and the button stays. Good link on a COMPUTER: `bitaqat://` leads nowhere there, and the
+  link has just been spent where the password cannot be chosen — so the page says to carry on
+  from the phone and ask for a new message, instead of letting someone wait in front of a screen
+  that will not change.
+
 ## 2026-08-29 — Fixes from the first real signup
 
 ### Fixed
