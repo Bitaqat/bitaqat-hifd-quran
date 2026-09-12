@@ -61,11 +61,16 @@
   var scheme = section.getAttribute('data-scheme');
   var tactile = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 
+  // La branche ordinateur est celle qui est rendue visible : il n'y a rien à faire pour
+  // elle, et c'est aussi ce qui s'affiche si ce script ne s'exécute jamais.
   if (!scheme || !tactile) {
-    if (surOrdinateur) surOrdinateur.hidden = false;
     nettoyer();
     return;
   }
+
+  // On passe à la branche tactile : l'autre doit partir, sans quoi les deux titres se
+  // suivraient.
+  if (surOrdinateur) surOrdinateur.hidden = true;
 
   var vers = scheme + '#' + fragment;
   var bouton = section.querySelector('[data-vers-app]');

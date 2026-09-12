@@ -25,11 +25,18 @@ import Layout from "../../layouts/Layout.astro";
     <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Application</p>
 
     <div data-etat="succes">
-      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
-        Choisissez votre nouveau mot de passe
-      </h1>
-
+      <!--
+        LE TITRE APPARTIENT À CHAQUE BRANCHE, et il n'a pas toujours été là. Il était rendu
+        une seule fois, au-dessus des deux : « Choisissez votre nouveau mot de passe »
+        s'affichait donc aussi sur un ordinateur, juste avant le paragraphe expliquant qu'on
+        ne peut justement pas le faire ici. Un titre rendu avant que le script ne sache sur
+        quel appareil on est promet ce que la page dément trois lignes plus bas (relevé par
+        l'auteur le 12/09/2026, à la fin de l'étape E.5).
+      -->
       <div data-si="tactile" hidden>
+        <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+          Choisissez votre nouveau mot de passe
+        </h1>
         <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
           <p>
             Le lien est reconnu. L'application <strong>Bitaqat Hifd Qor'an</strong>{' '}
@@ -55,8 +62,17 @@ import Layout from "../../layouts/Layout.astro";
         L'ordinateur, et la seule chose honnête à y dire. Le lien ne sert qu'une fois : en
         s'ouvrant ici, il vient d'être dépensé, et il ne s'ouvrira plus sur le téléphone.
         Promettre le contraire ferait attendre devant un écran qui ne changera pas.
+
+        C'est aussi la branche VISIBLE PAR DÉFAUT, et c'est le second effet du titre déplacé.
+        Si le script ne s'exécute pas — JavaScript coupé, fichier bloqué —, le fragment n'est
+        pas lu et rien ne peut l'être : la page affichait alors un titre et le vide. Ce
+        qu'elle affiche désormais est le seul conseil qui reste vrai dans tous les cas, y
+        compris celui-là.
       -->
-      <div data-si="ordinateur" hidden>
+      <div data-si="ordinateur">
+        <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+          Reprenez sur votre téléphone
+        </h1>
         <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
           <p>
             Le nouveau mot de passe se choisit dans l'application, sur le téléphone où elle est
