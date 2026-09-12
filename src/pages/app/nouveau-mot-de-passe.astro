@@ -1,0 +1,101 @@
+---
+/**
+ * Où aboutit le lien « mot de passe oublié » de l'application (§5.1).
+ *
+ * Jumelle de `/app/adresse-confirmee`, et elle en diffère sur un point qui décide de
+ * tout : la confirmation d'adresse est FINIE quand cette page s'affiche, la
+ * réinitialisation ne l'est pas. Le fragment que Supabase dépose ici porte une session
+ * ouverte, et c'est l'application — elle seule — qui peut poser le nouveau mot de passe.
+ * La page transmet donc le fragment à `bitaqat://auth` au lieu de l'effacer d'emblée
+ * (`public/scripts/app-mot-de-passe.js`).
+ *
+ * D'où un troisième message, qu'aucune autre page du site n'a à porter : sur un
+ * ordinateur, ce lien vient d'être dépensé pour rien. Le taire laisserait quelqu'un
+ * attendre devant son téléphone un lien qui ne s'y ouvrira jamais.
+ */
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Nouveau mot de passe"
+  description="Retour du lien de réinitialisation du mot de passe d'un compte adulte de l'application Bitaqat Hifd Qor'an."
+  noindex
+>
+  <section class="mx-auto max-w-xl px-6 py-16 sm:py-24" data-mot-de-passe data-scheme="bitaqat://auth">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">Application</p>
+
+    <div data-etat="succes">
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+        Choisissez votre nouveau mot de passe
+      </h1>
+
+      <div data-si="tactile" hidden>
+        <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+          <p>
+            Le lien est reconnu. L'application <strong>Bitaqat Hifd Qor'an</strong>{' '}
+            va s'ouvrir sur l'écran où se choisit le nouveau mot de passe.
+          </p>
+          <p class="text-ink-500 dark:text-night-400">
+            Si elle ne s'ouvre pas d'elle-même, utilisez le bouton ci-dessous.
+          </p>
+        </div>
+        <p class="mt-8">
+          <a
+            href="bitaqat://auth"
+            data-vers-app
+            hidden
+            class="inline-block rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900 dark:hover:bg-gold-400"
+          >
+            Choisir mon mot de passe
+          </a>
+        </p>
+      </div>
+
+      <!--
+        L'ordinateur, et la seule chose honnête à y dire. Le lien ne sert qu'une fois : en
+        s'ouvrant ici, il vient d'être dépensé, et il ne s'ouvrira plus sur le téléphone.
+        Promettre le contraire ferait attendre devant un écran qui ne changera pas.
+      -->
+      <div data-si="ordinateur" hidden>
+        <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+          <p>
+            Le nouveau mot de passe se choisit dans l'application, sur le téléphone où elle est
+            installée — cette page ne peut pas le faire à sa place.
+          </p>
+          <p>
+            Ce lien-ci a été ouvert ici, et un lien ne sert qu'une fois. Reprenez sur le
+            téléphone&nbsp;: dans l'application, écran de connexion, «&nbsp;Mot de passe
+            oublié&nbsp;?&nbsp;» — un nouveau message vous y attendra.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div data-etat="echec" data-titre="Lien expiré · Bitaqat Hifd Qor'an" hidden>
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+        Ce lien n'est plus valable
+      </h1>
+      <div class="mt-8 space-y-4 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+        <p>
+          Un lien de réinitialisation expire au bout d'une heure, et ne sert qu'une fois.
+          Celui-ci a fait son temps, ou il avait déjà été utilisé.
+        </p>
+        <p>
+          Rouvrez l'application sur votre téléphone et redemandez-en un depuis l'écran de
+          connexion, «&nbsp;Mot de passe oublié&nbsp;?&nbsp;». Votre mot de passe actuel n'a
+          pas changé.
+        </p>
+      </div>
+      <p class="mt-8">
+        <a
+          href="/contact"
+          class="inline-block rounded-full border border-ink-200 px-6 py-3 text-sm font-semibold text-ink-800 transition-colors hover:bg-ink-50 dark:border-night-700 dark:text-night-100 dark:hover:bg-night-900"
+        >
+          Nous écrire
+        </a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script src="/scripts/app-mot-de-passe.js" is:inline defer></script>
