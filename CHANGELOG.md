@@ -26,6 +26,10 @@ version numbers — entries are grouped by date instead.
   they stand. They get filled once the association is registered, not before, and not by guessing.
 - Fourteen days is now a public promise rather than an operator setting: the workflow in the app
   repository, the bucket lifecycle rule and this page have to move together or not at all.
+- §6 says what we hold from each provider. Supabase and Resend publish their data processing
+  agreement; Expo gives its MSA and DPA terms on request only. The sentence promises a dated
+  copy of what is published and a request where nothing is — which is true on 20/09, where
+  "we hold all three" would not be.
 
 ## 2026-09-12 — Password reset landing page
 
