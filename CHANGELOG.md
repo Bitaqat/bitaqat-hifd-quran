@@ -3,6 +3,26 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-09-20 — The last of the eaten spaces
+
+### Fixed
+- The five pages the previous entry left alone: `mentions-legales`, `telechargements`,
+  `en/legal-notice`, `en/downloads` and `ar/downloads`. All of them on the word before a licence
+  link — "sous licence**CC BY-NC 4.0**", "under the**CC BY-NC 4.0**", "بموجب ترخيص**CC BY-NC
+  4.0**" — plus "via la page**contact**" and its English twin. Live since the site went up.
+- Two of them also lost the space **after** the licence link, which the English pages needed for
+  "4.0 licence: free sharing" and the French ones for their colon: `mentions-legales` and
+  `telechargements` read "4.0: partage" where French wants "4.0 : partage". Arabic does not take
+  a space before a colon, so `ar/downloads` was right as it stood and was left alone.
+
+### Notes
+- A whole-site sweep now finds eleven remaining hits, all on `ar/privacy-policy`, and all of them
+  correct: the Arabic conjunction و is written against the word that follows it. That is the
+  shape to expect from this check on an Arabic page — it is not a defect list.
+- Two of the five files, `mentions-legales.astro` and `en/legal-notice.astro`, are stored with
+  CRLF. The pass preserved each file's own endings rather than assuming, and the diff is ten
+  single-token insertions with nothing else moved.
+
 ## 2026-09-20 — Prevalence clause on the two other Arabic pages
 
 ### Added
