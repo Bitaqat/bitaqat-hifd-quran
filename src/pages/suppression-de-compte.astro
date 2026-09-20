@@ -98,9 +98,8 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
         <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">Les sauvegardes</h3>
         <p class="mt-2">
-          Les sauvegardes automatiques du serveur, qui se remplacent les unes les autres, peuvent
-          contenir une copie quelques jours de plus. Elles ne sont jamais consultées pour rétablir un
-          compte supprimé.
+          Une copie chiffrée de la base est réalisée chaque nuit et conservée 14 jours, puis
+          détruite. Elle n'est jamais consultée pour rétablir un compte supprimé.
         </p>
       </div>
 

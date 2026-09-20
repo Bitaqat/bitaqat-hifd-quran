@@ -1,0 +1,481 @@
+---
+/**
+ * Privacy policy — version 0.9 of 19/09/2026.
+ *
+ * Both stores require a policy URL on the listing, and Apple additionally requires
+ * (rule 5.1.1(i)) that it be reachable from inside the app: hence the footer link on every
+ * page of the site, and the two links placed in the app.
+ *
+ * The [bracketed] fields — registered address, RNA number, last-updated date — stay as
+ * they are until the association is registered. They will be filled in a later commit;
+ * nothing here is to be invented.
+ *
+ * The French text (`politique-de-confidentialite.astro`) is this page's twin: any change
+ * of substance happens in both on the same day. There is no Arabic version — a legal text
+ * is not machine-translated — and the Arabic footer leads to the French page.
+ *
+ * Two figures on this page are promises, not settings: the 14-day backup retention (§7 and
+ * §6) and the 30-day bin. Changing them elsewhere means changing this page the same day.
+ *
+ * No `noindex`: unlike the `app/` pages, this one must be findable.
+ */
+import Layout from "../../layouts/Layout.astro";
+import { routes } from "../../i18n/ui";
+
+const links = routes.en;
+---
+
+<Layout
+  title="Privacy policy"
+  description="What the Bitaqat Hifd Qor'an app collects, why, for how long, and how to exercise your rights."
+  lang="en"
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">App</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      Privacy policy
+    </h1>
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-night-300">
+      <strong>Bitaqat Hifd Qor'an mobile app</strong>
+      (Android: <span class="font-mono text-sm">com.bitaqat.hifdquran</span> — iOS)<br />
+      Last updated: [day month 2026]
+    </p>
+
+    <div class="mt-12 space-y-10 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">In short</h2>
+        <p class="mt-3">
+          The app helps a learner memorise the Qur'an, card by card, under the eyes of a mentor and
+          a guardian. It is <strong>free, with no ads, no in-app purchases and no trackers</strong>.
+          It asks for <strong>neither the microphone, nor the camera, nor your location</strong>. A
+          child exists in it under a <strong>travel name</strong> (a pseudonym) — no real name, no
+          email address, no date of birth. Data is
+          <strong>hosted in the European Union</strong>. Everything can be deleted from within the
+          app, by yourself.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">1. Who is responsible</h2>
+        <p class="mt-3">
+          The data controller is <strong>Association Bitaqat</strong>, a non-profit association
+          under the French law of 1 July 1901, [registered address], [postcode] [town], RNA no.
+          [W…], publisher of the app on the app stores.
+        </p>
+        <p class="mt-2">
+          For any question or request about your data:
+          <strong
+            ><a href="mailto:stores@bitaqat-hifd-quran.com" class="underline hover:text-gold-600"
+              >stores@bitaqat-hifd-quran.com</a
+            ></strong
+          >.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">
+          2. Three roles, and what each one shares
+        </h2>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">
+          The adult account — mentor or guardian
+        </h3>
+        <p class="mt-2">Only adults have an account with contact details. We keep:</p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            your <strong>email address</strong> and your <strong>password</strong> (hashed, never
+            readable by us);
+          </li>
+          <li>
+            a <strong>display name</strong> you choose — the only thing shown to other users (never
+            your email);
+          </li>
+          <li>
+            your <strong>language</strong> and your <strong>notification preferences</strong> (eight
+            categories);
+          </li>
+          <li>
+            the <strong>push token</strong> of each device on which you accepted notifications.
+          </li>
+        </ul>
+        <p class="mt-4">
+          If you choose <strong>"Sign in with Google"</strong> or
+          <strong>"Sign in with Apple"</strong>, we receive from that service a technical identifier
+          and the email address linked to your account (Apple may offer you a relay address that
+          hides yours). We receive nothing else and write nothing to your Google or Apple account.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">The learner profile</h3>
+        <p class="mt-2">
+          A learner has <strong>no account</strong>: their device connects through an anonymous
+          session, with no email address. Their profile holds:
+        </p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            a <strong>travel name</strong> (pseudonym) and an <strong>avatar</strong> chosen in the
+            app;
+          </li>
+          <li>a <strong>minor or adult</strong> declaration (yes/no, no date of birth);</li>
+          <li>
+            the <strong>placement profile</strong> from the starting questionnaire (what they can
+            already recite);
+          </li>
+          <li>
+            their <strong>progress</strong>: cards, boxes, validation requests, assessments
+            received, due dates, badges, rewards, revision programme;
+          </li>
+          <li>
+            their <strong>sessions</strong>: one date per day of actual use,
+            <strong>never a duration</strong>;
+          </li>
+          <li>their in-app <strong>inbox</strong>.</li>
+        </ul>
+        <p class="mt-4">
+          A learner <strong>never types free text</strong>: their requests use predefined messages.
+          Free text written by adults (recommendations, rewards) is visible only to the learner
+          concerned, their mentor and their guardians.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">What the app does not collect</h3>
+        <p class="mt-2">
+          No child's real name, no date of birth, no phone number, no postal address, no location,
+          no contacts, no photo, no audio or video recording, no advertising identifier, no usage
+          duration. No microphone or camera permission is requested from the system — this can be
+          checked in the app manifests.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">3. Why, and on what legal basis</h2>
+        <!-- Three tables on this page. On a phone they scroll sideways rather than fold: a
+             legal basis separated from its purpose no longer means anything. -->
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[36rem] border-collapse text-start">
+            <thead>
+              <tr class="border-b border-ink-200 dark:border-night-700">
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  Purpose
+                </th>
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  Data
+                </th>
+                <th scope="col" class="py-2 text-start font-semibold text-ink-900 dark:text-white">
+                  Legal basis (GDPR)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">
+                  Create and run your account, sign you in, send confirmation and
+                  forgotten-password emails
+                </td>
+                <td class="py-3 pe-4">adult account</td>
+                <td class="py-3">performance of a contract (art. 6.1.b)</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">
+                  Track a learner's progress and let the mentor validate it
+                </td>
+                <td class="py-3 pe-4">learner profile</td>
+                <td class="py-3">
+                  for a minor: consent of the holder of parental responsibility, given twice —
+                  through the invitation code, then through the guardian's approval of the pairing;
+                  for an adult learner: performance of a contract
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Tell you what needs your attention (notifications)</td>
+                <td class="py-3 pe-4">push tokens, preferences</td>
+                <td class="py-3">
+                  consent (system permission, revocable), can be switched off per category
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">
+                  Protect accounts and children: limit code attempts, log pairings, revocations,
+                  manual unlocks and deletions
+                </td>
+                <td class="py-3 pe-4">technical identifiers, dates, role of the person acting</td>
+                <td class="py-3">legitimate interest (security, art. 6.1.f)</td>
+              </tr>
+              <tr class="align-top">
+                <td class="py-3 pe-4">Handle a deletion request made through the website</td>
+                <td class="py-3 pe-4">email address and content of the request</td>
+                <td class="py-3">legal obligation (art. 17)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">
+          We make <strong>no automated decision</strong> about you, build
+          <strong>no profile</strong> for commercial purposes and show
+          <strong>no advertising</strong>. Usage measurement is limited to aggregate, anonymous
+          counters with no individual profile.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">4. Children</h2>
+        <p class="mt-3">
+          The app is meant for learners who are often minors, and it is built for that:
+        </p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            a <strong>guardian</strong> (a parent or a trusted adult chosen by the family, never by
+            the mentor) must approve the pairing of a minor with a mentor; without that approval,
+            nothing flows between them;
+          </li>
+          <li>
+            the guardian <strong>sees every interaction</strong> and can
+            <strong>revoke</strong> the pairing at any time;
+          </li>
+          <li>only the guardian can <strong>delete a minor's profile</strong>; a mentor never can;</li>
+          <li>
+            notification content <strong>never shows the travel name</strong> on the lock screen;
+          </li>
+          <li>on a shared device, only the adult account registers a push token.</li>
+        </ul>
+        <p class="mt-4">
+          If you believe a profile was created for a minor without a responsible adult's agreement,
+          write to us: we will treat it as a priority.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">5. Who sees what</h2>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li><strong>The learner</strong> sees their own journey.</li>
+          <li>
+            <strong>The paired mentor</strong> sees their learners' progress, requests and
+            assessments, and the guardian's display name.
+          </li>
+          <li><strong>The paired guardian</strong> sees everything about their learner.</li>
+          <li>
+            <strong>We</strong> (the association and the app's author) access data only to run the
+            service, answer a request or fix an incident.
+          </li>
+        </ul>
+        <p class="mt-4">We do not sell, rent or pass on any data to anyone.</p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">
+          6. Where the data lives, and who helps us
+        </h2>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[36rem] border-collapse text-start">
+            <thead>
+              <tr class="border-b border-ink-200 dark:border-night-700">
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  Provider
+                </th>
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  Role
+                </th>
+                <th scope="col" class="py-2 text-start font-semibold text-ink-900 dark:text-white">
+                  Location
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Supabase</strong></td>
+                <td class="py-3 pe-4">database, authentication, server functions</td>
+                <td class="py-3">European Union (Paris region)</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Resend</strong></td>
+                <td class="py-3 pe-4">
+                  sending confirmation and forgotten-password emails from
+                  <span class="font-mono text-xs">ne-pas-repondre@bitaqat-hifd-quran.com</span>
+                </td>
+                <td class="py-3">European Union (Ireland region)</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Expo</strong> (Expo Application Services)</td>
+                <td class="py-3 pe-4">routing push notifications to Google and Apple</td>
+                <td class="py-3">
+                  United States — notifications carry no name and no personal text: fixed labels
+                  from a catalogue
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">
+                  <strong>Google Firebase Cloud Messaging</strong> /
+                  <strong>Apple Push Notification service</strong>
+                </td>
+                <td class="py-3 pe-4">delivering notifications to the device</td>
+                <td class="py-3">as per Google and Apple</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Cloudflare</strong></td>
+                <td class="py-3 pe-4">
+                  website, email-confirmation and forgotten-password pages, deletion-request form,
+                  Turnstile anti-bot check, storage of the encrypted backups (EU region)
+                </td>
+                <td class="py-3">United States, with points of presence in Europe</td>
+              </tr>
+              <tr class="align-top">
+                <td class="py-3 pe-4">
+                  <strong>Google Play</strong> / <strong>App Store</strong>
+                </td>
+                <td class="py-3 pe-4">app distribution</td>
+                <td class="py-3">as per Google and Apple, under their own policies</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">
+          Transfers outside the European Union are covered by the safeguards provided for by the
+          GDPR (standard contractual clauses or an adequacy decision) and limited to what is
+          strictly necessary — for notifications, a technical token and a catalogue label.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">7. For how long</h2>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[34rem] border-collapse text-start">
+            <thead>
+              <tr class="border-b border-ink-200 dark:border-night-700">
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  Data
+                </th>
+                <th scope="col" class="py-2 text-start font-semibold text-ink-900 dark:text-white">
+                  Retention
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Adult account</td>
+                <td class="py-3">until you delete it</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Learner profile</td>
+                <td class="py-3">
+                  until deleted; it then spends <strong>30 days in a bin</strong> from which the
+                  guardian can restore it, after which everything is erased
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Anonymous session of a device with no profile</td>
+                <td class="py-3"><strong>7 days</strong>, then automatic purge</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Invitation or pairing code</td>
+                <td class="py-3"><strong>72 hours</strong>, single use</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Push token</td>
+                <td class="py-3">
+                  removed after <strong>90 days</strong> without the app being opened on that
+                  device, or as soon as Google or Apple reports it invalid
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Log of pairings, revocations and deletions</td>
+                <td class="py-3">with the profile concerned</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Deletion request received through the website</td>
+                <td class="py-3">as long as it takes to verify and process it</td>
+              </tr>
+              <tr class="align-top">
+                <td class="py-3 pe-4">Backups</td>
+                <td class="py-3">
+                  an encrypted copy of the database is made every night and kept for
+                  <strong>14 days</strong> with a storage provider (Cloudflare, European Union),
+                  then destroyed automatically. It is never used to restore a deleted account or
+                  profile
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">
+          A deleted adult account <strong>does not take its learners with it</strong>: an adult is a
+          teacher or a guardian, never an owner. Their profiles go back to "waiting for a teacher",
+          and the assessments already given stay in their history, without an author's name.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">8. Your rights</h2>
+        <p class="mt-3">
+          You have the rights of <strong>access</strong>, <strong>rectification</strong>,
+          <strong>erasure</strong>, <strong>portability</strong>, <strong>objection</strong> and
+          <strong>restriction</strong>. For a minor, they are exercised by the guardian.
+        </p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            <strong>From the app</strong>: Settings → Delete my account (adult); Settings → Delete
+            my profile (adult learner); child's page → Delete this child's profile (guardian), with
+            a <strong>signed export</strong> of the journey handed over on the device for
+            portability — never sent by email.
+          </li>
+          <li>
+            <strong>Without the app</strong> (uninstalled, lost phone): the
+            <a href={links.suppression} class="underline hover:text-gold-600"
+              >Delete an account or a profile</a
+            > page on the website. Every request is verified and processed by hand, and we reply to
+            you before any deletion.
+          </li>
+          <li>
+            <strong>By email</strong>:
+            <a href="mailto:stores@bitaqat-hifd-quran.com" class="underline hover:text-gold-600"
+              >stores@bitaqat-hifd-quran.com</a
+            >.
+          </li>
+        </ul>
+        <p class="mt-4">
+          You may also lodge a complaint with the French data protection authority, the CNIL (<a
+            href="https://www.cnil.fr"
+            rel="noopener noreferrer"
+            class="underline hover:text-gold-600">www.cnil.fr</a
+          >), or with the authority of your own country.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">9. Security</h2>
+        <p class="mt-3">
+          Encryption in transit (TLS) and at rest with our host; hashed passwords; access rules
+          enforced by the database itself, row by row, according to role; invitation codes that
+          cannot be guessed, single-use, with limited attempts; logging of sensitive actions; no
+          secrets inside the installed app. Irreversible actions (deletion, revocation) require the
+          adult's password, never the simple adult gate.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">10. Notifications</h2>
+        <p class="mt-3">
+          The app tells you what needs your attention (validation request, verdict, due date,
+          reward, pairing). Each category can be switched off in the account settings; switching
+          off means "stop ringing" — the information stays readable in the app's inbox. No
+          promotional notification, ever.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">11. Changes</h2>
+        <p class="mt-3">
+          We will update this page if the app or our providers change. The date at the top is the
+          reference; a significant change is announced in the app.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">12. Contact</h2>
+        <p class="mt-3">
+          Association Bitaqat — [registered address], [postcode] [town] —
+          <a href="mailto:stores@bitaqat-hifd-quran.com" class="underline hover:text-gold-600"
+            >stores@bitaqat-hifd-quran.com</a
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

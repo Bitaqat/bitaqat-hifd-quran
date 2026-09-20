@@ -81,8 +81,8 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
         <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">Backups</h3>
         <p class="mt-2">
-          The server's automatic backups, which overwrite one another, may hold a copy for a few days
-          longer. They are never consulted to restore a deleted account.
+          An encrypted copy of the database is made every night and kept for 14 days, then
+          destroyed. It is never used to restore a deleted account.
         </p>
       </div>
 

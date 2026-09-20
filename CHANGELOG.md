@@ -3,6 +3,30 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-09-20 — Privacy policy
+
+### Added
+- `/politique-de-confidentialite/` and `/en/privacy-policy/`, version 0.9 of 19/09/2026: the page
+  both stores demand on the listing, and that Apple demands be reachable from inside the app
+  (rule 5.1.1(i)). Twelve sections, three tables — purposes, providers, retention — and no
+  `noindex`: unlike the `app/` pages, this one has to be findable. The URLs carry their trailing
+  slash, because that is the form the consoles will be given and the form that answers 200.
+- A footer entry in the three languages. Arabic points at the French page: a legal text is not
+  machine-translated, and the Arabic version waits for the author, like the deletion page before
+  it.
+
+### Changed
+- The "Backups" paragraph of the deletion pages said the server kept automatic backups that
+  overwrite one another. It kept none — the plan has no backups at all. Since 19/09 a robot makes
+  one encrypted copy a night, kept fourteen days; FR and EN now say that. The Arabic paragraph
+  still carries the old sentence and waits for the author.
+
+### Notes
+- The bracketed fields — registered address, postcode, RNA number, last-updated date — are left as
+  they stand. They get filled once the association is registered, not before, and not by guessing.
+- Fourteen days is now a public promise rather than an operator setting: the workflow in the app
+  repository, the bucket lifecycle rule and this page have to move together or not at all.
+
 ## 2026-09-12 — Password reset landing page
 
 ### Added

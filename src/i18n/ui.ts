@@ -25,7 +25,8 @@ export const routes: Record<Lang, Record<
   | "mentions"
   | "newsletter"
   | "actualites"
-  | "suppression",
+  | "suppression"
+  | "confidentialite",
   string
 >> = {
   fr: {
@@ -40,6 +41,9 @@ export const routes: Record<Lang, Record<
     newsletter: "/newsletter",
     actualites: "/actualites",
     suppression: "/suppression-de-compte",
+    // Avec slash final : sans lui le site répond 307, et c'est la forme canonique qui
+    // doit figurer dans les deux consoles de magasin (leçon du 12/09/2026).
+    confidentialite: "/politique-de-confidentialite/",
   },
   en: {
     home: "/en/",
@@ -53,6 +57,7 @@ export const routes: Record<Lang, Record<
     newsletter: "/en/newsletter",
     actualites: "/en/news",
     suppression: "/en/account-deletion",
+    confidentialite: "/en/privacy-policy/",
   },
   ar: {
     home: "/ar/",
@@ -66,6 +71,9 @@ export const routes: Record<Lang, Record<
     newsletter: "/ar/newsletter",
     actualites: "/ar/news",
     suppression: "/ar/account-deletion",
+    // Pas de traduction automatique d'un texte juridique : l'arabe pointe vers la page FR
+    // jusqu'à ce que l'auteur fournisse sa version (décision du 19/09/2026).
+    confidentialite: "/politique-de-confidentialite/",
   },
 };
 
@@ -82,6 +90,7 @@ export const ui = {
     "footer.info": "Informations",
     "footer.mentions": "Mentions légales",
     "footer.suppression": "Supprimer un compte",
+    "footer.confidentialite": "Politique de confidentialité",
     "footer.rights": "Œuvre libre, non commercialisable.",
     "footer.follow": "Suivez le projet sur X",
     "action.view": "Voir",
@@ -147,6 +156,7 @@ export const ui = {
     "footer.info": "Information",
     "footer.mentions": "Legal notice",
     "footer.suppression": "Delete an account",
+    "footer.confidentialite": "Privacy policy",
     "footer.rights": "Free work, not for commercial use.",
     "footer.follow": "Follow the project on X",
     "action.view": "View",
@@ -211,6 +221,7 @@ export const ui = {
     "footer.info": "معلومات",
     "footer.mentions": "الإشعار القانوني",
     "footer.suppression": "حذف حساب",
+    "footer.confidentialite": "سياسة الخصوصية",
     "footer.rights": "عمل حر، غير مخصص للاستخدام التجاري.",
     "footer.follow": "تابع المشروع على X",
     "action.view": "عرض",

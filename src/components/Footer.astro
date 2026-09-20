@@ -55,6 +55,10 @@ const links = routes[lang];
         <!-- Exigence Google Play : la page de demande de suppression doit être
              atteignable sans session, donc depuis n'importe quelle page du site. -->
         <li><a href={links.suppression} class="hover:text-gold-600">{t("footer.suppression")}</a></li>
+        <!-- Les deux magasins exigent l'URL de la politique dans leur fiche ; Apple exige
+             en plus qu'elle soit atteignable depuis l'application (règle 5.1.1(i)). Elle est
+             donc au pied de chaque page, et non seulement dans les consoles. -->
+        <li><a href={links.confidentialite} class="hover:text-gold-600">{t("footer.confidentialite")}</a></li>
       </ul>
     </div>
   </div>
