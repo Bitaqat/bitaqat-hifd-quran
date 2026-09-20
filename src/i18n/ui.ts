@@ -71,9 +71,9 @@ export const routes: Record<Lang, Record<
     newsletter: "/ar/newsletter",
     actualites: "/ar/news",
     suppression: "/ar/account-deletion",
-    // Pas de traduction automatique d'un texte juridique : l'arabe pointe vers la page FR
-    // jusqu'à ce que l'auteur fournisse sa version (décision du 19/09/2026).
-    confidentialite: "/politique-de-confidentialite/",
+    // La page arabe existe depuis le 20/09/2026 et porte une clause de prévalence : le
+    // texte français fait foi. Les consoles des magasins ne reçoivent que FR et EN.
+    confidentialite: "/ar/privacy-policy/",
   },
 };
 

@@ -1,0 +1,498 @@
+---
+/**
+ * Arabic twin of /politique-de-confidentialite — see that file for why this page exists.
+ *
+ * The decision of 19/09/2026 was to point Arabic readers at the French page rather than
+ * ship a machine translation of a legal text. Reversed on 20/09 for one reason: the site
+ * already publishes Arabic legal text (ar/legal-notice, ar/account-deletion), so the rule
+ * was not protecting against translation — it was protecting against an unreviewed
+ * translation standing as the only version of a binding text. The clause at the top of this
+ * page removes that risk: the French text prevails, and this one is a reading aid.
+ *
+ * Consequences to keep in mind:
+ *   * the two store consoles receive the FR and EN URLs only — never this one;
+ *   * any change of substance happens in all three pages the same day;
+ *   * the GDPR vocabulary is the part that needs a reviewer — "تنفيذ العقد",
+ *     "المصلحة المشروعة", the article numbers. The retention and provider tables are
+ *     facts and translate without ambiguity.
+ *
+ * The wording is awaiting the author's review, like the rest of the Arabic content.
+ *
+ * The layout needs no RTL work: the French page was written with logical properties
+ * (ps-/pe-/text-start), which flip on their own under dir="rtl".
+ */
+import Layout from "../../layouts/Layout.astro";
+import { routes } from "../../i18n/ui";
+
+const links = routes.ar;
+---
+
+<Layout
+  lang="ar"
+  title="سياسة الخصوصية"
+  description="ما الذي يجمعه تطبيق بطاقات حفظ القرآن، ولماذا، وكم من الوقت، وكيف تمارس حقوقك."
+>
+  <section class="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">التطبيق</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      سياسة الخصوصية
+    </h1>
+    <p class="mt-6 leading-relaxed text-ink-600 dark:text-night-300">
+      <strong>تطبيق بطاقات حفظ القرآن</strong>{' '}
+      (أندرويد: <span class="font-mono text-sm" dir="ltr">com.bitaqat.hifdquran</span> — iOS)<br />
+      آخر تحديث: [يوم شهر 2026]
+    </p>
+
+    <!-- La clause de prévalence : elle est ce qui rend cette page publiable sans relecture
+         juridique en arabe. Elle ne doit pas être déplacée sous le pli. -->
+    <div class="mt-8 rounded-xl border border-ink-200 bg-ink-50 p-5 text-sm leading-relaxed text-ink-600 dark:border-night-700 dark:bg-night-900 dark:text-night-300">
+      هذه الصفحة <strong>ترجمة عربية</strong> للنصّ الفرنسي، وُضعت للقراءة والفهم. وفي حال وجود
+      اختلاف بين النصّين، <strong>يُعتمد النصّ الفرنسي</strong> وهو المرجع:
+      <a href="/politique-de-confidentialite/" class="underline hover:text-gold-600"
+        >سياسة الخصوصية بالفرنسية</a
+      >.
+    </div>
+
+    <div class="mt-12 space-y-10 text-sm leading-relaxed text-ink-600 dark:text-night-300">
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">الأساسيّ</h2>
+        <p class="mt-3">
+          يعين التطبيق المتعلّم على حفظ القرآن، بطاقةً بطاقة، تحت نظر معلّم ووليّ. وهو
+          <strong>مجّانيّ، بلا إعلانات، وبلا شراء داخليّ، وبلا متعقّبات</strong>. ولا يطلب
+          <strong>لا الميكروفون، ولا الكاميرا، ولا الموقع</strong>. ويوجد الطفل فيه باسم رحلة
+          (اسم مستعار)، بلا اسم حقيقيّ، وبلا بريد إلكتروني، وبلا تاريخ ميلاد. والبيانات
+          <strong>مستضافة داخل الاتحاد الأوروبي</strong>. وكلّ شيء يُحذف من داخل التطبيق، بيدك أنت.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">١. من المسؤول</h2>
+        <p class="mt-3">
+          المسؤول عن المعالجة هو <strong>جمعية بطاقات</strong>، جمعية مصرَّح بها خاضعة للقانون
+          الفرنسي الصادر في الأوّل من يوليو 1901، [عنوان المقرّ]، [الرمز البريدي] [المدينة]، رقم
+          RNA‏ [W…]، وهي ناشرة التطبيق في متاجر التطبيقات.
+        </p>
+        <p class="mt-2">
+          لأيّ سؤال أو طلب يتعلّق ببياناتك:
+          <strong
+            ><a
+              href="mailto:stores@bitaqat-hifd-quran.com"
+              dir="ltr"
+              class="underline hover:text-gold-600">stores@bitaqat-hifd-quran.com</a
+            ></strong
+          >.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">
+          ٢. الأدوار الثلاثة، وما يودعه كلّ واحد
+        </h2>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">
+          حساب البالغ — معلّمًا كان أو وليًّا
+        </h3>
+        <p class="mt-2">البالغون وحدهم لهم حساب فيه بيان اتّصال. ونحن نحتفظ بـ:</p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            <strong>عنوان بريدك الإلكتروني</strong> و<strong>كلمة مرورك</strong> (مخزَّنة بعد
+            تجزئتها، فلا نستطيع قراءتها أبدًا)؛
+          </li>
+          <li>
+            <strong>اسمًا معروضًا</strong> تختاره أنت، وهو وحده ما يظهر لسائر المستعملين (ولا
+            يظهر عنوانك قطّ)؛
+          </li>
+          <li>
+            <strong>لغتك</strong> و<strong>تفضيلات الإشعارات</strong> لديك (ثماني فئات)؛
+          </li>
+          <li>
+            <strong>رمز الإشعارات</strong> لكلّ جهاز قبِلت عليه الإشعارات.
+          </li>
+        </ul>
+        <p class="mt-4">
+          وإن اخترت <strong>«الدخول بحساب Google»</strong> أو
+          <strong>«الدخول بحساب Apple»</strong>، فإنّنا نتلقّى من تلك الخدمة معرّفًا تقنيًّا
+          والبريد الإلكتروني المرتبط بحسابك (وقد تعرض عليك Apple عنوانًا وسيطًا يحجب عنوانك).
+          ولا نتلقّى غير ذلك، ولا نكتب شيئًا في حسابك لدى Google أو Apple.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">ملف المتعلّم</h3>
+        <p class="mt-2">
+          ليس للمتعلّم <strong>حساب</strong>: فجهازه يتّصل بجلسة مجهولة، بلا بريد إلكتروني.
+          ويشتمل ملفّه على:
+        </p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            <strong>اسم رحلة</strong> (اسم مستعار) و<strong>صورة رمزية</strong> يختارهما في
+            التطبيق؛
+          </li>
+          <li>
+            الإقرار بكونه <strong>قاصرًا أو بالغًا</strong> (نعم/لا، بلا تاريخ ميلاد)؛
+          </li>
+          <li>
+            <strong>ملفّ التموضع</strong> الناتج عن استبيان البداية (ما يحسن تلاوته أصلًا)؛
+          </li>
+          <li>
+            <strong>تقدّمه</strong>: البطاقات، والخانات، وطلبات التصديق، والتقييمات المستلَمة،
+            والمواعيد، والأوسمة، والمكافآت، وبرنامج المراجعة؛
+          </li>
+          <li>
+            <strong>جلساته</strong>: تاريخ واحد لكلّ يوم استعمال فعليّ،
+            <strong>ولا مدّة أبدًا</strong>؛
+          </li>
+          <li><strong>صندوق وارده</strong> داخل التطبيق.</li>
+        </ul>
+        <p class="mt-4">
+          ولا يكتب المتعلّم <strong>نصًّا حرًّا قطّ</strong>: فطلباته رسائل معدّة سلفًا. أمّا
+          النصوص الحرّة التي يكتبها البالغون (التوصيات والمكافآت) فلا يراها إلّا المتعلّم
+          المعنيّ ومعلّمه وأولياؤه.
+        </p>
+
+        <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">ما لا يجمعه التطبيق</h3>
+        <p class="mt-2">
+          لا اسم حقيقيّ لطفل، ولا تاريخ ميلاد، ولا رقم هاتف، ولا عنوان بريديّ، ولا موقع، ولا
+          جهات اتّصال، ولا صورة، ولا تسجيل صوتيّ أو مرئيّ، ولا معرّف إعلانيّ، ولا مدّة استعمال.
+          ولا يُطلب من النظام إذن ميكروفون ولا كاميرا — وهذا ممّا يمكن التحقّق منه في بيانات
+          التطبيق المعلنة.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">٣. لماذا، وعلى أيّ أساس</h2>
+        <!-- Trois tableaux ici aussi : ils défilent latéralement sur un téléphone plutôt que
+             de se replier — un fondement juridique séparé de sa finalité ne dit plus rien. -->
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[36rem] border-collapse text-start">
+            <thead>
+              <tr class="border-b border-ink-200 dark:border-night-700">
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  الغرض
+                </th>
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  البيانات
+                </th>
+                <th scope="col" class="py-2 text-start font-semibold text-ink-900 dark:text-white">
+                  الأساس القانوني (GDPR)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">
+                  إنشاء حسابك وتشغيله، وإدخالك إليه، وإرسال رسائل التأكيد واستعادة كلمة المرور
+                </td>
+                <td class="py-3 pe-4">حساب البالغ</td>
+                <td class="py-3">تنفيذ العقد (المادة 6.1.ب)</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">متابعة تقدّم المتعلّم وتمكين المعلّم من التصديق عليه</td>
+                <td class="py-3 pe-4">ملف المتعلّم</td>
+                <td class="py-3">
+                  في حال القاصر: موافقة صاحب السلطة الأبوية، وتتحقّق مرّتين — برمز الدعوة، ثمّ
+                  بمصادقة الوليّ على الاقتران؛ وفي حال البالغ: تنفيذ العقد
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">تنبيهك إلى ما يستدعي انتباهك (الإشعارات)</td>
+                <td class="py-3 pe-4">رموز الإشعارات، والتفضيلات</td>
+                <td class="py-3">
+                  الموافقة (إذن يُعطى للنظام، ويمكن سحبه)، ويمكن إيقافها فئةً فئة
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">
+                  حماية الحسابات والأطفال: تقييد محاولات الرمز، وتسجيل الاقترانات والإلغاءات
+                  وعمليات الفكّ اليدويّ والحذف
+                </td>
+                <td class="py-3 pe-4">معرّفات تقنية، وتواريخ، ودور من قام بالفعل</td>
+                <td class="py-3">المصلحة المشروعة (الأمان، المادة 6.1.و)</td>
+              </tr>
+              <tr class="align-top">
+                <td class="py-3 pe-4">الاستجابة لطلب حذف مقدَّم من الموقع</td>
+                <td class="py-3 pe-4">البريد الإلكتروني ومضمون الطلب</td>
+                <td class="py-3">التزام قانونيّ (المادة 17)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">
+          ولا نتّخذ <strong>أيّ قرار آليّ</strong> بشأنك، ولا نبني <strong>أيّ ملفّ تعريفيّ</strong>
+          لأغراض تجارية، ولا نعرض <strong>أيّ إعلان</strong>. وقياس الاستعمال لا يتعدّى عدّادات
+          مجمَّعة مجهولة، بلا ملفّ فرديّ.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">٤. الأطفال</h2>
+        <p class="mt-3">
+          التطبيق موجَّه إلى متعلّمين كثيرًا ما يكونون قُصَّرًا، وهو مبنيّ على ذلك:
+        </p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            لا بدّ أن يصادق <strong>وليّ</strong> (أحد الوالدين أو بالغ ثقة تختاره الأسرة، لا
+            يختاره المعلّم أبدًا) على اقتران القاصر بمعلّم؛ وبغير هذه المصادقة لا يجري بينهما
+            شيء؛
+          </li>
+          <li>
+            والوليّ <strong>يرى كلّ التفاعلات</strong>، وله أن <strong>يلغي</strong> الاقتران
+            في أيّ وقت؛
+          </li>
+          <li>
+            والوليّ وحده يستطيع <strong>حذف ملف القاصر</strong>؛ ولا يستطيعه المعلّم أبدًا؛
+          </li>
+          <li>
+            ولا يذكر مضمون الإشعارات <strong>اسم الرحلة أبدًا</strong> على شاشة القفل؛
+          </li>
+          <li>وعلى الجهاز المشترك، لا يسجّل رمز الإشعارات إلّا حساب البالغ.</li>
+        </ul>
+        <p class="mt-4">
+          وإن رأيت أنّ ملفًّا أُنشئ لقاصر بغير موافقة بالغ مسؤول، فاكتب إلينا: نعالج ذلك على وجه
+          الأولوية.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">٥. من يرى ماذا</h2>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li><strong>المتعلّم</strong> يرى مساره هو.</li>
+          <li>
+            و<strong>المعلّم</strong> المقترن يرى تقدّم متعلّميه وطلباتهم وتقييماتهم، ويرى الاسم
+            المعروض للوليّ.
+          </li>
+          <li>و<strong>الوليّ</strong> المقترن يرى كلّ ما يخصّ متعلّمه.</li>
+          <li>
+            و<strong>نحن</strong> (الجمعية وصاحب التطبيق) لا نصل إلى البيانات إلّا لتشغيل الخدمة،
+            أو للاستجابة لطلب، أو لإصلاح عطل.
+          </li>
+        </ul>
+        <p class="mt-4">ولا نبيع أيّ بيانات ولا نؤجّرها ولا نتنازل عنها لأيّ جهة كانت.</p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">
+          ٦. أين تُحفظ البيانات، ومن يساعدنا
+        </h2>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[36rem] border-collapse text-start">
+            <thead>
+              <tr class="border-b border-ink-200 dark:border-night-700">
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  مقدّم الخدمة
+                </th>
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  الدور
+                </th>
+                <th scope="col" class="py-2 text-start font-semibold text-ink-900 dark:text-white">
+                  الموقع
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Supabase</strong></td>
+                <td class="py-3 pe-4">قاعدة البيانات، والاستيثاق، ووظائف الخادم</td>
+                <td class="py-3">الاتحاد الأوروبي (إقليم باريس)</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Resend</strong></td>
+                <td class="py-3 pe-4">
+                  إرسال رسائل التأكيد واستعادة كلمة المرور، من
+                  <span class="font-mono text-xs" dir="ltr">ne-pas-repondre@bitaqat-hifd-quran.com</span>
+                </td>
+                <td class="py-3">الاتحاد الأوروبي (إقليم إيرلندا)</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Expo</strong> (Expo Application Services)</td>
+                <td class="py-3 pe-4">توجيه الإشعارات إلى Google وApple</td>
+                <td class="py-3">
+                  الولايات المتحدة — ولا تحمل الإشعارات أيّ اسم ولا أيّ نصّ شخصيّ: عبارات ثابتة
+                  مأخوذة من فهرس
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">
+                  <strong>Google Firebase Cloud Messaging</strong> /
+                  <strong>Apple Push Notification service</strong>
+                </td>
+                <td class="py-3 pe-4">تسليم الإشعارات إلى الجهاز</td>
+                <td class="py-3">بحسب Google وApple</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4"><strong>Cloudflare</strong></td>
+                <td class="py-3 pe-4">
+                  الموقع، وصفحتا تأكيد العنوان واستعادة كلمة المرور، ونموذج طلب الحذف، وفحص
+                  Turnstile المضادّ للروبوتات، وتخزين النسخ الاحتياطية المعمّاة (إقليم الاتحاد
+                  الأوروبي)
+                </td>
+                <td class="py-3">الولايات المتحدة، مع نقاط حضور في أوروبا</td>
+              </tr>
+              <tr class="align-top">
+                <td class="py-3 pe-4">
+                  <strong>Google Play</strong> / <strong>App Store</strong>
+                </td>
+                <td class="py-3 pe-4">توزيع التطبيق</td>
+                <td class="py-3">بحسب Google وApple، وفق سياساتهما</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">
+          والنقل خارج الاتحاد الأوروبي محكوم بالضمانات التي ينصّ عليها النظام الأوروبي العام
+          لحماية البيانات (الشروط التعاقدية النموذجية أو قرار الكفاية)، ومحصور فيما تدعو إليه
+          الحاجة وحدها — وهو في الإشعارات رمز تقنيّ وعبارة من فهرس.
+        </p>
+        <p class="mt-2">
+          واتّفاقات معالجة البيانات مع مقدّمي الخدمة هؤلاء محفوظة لدى الجمعية، مؤرَّخة بيوم
+          الاطّلاع عليها؛ وإن لم ينشر مقدّم خدمة اتّفاقه، طلبناه منه.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">٧. كم من الوقت</h2>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full min-w-[34rem] border-collapse text-start">
+            <thead>
+              <tr class="border-b border-ink-200 dark:border-night-700">
+                <th scope="col" class="py-2 pe-4 text-start font-semibold text-ink-900 dark:text-white">
+                  البيانات
+                </th>
+                <th scope="col" class="py-2 text-start font-semibold text-ink-900 dark:text-white">
+                  المدّة
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">حساب البالغ</td>
+                <td class="py-3">إلى أن تحذفه أنت</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">ملف المتعلّم</td>
+                <td class="py-3">
+                  إلى أن يُحذف؛ فيمكث حينئذ <strong>ثلاثين يومًا في سلّة مهملات</strong> يستطيع
+                  الوليّ إرجاعه منها، ثمّ يُمحى كلّ شيء
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">جلسة جهاز مجهولة بلا ملف</td>
+                <td class="py-3"><strong>سبعة أيام</strong>، ثمّ تُمسح تلقائيًّا</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">رمز الدعوة أو الاقتران</td>
+                <td class="py-3"><strong>اثنتان وسبعون ساعة</strong>، ولمرّة واحدة</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">رمز الإشعارات</td>
+                <td class="py-3">
+                  يُحذف بعد <strong>تسعين يومًا</strong> دون فتح التطبيق على الجهاز، أو فور أن
+                  تُعلمنا Google أو Apple بأنّه لم يعد صالحًا
+                </td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">سجلّ الاقترانات والإلغاءات وعمليات الحذف</td>
+                <td class="py-3">مع الملفّ المعنيّ</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">طلب حذف وارد من الموقع</td>
+                <td class="py-3">مدّة التحقّق منه ومعالجته</td>
+              </tr>
+              <tr class="align-top">
+                <td class="py-3 pe-4">النسخ الاحتياطية</td>
+                <td class="py-3">
+                  تُنجَز كلّ ليلة نسخة معمّاة من قاعدة البيانات، وتُحفظ
+                  <strong>أربعة عشر يومًا</strong> لدى مقدّم خدمة تخزين (Cloudflare، الاتحاد
+                  الأوروبي)، ثمّ تُتلَف تلقائيًّا. ولا يُرجَع إليها قطّ لاستعادة حساب أو ملفّ
+                  محذوف
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">
+          وحساب البالغ المحذوف <strong>لا يأخذ معه متعلّميه</strong>: فالبالغ معلّم أو وليّ، وليس
+          مالكًا أبدًا. تعود ملفّاتهم إلى حال «في انتظار معلّم»، وتبقى التقييمات الصادرة في
+          سجلّهم بلا اسم صاحبها.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">٨. حقوقك</h2>
+        <p class="mt-3">
+          لك حقّ <strong>الوصول</strong>، و<strong>التصحيح</strong>، و<strong>المحو</strong>،
+          و<strong>قابلية النقل</strong>، و<strong>الاعتراض</strong>، و<strong>تقييد
+          المعالجة</strong>. وتُمارَس هذه الحقوق عن القاصر بواسطة وليّه.
+        </p>
+        <ul class="mt-4 list-disc space-y-3 ps-6">
+          <li>
+            <strong>من داخل التطبيق</strong>: الإعدادات ← حذف حسابي (للبالغ)؛ الإعدادات ← حذف
+            ملفي (للمتعلّم البالغ)؛ صفحة الطفل ← حذف ملف هذا الطفل (للوليّ)، مع
+            <strong>نسخة موقَّعة</strong> من المسار تُسلَّم على الجهاز إعمالًا لقابلية النقل —
+            ولا تُرسَل بالبريد الإلكتروني أبدًا.
+          </li>
+          <li>
+            <strong>من غير التطبيق</strong> (حُذف التطبيق، أو ضاع الهاتف): صفحة
+            <a href={links.suppression} class="underline hover:text-gold-600"
+              >حذف حساب أو ملف</a
+            > في الموقع. وكلّ طلب يُتحقَّق منه ثمّ يُعالَج يدويًّا، ونردّ عليك قبل أيّ حذف.
+          </li>
+          <li>
+            <strong>بالبريد الإلكتروني</strong>:
+            <a
+              href="mailto:stores@bitaqat-hifd-quran.com"
+              dir="ltr"
+              class="underline hover:text-gold-600">stores@bitaqat-hifd-quran.com</a
+            >.
+          </li>
+        </ul>
+        <p class="mt-4">
+          ولك أيضًا أن تتقدّم بشكوى إلى الهيئة الفرنسية لحماية البيانات، CNIL (<a
+            href="https://www.cnil.fr"
+            dir="ltr"
+            rel="noopener noreferrer"
+            class="underline hover:text-gold-600">www.cnil.fr</a
+          >)، أو إلى الهيئة المختصّة في بلدك، إن رأيت أنّ حقوقك لم تُحترم.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">٩. الأمان</h2>
+        <p class="mt-3">
+          تعمية أثناء النقل (TLS) وفي حال السكون لدى المستضيف؛ وكلمات مرور مخزَّنة بعد تجزئتها؛
+          وقواعد وصول تطبّقها قاعدة البيانات نفسها، سطرًا سطرًا، بحسب الدور؛ ورموز دعوة لا
+          تُخمَّن، تُستعمل مرّة واحدة، بمحاولات محدودة؛ وتسجيل للأفعال الحسّاسة؛ ولا سرّ داخل
+          التطبيق المثبَّت. والأفعال التي لا رجعة فيها (الحذف، الإلغاء) تستلزم كلمة مرور البالغ،
+          لا مجرّد بوّابة البالغين.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">١٠. الإشعارات</h2>
+        <p class="mt-3">
+          ينبّهك التطبيق إلى ما يستدعي انتباهك (طلب تصديق، أو حكم، أو موعد، أو مكافأة، أو
+          اقتران). وكلّ فئة يمكن إيقافها في إعدادات الحساب؛ والإيقاف معناه «لا يرنّ بعد»،
+          فالخبر يبقى مقروءًا في صندوق الوارد داخل التطبيق. ولا إشعار إعلانيّ، أبدًا.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">١١. التعديلات</h2>
+        <p class="mt-3">
+          سنحدّث هذه الصفحة إن تغيّر التطبيق أو تغيّر مقدّمو خدماتنا. والتاريخ المذكور في أعلاها
+          هو المعتمد؛ ويُعلَن التغيير المهمّ داخل التطبيق.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-lg font-bold text-ink-900 dark:text-white">١٢. التواصل</h2>
+        <p class="mt-3">
+          جمعية بطاقات — [عنوان المقرّ]، [الرمز البريدي] [المدينة] —
+          <a
+            href="mailto:stores@bitaqat-hifd-quran.com"
+            dir="ltr"
+            class="underline hover:text-gold-600">stores@bitaqat-hifd-quran.com</a
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -3,6 +3,26 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-09-20 — Arabic privacy policy
+
+### Added
+- `/ar/privacy-policy/`, with a prevalence clause at the top: the French text is the reference,
+  this one is a reading aid. That clause is what makes the page publishable — the decision of
+  19/09 was not against translating a legal text, it was against an unreviewed translation
+  standing as the only version of one.
+- The Arabic footer now leads to it instead of to the French page. It was the only Arabic link
+  on the site that did not keep its promise, while `ar/legal-notice` and `ar/account-deletion`
+  have carried Arabic legal text since August.
+
+### Notes
+- The store consoles get the FR and EN URLs only. Arabic is for readers, not for reviewers.
+- The part that needs a human reviewer is the GDPR vocabulary — تنفيذ العقد, المصلحة المشروعة,
+  the article numbers — not the retention or provider tables, which are facts. The page joins
+  the same review queue as the rest of the Arabic content.
+- No RTL work was needed: the French page was written with logical properties, so the tables
+  and lists flip on their own. Checked at 375px — the page does not scroll sideways, each
+  table scrolls inside its own wrapper.
+
 ## 2026-09-20 — Privacy policy
 
 ### Added
