@@ -3,6 +3,41 @@
 All notable changes to this project are documented here, most recent first. The project doesn't use
 version numbers — entries are grouped by date instead.
 
+## 2026-09-20 — Prevalence clause on the two other Arabic pages
+
+### Added
+- The clause that heads the Arabic policy now heads `ar/legal-notice` too, and sits under the
+  request button on `ar/account-deletion`: the French text is the reference, the Arabic one is a
+  reading aid. The three Arabic legal texts of the site now say the same thing about their own
+  status, which is the point — one of them saying it and two not would have read as a difference
+  of substance rather than of placement.
+- On the deletion page the clause goes BELOW the request button, not above it. Play wants that
+  path "prominent and easy to find on the page", and one more box between the intro and the
+  button would have pushed it under the fold on a phone. Checked at 375px: the button sits at
+  387px, the clause at 455px, both well inside the first screen.
+
+### Fixed
+- Astro ate the space before several inline tags. This is the defect already recorded on
+  2026-08-29, when `/app/adresse-confirmee` read "Bitaqat Hifd Qor'anet connectez-vous": the
+  compressor drops the newline between a word and the tag that follows it. It had come back in
+  all three new policy pages — "ne faisons**aucune publicité**", "conservée**14 jours**", and the
+  clause itself reading "وهو المرجع:**سياسة الخصوصية بالفرنسية**" — and it turned out to be live
+  already in two older places nobody had caught: "onglet**Tuteur**" on the French deletion page
+  and "or**Mentor**" on the English one. Every spot on the pages touched here now carries an
+  explicit `{' '}`.
+- Arabic needed care on that pass: the conjunction و attaches to the word after it, with no
+  space. Those spots were left alone, and only the standalone words — أو, وهو, مع, صفحة — got
+  the explicit space.
+
+### Notes
+- The same defect is still live on five pages this entry did not touch: `mentions-legales`,
+  `telechargements`, `en/legal-notice`, `en/downloads` and `ar/downloads`, all on the word before
+  a licence link. Left for a commit of its own rather than folded into a legal-text review.
+- `ar/legal-notice.astro` is one of the few files in the repository stored with CRLF endings. A
+  line-ending-blind pass put a marker after the carriage return instead of before it; the file
+  was normalised back to uniform CRLF in the same breath. Worth knowing before scripting an edit
+  over this tree again.
+
 ## 2026-09-20 — Arabic privacy policy
 
 ### Added

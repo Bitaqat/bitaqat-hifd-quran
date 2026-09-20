@@ -10,9 +10,10 @@
  * quels jusqu'à la déclaration de l'association. Ils se rempliront dans un commit
  * ultérieur ; rien ici n'est à inventer.
  *
- * Le texte anglais (`en/privacy-policy.astro`) est le jumeau de celui-ci : toute retouche
- * de fond se fait dans les deux le même jour. La version arabe n'existe pas — on ne fait
- * pas traduire un texte juridique par une machine —, et le pied de page arabe mène ici.
+ * Le texte anglais (`en/privacy-policy.astro`) et l'arabe (`ar/privacy-policy.astro`) sont
+ * les jumeaux de celui-ci : toute retouche de fond se fait dans les trois le même jour.
+ * L'arabe porte une clause de prévalence — c'est CETTE page qui fait foi — et les deux
+ * consoles de magasin ne reçoivent que les URL FR et EN.
  *
  * Deux chiffres de cette page sont des promesses, pas des réglages : les 14 jours de
  * rétention des sauvegardes (§7 et §6) et les 30 jours de la corbeille. Les changer
@@ -104,7 +105,7 @@ const liens = routes.fr;
           </li>
         </ul>
         <p class="mt-4">
-          Si vous choisissez <strong>« Se connecter avec Google »</strong> ou
+          Si vous choisissez <strong>« Se connecter avec Google »</strong> ou{' '}
           <strong>« Se connecter avec Apple »</strong>, nous recevons de ce service un identifiant
           technique et l'adresse e-mail associée à votre compte (Apple peut vous proposer une
           adresse relais qui masque la vôtre). Nous ne recevons rien d'autre, et nous n'écrivons
@@ -131,7 +132,7 @@ const liens = routes.fr;
             reçues, échéances, badges, récompenses, programme de révision ;
           </li>
           <li>
-            ses <strong>séances</strong> : une date par jour d'usage effectif,
+            ses <strong>séances</strong> : une date par jour d'usage effectif,{' '}
             <strong>jamais de durée</strong> ;
           </li>
           <li>sa <strong>boîte de réception</strong> dans l'application.</li>
@@ -226,7 +227,7 @@ const liens = routes.fr;
         </div>
         <p class="mt-4">
           Nous ne prenons <strong>aucune décision automatisée</strong> vous concernant,
-          n'établissons <strong>aucun profil</strong> à des fins commerciales et ne faisons
+          n'établissons <strong>aucun profil</strong> à des fins commerciales et ne faisons{' '}
           <strong>aucune publicité</strong>. La mesure d'usage se limite à des compteurs agrégés et
           anonymes, sans profil individuel.
         </p>
@@ -245,7 +246,7 @@ const liens = routes.fr;
             sans cette approbation, rien ne circule entre eux ;
           </li>
           <li>
-            le tuteur <strong>voit toutes les interactions</strong> et peut
+            le tuteur <strong>voit toutes les interactions</strong> et peut{' '}
             <strong>révoquer</strong> l'appairage à tout moment ;
           </li>
           <li>
@@ -310,7 +311,7 @@ const liens = routes.fr;
               <tr class="border-b border-ink-100 align-top dark:border-night-800">
                 <td class="py-3 pe-4"><strong>Resend</strong></td>
                 <td class="py-3 pe-4">
-                  envoi des courriels de confirmation et de mot de passe oublié, depuis
+                  envoi des courriels de confirmation et de mot de passe oublié, depuis{' '}
                   <span class="font-mono text-xs">ne-pas-repondre@bitaqat-hifd-quran.com</span>
                 </td>
                 <td class="py-3">Union européenne (région Irlande)</td>
@@ -386,7 +387,7 @@ const liens = routes.fr;
               <tr class="border-b border-ink-100 align-top dark:border-night-800">
                 <td class="py-3 pe-4">Profil d'apprenant</td>
                 <td class="py-3">
-                  jusqu'à sa suppression ; il passe alors
+                  jusqu'à sa suppression ; il passe alors{' '}
                   <strong>30 jours dans une corbeille</strong> restaurable par le tuteur, puis tout
                   est effacé
                 </td>
@@ -417,7 +418,7 @@ const liens = routes.fr;
               <tr class="align-top">
                 <td class="py-3 pe-4">Sauvegardes</td>
                 <td class="py-3">
-                  une copie chiffrée de la base est réalisée chaque nuit et conservée
+                  une copie chiffrée de la base est réalisée chaque nuit et conservée{' '}
                   <strong>14 jours</strong> chez un prestataire de stockage (Cloudflare, Union
                   européenne), puis détruite automatiquement. Elle n'est jamais consultée pour
                   rétablir un compte ou un profil supprimé
@@ -450,14 +451,14 @@ const liens = routes.fr;
             sur l'appareil au titre de la portabilité — jamais envoyé par courriel.
           </li>
           <li>
-            <strong>Sans l'application</strong> (désinstallée, téléphone perdu) : la page
+            <strong>Sans l'application</strong> (désinstallée, téléphone perdu) : la page{' '}
             <a href={liens.suppression} class="underline hover:text-gold-600"
               >Supprimer un compte ou un profil</a
             > du site. Chaque demande est vérifiée puis traitée à la main, et nous vous répondons
             avant toute suppression.
           </li>
           <li>
-            <strong>Par courriel</strong> :
+            <strong>Par courriel</strong> :{' '}
             <a href="mailto:stores@bitaqat-hifd-quran.com" class="underline hover:text-gold-600"
               >stores@bitaqat-hifd-quran.com</a
             >.
