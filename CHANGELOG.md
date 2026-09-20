@@ -38,8 +38,8 @@ version numbers — entries are grouped by date instead.
 ### Changed
 - The "Backups" paragraph of the deletion pages said the server kept automatic backups that
   overwrite one another. It kept none — the plan has no backups at all. Since 19/09 a robot makes
-  one encrypted copy a night, kept fourteen days; FR and EN now say that. The Arabic paragraph
-  still carries the old sentence and waits for the author.
+  one encrypted copy a night, kept fourteen days, and all three languages now say so. The Arabic
+  one was corrected last, once the Arabic policy existed to agree with.
 
 ### Notes
 - The bracketed fields — registered address, postcode, RNA number, last-updated date — are left as

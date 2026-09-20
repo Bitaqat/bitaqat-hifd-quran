@@ -4,6 +4,11 @@
  *
  * The Arabic wording was written alongside the French and English pages on 26/08/2026 and
  * is awaiting the author's review, like the rest of the Arabic content of the site.
+ *
+ * The "backups" paragraph was corrected on 20/09/2026, after the French and English ones:
+ * it described sliding server backups that overwrite one another, which the Free plan never
+ * made. The figure it now carries — fourteen days — is the one in the privacy policy (§7),
+ * and the three languages have to move together if it ever changes.
  */
 import Layout from "../../layouts/Layout.astro";
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
@@ -85,8 +90,8 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
         <h3 class="mt-5 font-semibold text-ink-900 dark:text-white">النسخ الاحتياطية</h3>
         <p class="mt-2">
-          قد تحتفظ النسخ الاحتياطية التلقائية للخادم، وهي يحلّ بعضها محلّ بعض، بنسخة أيامًا معدودة
-          أخرى. ولا يُرجَع إليها قطّ لاستعادة حساب محذوف.
+          تُنجَز كلّ ليلة نسخة معمّاة من قاعدة البيانات، وتُحفظ أربعة عشر يومًا، ثمّ تُتلَف.
+          ولا يُرجَع إليها قطّ لاستعادة حساب محذوف.
         </p>
       </div>
 
