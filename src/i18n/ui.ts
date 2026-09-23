@@ -21,6 +21,7 @@ export const routes: Record<Lang, Record<
   | "niveaux"
   | "carteDeSuivi"
   | "telechargements"
+  | "livres"
   | "contact"
   | "mentions"
   | "newsletter"
@@ -36,6 +37,7 @@ export const routes: Record<Lang, Record<
     niveaux: "/methodologie/niveaux",
     carteDeSuivi: "/methodologie/carte-de-suivi",
     telechargements: "/telechargements",
+    livres: "/livres",
     contact: "/contact",
     mentions: "/mentions-legales",
     newsletter: "/newsletter",
@@ -52,6 +54,7 @@ export const routes: Record<Lang, Record<
     niveaux: "/en/methodology/levels",
     carteDeSuivi: "/en/methodology/tracking-card",
     telechargements: "/en/downloads",
+    livres: "/en/books",
     contact: "/en/contact",
     mentions: "/en/legal-notice",
     newsletter: "/en/newsletter",
@@ -66,6 +69,7 @@ export const routes: Record<Lang, Record<
     niveaux: "/ar/methodology/levels",
     carteDeSuivi: "/ar/methodology/tracking-card",
     telechargements: "/ar/downloads",
+    livres: "/ar/books",
     contact: "/ar/contact",
     mentions: "/ar/legal-notice",
     newsletter: "/ar/newsletter",
@@ -82,6 +86,7 @@ export const ui = {
     "nav.methodologie": "Méthodologie",
     "nav.niveaux": "Les niveaux",
     "nav.telechargements": "Téléchargements",
+    "nav.livres": "Les livres",
     "nav.contact": "Contact",
     "nav.cta": "Télécharger le kit",
     "footer.tagline":
@@ -148,6 +153,7 @@ export const ui = {
     "nav.methodologie": "Methodology",
     "nav.niveaux": "Levels",
     "nav.telechargements": "Downloads",
+    "nav.livres": "Books",
     "nav.contact": "Contact",
     "nav.cta": "Download the kit",
     "footer.tagline":
@@ -213,6 +219,7 @@ export const ui = {
     "nav.methodologie": "المنهجية",
     "nav.niveaux": "المستويات",
     "nav.telechargements": "التحميلات",
+    "nav.livres": "الكتب",
     "nav.contact": "تواصل معنا",
     "nav.cta": "تحميل الحقيبة",
     "footer.tagline":

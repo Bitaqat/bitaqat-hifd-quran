@@ -1,0 +1,122 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { editions, amazonUrl } from "../../data/livres";
+import { routes } from "../../i18n/ui";
+import coverPuits from "../../assets/livres/le-puits-des-etoiles.jpg";
+import coverSceau from "../../assets/livres/le-sceau-des-etoiles.jpg";
+
+const r = routes.ar;
+
+const books = [
+  {
+    num: "الكتاب الأول",
+    badge: "جديد",
+    title: "بئر النجوم",
+    original: "Le Puits des Étoiles · The Well of Stars",
+    cover: coverPuits,
+    alt: "غلاف رواية بئر النجوم: شاب ينحني فوق بئر حجرية ينفتح قعرها على سماء مليئة بالنجوم.",
+    blurb:
+      "غرناطة، أواخر سنة 1491م. في حديقة مهجورة، ينحني معلّم شابّ متعجّل القلب فوق بئر بلا ماء — فإذا بقعر البئر ينفتح على سماء من النجوم. هذه قصة إدريس الذي سقط ألف سنة نحو المستقبل عند آخر المسمِّعين في العوالم، وقصة الأصول المتخيَّلة لبطاقات التسميع.",
+    details: "رواية مصوَّرة (15 لوحة) · من 10 سنوات فما فوق · سبع آيات الفاتحة عمودها الفقري",
+    editionFr: editions.puits.fr,
+    editionEn: editions.puits.en,
+  },
+  {
+    num: "الكتاب الثاني",
+    badge: null,
+    title: "خاتم النجوم",
+    original: "Le Sceau des Étoiles · The Seal of Stars",
+    cover: coverSceau,
+    alt: "غلاف رواية خاتم النجوم: ستة أطفال من الخلف يتأملون مدينة عند الغروب تحت خاتم مضيء كبير.",
+    blurb:
+      "ستة أصدقاء. رَقّ منسيّ منذ خمسة قرون. ستة أختام من الشمع تحرس كنزًا بلا اسم. في الأروقة الخفية لقصر الحمراء، يعثر قيس وأصدقاؤه على خريطة تقلب حياتهم — ليكتشفوا أن ما من محنة تُجتاز قبل أن تُنقَش في القلب أثمنُ الكلمات في العالم.",
+    details: "رواية مصوَّرة · من 10 سنوات فما فوق · المغامرة التي بدأت بها السلسلة",
+    editionFr: editions.sceau.fr,
+    editionEn: editions.sceau.en,
+  },
+];
+---
+
+<Layout
+  title="الكتب"
+  lang="ar"
+  description="روايات سلسلة خاتم النجوم: بئر النجوم وخاتم النجوم، روايتان مصوَّرتان للناشئة حول بطاقات التسميع، ريعهما لدعم المشروع."
+>
+  <section class="mx-auto max-w-5xl px-6 py-16 sm:py-24">
+    <p class="text-sm font-semibold uppercase tracking-widest text-gold-600">الكتب</p>
+    <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-ink-900 dark:text-white">
+      سلسلة خاتم النجوم
+    </h1>
+    <p class="mt-6 max-w-3xl text-lg leading-relaxed text-ink-600 dark:text-night-300">
+      روايتان مصوَّرتان للناشئة تحكيان المغامرة التي كنزها بطاقات التسميع: سلسلة واحدة لم تنقطع، من غرناطة سنة
+      1491م إلى ستة أصدقاء من زماننا. يُختَم كل فصل بلوحة موثَّقة — آيات وأحاديث بمراجعها الكاملة — مع فصلٍ صريح
+      بين ما هو حقّ وما هو حكاية.
+    </p>
+    <p class="mt-4 max-w-3xl leading-relaxed text-ink-600 dark:text-night-300">
+      الروايتان متوفرتان بالفرنسية وبالإنجليزية، ويمكن قراءتهما بأي ترتيب. ريعهما يدعم المشروع — أما البطاقات <a href={r.telechargements} class="font-medium text-gold-600 hover:underline">فتبقى مجانية</a>.
+    </p>
+
+    <div class="mt-14 space-y-14">
+      {books.map((book) => (
+        <article class="grid gap-8 sm:grid-cols-[220px_1fr] sm:gap-10">
+          <div class="mx-auto w-48 sm:w-auto">
+            <Image
+              src={book.cover}
+              alt={book.alt}
+              width={440}
+              class="rounded-lg shadow-lg ring-1 ring-ink-900/10 dark:ring-white/10"
+            />
+          </div>
+          <div>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-sm font-semibold uppercase tracking-widest text-gold-600">{book.num}</span>
+              {book.badge && (
+                <span class="rounded-full bg-gold-500 px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
+                  {book.badge}
+                </span>
+              )}
+            </div>
+            <h2 class="mt-2 text-2xl font-bold text-ink-900 dark:text-white">{book.title}</h2>
+            <p class="mt-1 text-sm font-medium text-ink-500 dark:text-night-400" dir="ltr">{book.original}</p>
+            <p class="mt-4 leading-relaxed text-ink-600 dark:text-night-300">{book.blurb}</p>
+            <p class="mt-3 text-sm text-ink-500 dark:text-night-400">{book.details}</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              {amazonUrl(book.editionFr, "paperback") && (
+                <a
+                  href={amazonUrl(book.editionFr, "paperback")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full bg-ink-900 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-600 dark:bg-white dark:text-ink-900"
+                >
+                  النسخة الفرنسية — أمازون
+                </a>
+              )}
+              {amazonUrl(book.editionEn, "paperback") ? (
+                <a
+                  href={amazonUrl(book.editionEn, "paperback")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full border border-ink-300 px-5 py-2 text-sm font-semibold text-ink-700 transition-colors hover:border-gold-400 hover:text-gold-600 dark:border-night-600 dark:text-night-200"
+                >
+                  النسخة الإنجليزية — أمازون
+                </a>
+              ) : (
+                <span class="rounded-full border border-ink-200 px-5 py-2 text-sm font-medium text-ink-400 dark:border-night-700 dark:text-night-500">
+                  النسخة الإنجليزية قريبًا
+                </span>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-16 rounded-xl bg-ink-50 p-6 text-sm leading-relaxed text-ink-600 dark:bg-night-900 dark:text-night-300">
+      <p>
+        وفي الصفحة الأخيرة من كل رواية دعوة واحدة: خذ <a href={r.telechargements} class="font-medium text-gold-600 hover:underline">بطاقتك الأولى</a>،
+        واكتب اسمك، وابدأ من البداية — باسم الله.
+      </p>
+    </div>
+  </section>
+</Layout>
