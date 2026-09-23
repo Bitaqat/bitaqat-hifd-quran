@@ -10,19 +10,6 @@ const r = routes.fr;
 
 const books = [
   {
-    num: "Livre 1",
-    badge: "Nouveau",
-    title: "Le Puits des Étoiles",
-    subtitle: "Aux origines du Sceau des Étoiles",
-    cover: coverPuits,
-    alt: "Couverture du Puits des Étoiles : un jeune homme se penche au-dessus d'un puits de pierre dont le fond s'ouvre sur un ciel d'étoiles.",
-    blurb:
-      "Grenade, fin de l'an 1491. Dans un jardin en ruine, un jeune maître au cœur trop pressé se penche sur un puits sans eau — et le fond du puits s'ouvre sur un ciel d'étoiles. Voici l'histoire d'Idrîs, tombé mille ans dans le futur chez les derniers récitants des mondes, et des origines rêvées des cartes de récitation.",
-    details: "Roman illustré (15 planches) · à partir de 10 ans · les sept versets d'Al-Fâtiha en colonne vertébrale",
-    edition: editions.puits.fr,
-  },
-  {
-    num: "Livre 2",
     badge: null,
     title: "Le Sceau des Étoiles",
     subtitle: "Six amis, un parchemin, une quête au cœur du Qor'an",
@@ -32,6 +19,17 @@ const books = [
       "Six amis. Un parchemin oublié depuis cinq siècles. Six sceaux de cire gardant un trésor sans nom. Dans les galeries cachées de l'Alhambra, Qaïs et ses amis mettent la main sur une carte qui bouleverse leurs vies — et découvrent qu'aucune épreuve ne se franchit sans graver dans son cœur les mots les plus précieux du monde.",
     details: "Roman illustré · à partir de 10 ans · la quête qui a fait naître la série",
     edition: editions.sceau.fr,
+  },
+  {
+    badge: "Nouveau",
+    title: "Le Puits des Étoiles",
+    subtitle: "Aux origines du Sceau des Étoiles",
+    cover: coverPuits,
+    alt: "Couverture du Puits des Étoiles : un jeune homme se penche au-dessus d'un puits de pierre dont le fond s'ouvre sur un ciel d'étoiles.",
+    blurb:
+      "Grenade, fin de l'an 1491. Dans un jardin en ruine, un jeune maître au cœur trop pressé se penche sur un puits sans eau — et le fond du puits s'ouvre sur un ciel d'étoiles. Voici l'histoire d'Idrîs, tombé mille ans dans le futur chez les derniers récitants des mondes, et des origines rêvées des cartes de récitation.",
+    details: "Roman illustré (15 planches) · à partir de 10 ans · les sept versets d'Al-Fâtiha en colonne vertébrale",
+    edition: editions.puits.fr,
   },
 ];
 ---
@@ -68,14 +66,11 @@ const books = [
             />
           </div>
           <div>
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="text-sm font-semibold uppercase tracking-widest text-gold-600">{book.num}</span>
-              {book.badge && (
-                <span class="rounded-full bg-gold-500 px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
-                  {book.badge}
-                </span>
-              )}
-            </div>
+            {book.badge && (
+              <span class="inline-block rounded-full bg-gold-500 px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
+                {book.badge}
+              </span>
+            )}
             <h2 class="mt-2 text-2xl font-bold text-ink-900 dark:text-white">{book.title}</h2>
             <p class="mt-1 font-medium italic text-ink-500 dark:text-night-400">{book.subtitle}</p>
             <p class="mt-4 leading-relaxed text-ink-600 dark:text-night-300">{book.blurb}</p>

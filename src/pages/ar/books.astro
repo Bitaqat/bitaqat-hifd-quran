@@ -10,20 +10,6 @@ const r = routes.ar;
 
 const books = [
   {
-    num: "الكتاب الأول",
-    badge: "جديد",
-    title: "بئر النجوم",
-    original: "Le Puits des Étoiles · The Well of Stars",
-    cover: coverWell,
-    alt: "غلاف رواية بئر النجوم: شاب ينحني فوق بئر حجرية ينفتح قعرها على سماء مليئة بالنجوم.",
-    blurb:
-      "غرناطة، أواخر سنة 1491م. في حديقة مهجورة، ينحني معلّم شابّ متعجّل القلب فوق بئر بلا ماء — فإذا بقعر البئر ينفتح على سماء من النجوم. هذه قصة إدريس الذي سقط ألف سنة نحو المستقبل عند آخر المسمِّعين في العوالم، وقصة الأصول المتخيَّلة لبطاقات التسميع.",
-    details: "رواية مصوَّرة (15 لوحة) · من 10 سنوات فما فوق · سبع آيات الفاتحة عمودها الفقري",
-    editionFr: editions.puits.fr,
-    editionEn: editions.puits.en,
-  },
-  {
-    num: "الكتاب الثاني",
     badge: null,
     title: "خاتم النجوم",
     original: "Le Sceau des Étoiles · The Seal of Stars",
@@ -34,6 +20,18 @@ const books = [
     details: "رواية مصوَّرة · من 10 سنوات فما فوق · المغامرة التي بدأت بها السلسلة",
     editionFr: editions.sceau.fr,
     editionEn: editions.sceau.en,
+  },
+  {
+    badge: "جديد",
+    title: "بئر النجوم",
+    original: "Le Puits des Étoiles · The Well of Stars",
+    cover: coverWell,
+    alt: "غلاف رواية بئر النجوم: شاب ينحني فوق بئر حجرية ينفتح قعرها على سماء مليئة بالنجوم.",
+    blurb:
+      "غرناطة، أواخر سنة 1491م. في حديقة مهجورة، ينحني معلّم شابّ متعجّل القلب فوق بئر بلا ماء — فإذا بقعر البئر ينفتح على سماء من النجوم. هذه قصة إدريس الذي سقط ألف سنة نحو المستقبل عند آخر المسمِّعين في العوالم، وقصة الأصول المتخيَّلة لبطاقات التسميع.",
+    details: "رواية مصوَّرة (15 لوحة) · من 10 سنوات فما فوق · سبع آيات الفاتحة عمودها الفقري",
+    editionFr: editions.puits.fr,
+    editionEn: editions.puits.en,
   },
 ];
 ---
@@ -69,14 +67,11 @@ const books = [
             />
           </div>
           <div>
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="text-sm font-semibold uppercase tracking-widest text-gold-600">{book.num}</span>
-              {book.badge && (
-                <span class="rounded-full bg-gold-500 px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
-                  {book.badge}
-                </span>
-              )}
-            </div>
+            {book.badge && (
+              <span class="inline-block rounded-full bg-gold-500 px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
+                {book.badge}
+              </span>
+            )}
             <h2 class="mt-2 text-2xl font-bold text-ink-900 dark:text-white">{book.title}</h2>
             <p class="mt-1 text-sm font-medium text-ink-500 dark:text-night-400" dir="ltr">{book.original}</p>
             <p class="mt-4 leading-relaxed text-ink-600 dark:text-night-300">{book.blurb}</p>

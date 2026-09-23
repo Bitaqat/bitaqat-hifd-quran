@@ -10,19 +10,6 @@ const r = routes.en;
 
 const books = [
   {
-    num: "Book 1",
-    badge: "New",
-    title: "The Well of Stars",
-    subtitle: "Origins of the Seal of Stars",
-    cover: coverWell,
-    alt: "Cover of The Well of Stars: a young man leans over a stone well whose depths open onto a sky full of stars.",
-    blurb:
-      "Granada, late in the year 1491. In a ruined garden, a young master with too hurried a heart leans over a waterless well — and the bottom of the well opens onto a sky of stars. This is the story of Idris, fallen a thousand years into the future among the last reciters of the worlds, and of the dreamed origins of the recitation cards.",
-    details: "Illustrated novel (15 plates) · ages 10 and up · the seven verses of Al-Fatiha as its backbone",
-    edition: editions.puits.en,
-  },
-  {
-    num: "Book 2",
     badge: null,
     title: "The Seal of Stars",
     subtitle: "Six friends, a parchment, and a quest to the heart of the Qur'an",
@@ -32,6 +19,17 @@ const books = [
       "Six friends. A parchment forgotten for five centuries. Six wax seals guarding a nameless treasure. In the hidden galleries of the Alhambra, Qais and his friends lay their hands on a map that overturns their lives — and discover that no trial can be overcome without first engraving on your heart the most precious words in the world.",
     details: "Illustrated novel · ages 10 and up · the quest that started the series",
     edition: editions.sceau.en,
+  },
+  {
+    badge: "New",
+    title: "The Well of Stars",
+    subtitle: "Origins of the Seal of Stars",
+    cover: coverWell,
+    alt: "Cover of The Well of Stars: a young man leans over a stone well whose depths open onto a sky full of stars.",
+    blurb:
+      "Granada, late in the year 1491. In a ruined garden, a young master with too hurried a heart leans over a waterless well — and the bottom of the well opens onto a sky of stars. This is the story of Idris, fallen a thousand years into the future among the last reciters of the worlds, and of the dreamed origins of the recitation cards.",
+    details: "Illustrated novel (15 plates) · ages 10 and up · the seven verses of Al-Fatiha as its backbone",
+    edition: editions.puits.en,
   },
 ];
 ---
@@ -69,14 +67,11 @@ const books = [
             />
           </div>
           <div>
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="text-sm font-semibold uppercase tracking-widest text-gold-600">{book.num}</span>
-              {book.badge && (
-                <span class="rounded-full bg-gold-500 px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
-                  {book.badge}
-                </span>
-              )}
-            </div>
+            {book.badge && (
+              <span class="inline-block rounded-full bg-gold-500 px-3 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
+                {book.badge}
+              </span>
+            )}
             <h2 class="mt-2 text-2xl font-bold text-ink-900 dark:text-white">{book.title}</h2>
             <p class="mt-1 font-medium italic text-ink-500 dark:text-night-400">{book.subtitle}</p>
             <p class="mt-4 leading-relaxed text-ink-600 dark:text-night-300">{book.blurb}</p>
