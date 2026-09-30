@@ -90,6 +90,16 @@ const books = [
                   Broché bientôt disponible
                 </span>
               )}
+              {amazonUrl(book.edition, "hardcover") && (
+                <a
+                  href={amazonUrl(book.edition, "hardcover")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full border border-ink-300 px-5 py-2 text-sm font-semibold text-ink-700 transition-colors hover:border-gold-400 hover:text-gold-600 dark:border-night-600 dark:text-night-200"
+                >
+                  Livre relié — Amazon
+                </a>
+              )}
               {amazonUrl(book.edition, "ebook") ? (
                 <a
                   href={amazonUrl(book.edition, "ebook")}
