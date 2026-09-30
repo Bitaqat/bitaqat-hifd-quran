@@ -135,7 +135,15 @@ const liens = routes.fr;
             ses <strong>séances</strong> : une date par jour d'usage effectif,{' '}
             <strong>jamais de durée</strong> ;
           </li>
-          <li>sa <strong>boîte de réception</strong> dans l'application.</li>
+          <li>sa <strong>boîte de réception</strong> dans l'application ;</li>
+          <li>
+            s'il est <strong>majeur</strong> et l'a créée, une <strong>clé de secours</strong>, qui lui
+            permet de retrouver son profil sur un nouveau navigateur ou appareil. Nous n'en conservons
+            qu'une <strong>empreinte</strong> : la clé elle-même n'est jamais enregistrée et personne, pas
+            même nous, ne peut la relire. En créer une nouvelle annule la précédente. Le nom sous lequel
+            le navigateur l'enregistre reste dans le navigateur de l'utilisateur et ne nous est jamais
+            transmis.
+          </li>
         </ul>
         <p class="mt-4">
           Un apprenant <strong>n'écrit jamais de texte libre</strong> : ses demandes utilisent des
@@ -397,6 +405,10 @@ const liens = routes.fr;
                 <td class="py-3"><strong>7 jours</strong>, puis purge automatique</td>
               </tr>
               <tr class="border-b border-ink-100 align-top dark:border-night-800">
+                <td class="py-3 pe-4">Empreinte de la clé de secours</td>
+                <td class="py-3">jusqu'à la création d'une nouvelle clé, ou jusqu'à la suppression du profil (elle suit alors la corbeille de 30 jours, puis est effacée)</td>
+              </tr>
+              <tr class="border-b border-ink-100 align-top dark:border-night-800">
                 <td class="py-3 pe-4">Code d'invitation ou d'appairage</td>
                 <td class="py-3"><strong>72 heures</strong>, usage unique</td>
               </tr>
@@ -478,7 +490,7 @@ const liens = routes.fr;
         <p class="mt-3">
           Chiffrement en transit (TLS) et au repos chez l'hébergeur ; mots de passe hachés ; règles
           d'accès appliquées par la base de données elle-même, ligne par ligne, selon le rôle ;
-          codes d'invitation non devinables, à usage unique ;
+          codes d'invitation non devinables, à usage unique, avec tentatives limitées ;
           journalisation des gestes sensibles ; aucun secret dans l'application installée. Les
           gestes irréversibles (suppression, révocation) demandent le mot de passe de l'adulte,
           jamais le simple sas.
