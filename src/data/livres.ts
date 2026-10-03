@@ -18,7 +18,7 @@ export type Edition = {
 export const editions = {
   puits: {
     fr: { ebook: "B0HKG3Q651", paperback: "B0HKG3S5KM", hardcover: "B0HL733N2W", store: "amazon.fr" },
-    en: { ebook: "B0HCB533MB", paperback: "B0HKGLVWWM", hardcover: null, store: "amazon.com" },
+    en: { ebook: "B0HCB533MB", paperback: "B0HKGLVWWM", hardcover: "B0HLW4C7K7", store: "amazon.com" },
   },
   sceau: {
     fr: { ebook: "B0HCM9PMTX", paperback: "B0HCM9C3S8", hardcover: null, store: "amazon.fr" },
