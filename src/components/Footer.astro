@@ -4,8 +4,10 @@ import NewsletterForm from "./NewsletterForm.astro";
 
 interface Props {
   lang: Lang;
+  /** Mis par les pages qui affichent déjà leur propre bloc d'inscription. */
+  hideNewsletter?: boolean;
 }
-const { lang } = Astro.props;
+const { lang, hideNewsletter = false } = Astro.props;
 const t = useTranslations(lang);
 const startYear = 2014;
 const year = new Date().getFullYear();
@@ -13,9 +15,13 @@ const links = routes[lang];
 ---
 
 <footer class="border-t border-ink-100 bg-ink-50 dark:border-night-800 dark:bg-night-900">
-  <div class="border-b border-ink-200 px-6 py-12 dark:border-night-800">
-    <NewsletterForm lang={lang} id="newsletter-footer" headingLevel="h2" />
-  </div>
+  {
+    !hideNewsletter && (
+      <div class="border-b border-ink-200 px-6 py-12 dark:border-night-800">
+        <NewsletterForm lang={lang} id="newsletter-footer" headingLevel="h2" />
+      </div>
+    )
+  }
   <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
     <div>
       <div class="flex items-center gap-2 text-lg font-bold text-ink-900 dark:text-white">

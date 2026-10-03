@@ -10,6 +10,8 @@ interface Props {
   lang?: Lang;
   /** Pages de plomberie de l'application : utiles à qui reçoit le lien, à personne d'autre. */
   noindex?: boolean;
+  /** Pages ayant déjà leur propre bloc d'inscription : le pied de page n'affiche pas le sien. */
+  hideFooterNewsletter?: boolean;
 }
 
 const {
@@ -17,6 +19,7 @@ const {
   description = "Kit gratuit et libre de cartes de récitation pour l'apprentissage et la mémorisation du Qor'an, avec une méthodologie pédagogique complète.",
   lang = "fr",
   noindex = false,
+  hideFooterNewsletter = false,
 } = Astro.props;
 
 const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
@@ -45,7 +48,7 @@ const rssHref = lang === "fr" ? "/rss.xml" : `/${lang}/rss.xml`;
     <main>
       <slot />
     </main>
-    <Footer lang={lang} />
+    <Footer lang={lang} hideNewsletter={hideFooterNewsletter} />
     <script src="/scripts/theme-toggle.js" defer></script>
     <script src="/scripts/newsletter.js" defer></script>
   </body>
