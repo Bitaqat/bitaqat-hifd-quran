@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import ResourceActions from "../../components/ResourceActions.astro";
+import NewsletterForm from "../../components/NewsletterForm.astro";
 import { paliers, categories, outils, methodologieDocs } from "../../data/niveaux.ar";
 import type { ThemeVariant } from "../../data/niveaux";
 import { useTranslations } from "../../i18n/ui";
@@ -233,6 +234,18 @@ function getMethodologieImage(name: string) {
           </div>
         );
       })}
+    </div>
+  </section>
+
+  <section class="border-t border-ink-100 py-16 dark:border-night-800">
+    <div class="mx-auto max-w-2xl px-6">
+      <NewsletterForm
+        lang="ar"
+        id="newsletter-downloads"
+        headingLevel="h2"
+        title="البطاقات القادمة عبر البريد"
+        desc="فائدة في الحفظ من حين إلى آخر، ورسالة عند صدور بطاقات جديدة — لا شيء غير ذلك، والحقيبة تبقى مجانية."
+      />
     </div>
   </section>
 

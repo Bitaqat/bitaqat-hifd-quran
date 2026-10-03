@@ -7,10 +7,16 @@ interface Props {
   id: string;
   /** The footer renders this below the site title, the dedicated page renders it as the main heading. */
   headingLevel?: "h1" | "h2" | "h3";
+  /** Context-specific heading; falls back to the generic translated one. */
+  title?: string;
+  /** Context-specific pitch; falls back to the generic translated one. */
+  desc?: string;
 }
 
-const { lang, id, headingLevel = "h2" } = Astro.props;
+const { lang, id, headingLevel = "h2", title, desc } = Astro.props;
 const t = useTranslations(lang);
+const heading = title ?? t("newsletter.title");
+const pitch = desc ?? t("newsletter.desc");
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 const Heading = headingLevel;
 ---
@@ -22,9 +28,9 @@ const Heading = headingLevel;
       headingLevel === "h1" ? "text-3xl font-extrabold tracking-tight sm:text-4xl" : "text-lg",
     ]}
   >
-    {t("newsletter.title")}
+    {heading}
   </Heading>
-  <p class="mt-2 text-sm leading-relaxed text-ink-500 dark:text-night-400">{t("newsletter.desc")}</p>
+  <p class="mt-2 text-sm leading-relaxed text-ink-500 dark:text-night-400">{pitch}</p>
 
   <form
     data-newsletter-form
